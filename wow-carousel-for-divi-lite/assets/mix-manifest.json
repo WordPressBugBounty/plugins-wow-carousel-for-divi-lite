@@ -1,0 +1,13 @@
+{
+    "/js/builder.js": "/js/builder.js?id=d29eec971ff98123b37e41dd1490bf00",
+    "/js/frontend.js": "/js/frontend.js?id=73fb0245e48971aa1a9c83aa47e2a5b5",
+    "/admin/js/dashboard.js": "/admin/js/dashboard.js?id=1037b4d296018baa5dac19ffea587996",
+    "/admin/js/admin.js": "/admin/js/admin.js?id=f573718a9ff440e422025d9d6e624f6c",
+    "/admin/js/app.js": "/admin/js/app.js?id=2373e44a79a46dd03889783fc7395f21",
+    "/css/builder.css": "/css/builder.css?id=6da431b5ce67b5851ff18c2c191c0cee",
+    "/css/frontend.css": "/css/frontend.css?id=50617b3a298ffae1b49d3a1e4fe498ec",
+    "/admin/css/app.css": "/admin/css/app.css?id=4f88f718bc77c72f8e7e505f1936eae8",
+    "/admin/css/admin.css": "/admin/css/admin.css?id=fad5bcc1639497a53445a5a42f90c5fa",
+    "/admin/css/dashboard.css": "/admin/css/dashboard.css?id=d7efec00f5a497db62446d53ce72b404",
+    "/admin/css/fs-override.css": "/admin/css/fs-override.css?id=7df4e3a86f00f972082c3df16aac8cc4"
+}
