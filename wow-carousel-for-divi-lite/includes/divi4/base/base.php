@@ -9,12 +9,9 @@ class Divi_Carousel_Lite_Builder_Module extends ET_Builder_Module
         'author_uri' => 'https://diviepic.com/',
     ];
 
-    public $folder_name = 'divi_carousel_lite';
+    public $icon_path;
 
-    public function dcl_icon_path($icon)
-    {
-        return sprintf('%1$s/assets/imgs/icons/%2$s.svg', DCL_PLUGIN_DIR, $icon);
-    }
+    public $folder_name = 'divi_carousel_lite';
 
     protected function _custom_advanced_background_fields($option_name, $option_label, $tab_slug, $toggle_slug, array $background_tab = [], $show_if = [])
     {

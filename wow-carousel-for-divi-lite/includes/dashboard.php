@@ -3,16 +3,29 @@
 namespace Divi_Carousel_Lite;
 
 use Divi_Carousel_Lite\ModulesManager;
-use Divi_Carousel_Lite\AdminMenu;
 use Divi_Carousel_Lite\Plugin_Upgrader;
 use Divi_Carousel_Lite\AdminHelper;
 
+/**
+ * Dashboard class handles the admin dashboard functionality
+ * 
+ * @since 1.0.0
+ */
 class Dashboard
 {
+
+    /**
+     * Instance of Dashboard class
+     * 
+     * @var Dashboard
+     */
     private static $instance;
 
-    private $plugin_menu;
-
+    /**
+     * Get instance of Dashboard class
+     * 
+     * @return Dashboard
+     */
     public static function get_instance()
     {
         if (!isset(self::$instance)) {
@@ -21,38 +34,70 @@ class Dashboard
         return self::$instance;
     }
 
+    /**
+     * Constructor
+     */
     public function __construct()
     {
-        $this->plugin_menu = AdminMenu::get_instance();
-        add_action('admin_menu', [$this, 'add_submenu'], 11);
+        add_action('admin_menu', [$this, 'add_menu'], 11);
         add_action('admin_post_divi_carousel_lite_rollback', array($this, 'post_divi_carousel_lite_rollback'));
     }
 
-    public function add_submenu()
+    /**
+     * Add menu to WordPress admin dashboard
+     * 
+     * @return void
+     */
+    public function add_menu()
     {
+        // Check user capabilities
         if (!current_user_can('manage_options')) {
             return;
         }
 
+        // Don't show menu if pro version is installed
         if (AdminHelper::is_pro_installed()) {
             return;
         }
 
-        $this->plugin_menu->add_submenu(
-            __('Divi Carousel Lite', 'divi-carousel-lite'),
-            __('Divi Carousel Lite', 'divi-carousel-lite'),
+        // Add top level menu
+        add_menu_page(
+            __('Divi Carousel', 'divi-carousel-lite'),
+            __('Divi Carousel', 'divi-carousel-lite'),
+            'manage_options',
             'divi-carousel',
             [$this, 'load_page'],
-            1
+            'dashicons-slides',
+            55 // Position after Divi menu
+        );
+
+        // Add submenu pages
+        add_submenu_page(
+            'divi-carousel',
+            __('Dashboard', 'divi-carousel-lite'),
+            __('Dashboard', 'divi-carousel-lite'),
+            'manage_options',
+            'divi-carousel',
+            [$this, 'load_page']
         );
     }
 
+    /**
+     * Load dashboard page content
+     * 
+     * @return void
+     */
     public function load_page()
     {
         $this->enqueue_scripts();
         echo '<div id="divi-carousel-root"></div>';
     }
 
+    /**
+     * Enqueue required scripts and styles
+     * 
+     * @return void
+     */
     public function enqueue_scripts()
     {
         $manifest_path = DCL_PLUGIN_DIR . 'assets/mix-manifest.json';
@@ -94,14 +139,32 @@ class Dashboard
         wp_localize_script('divi-carousel-lite-app', 'diviCarouselLite', $localize);
     }
 
+    /**
+     * Get WordPress dependencies
+     * 
+     * @return array
+     */
     public function wp_deps()
     {
         return [
-            'react', 'wp-api', 'wp-i18n', 'lodash', 'wp-components', 'wp-element', 'wp-api-fetch',
-            'wp-core-data', 'wp-data', 'wp-dom-ready',
+            'react',
+            'wp-api',
+            'wp-i18n',
+            'lodash',
+            'wp-components',
+            'wp-element',
+            'wp-api-fetch',
+            'wp-core-data',
+            'wp-data',
+            'wp-dom-ready',
         ];
     }
 
+    /**
+     * Handle plugin rollback
+     * 
+     * @return void
+     */
     public function post_divi_carousel_lite_rollback()
     {
         if (!current_user_can('install_plugins')) {

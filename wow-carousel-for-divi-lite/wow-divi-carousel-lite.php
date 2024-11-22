@@ -3,7 +3,7 @@
 Plugin Name: Divi Carousel Lite
 Plugin URI:  https://diviepic.com/
 Description: Divi Carousel Lite is a free WordPress plugin that allows you to create stunning carousels for your Divi site.
-Version: 2.0.2
+Version: 2.0.3
 Author: DiviEpic
 Author URI:  https://diviepic.com
 License:     GPL2
@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('DCL_PLUGIN_VERSION', '2.0.2');
+define('DCL_PLUGIN_VERSION', '2.0.3');
 define('DCL_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('DCL_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('DCL_PLUGIN_ASSETS', trailingslashit(DCL_PLUGIN_URL . 'assets'));

@@ -6,7 +6,6 @@ use Divi_Carousel_Lite\ModulesManager;
 
 class AdminHelper
 {
-
     public static function get_common_settings()
     {
         return [

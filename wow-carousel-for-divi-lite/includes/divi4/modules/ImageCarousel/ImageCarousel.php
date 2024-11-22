@@ -10,7 +10,6 @@ class WDCL_ImageCarousel extends Divi_Carousel_Lite_Builder_Module
     {
 
         $this->name      = esc_html__('Image Carousel', 'divi-carousel-lite');
-        $this->icon_path      = $this->dcl_icon_path('carousel');
 
         $this->settings_modal_toggles = [
             'general'  => [

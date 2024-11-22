@@ -9,7 +9,6 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         $this->vb_support = 'on';
         $this->name       = esc_html__('Twitter Feed', 'divi-carousel-lite');
         $this->slug       = 'wdcl_twitter_feed_carousel';
-        $this->icon_path      = $this->dcl_icon_path('twitter');
 
         $this->settings_modal_toggles = [
             'general'  => [

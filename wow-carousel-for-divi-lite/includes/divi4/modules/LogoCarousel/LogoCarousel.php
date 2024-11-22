@@ -10,7 +10,6 @@ class WDCL_LogoCarousel extends Divi_Carousel_Lite_Builder_Module
         $this->slug       = 'wdcl_logo_carousel';
         $this->vb_support = 'on';
         $this->child_slug = 'wdcl_logo_carousel_child';
-        $this->icon_path      = $this->dcl_icon_path('carousel');
 
         $this->settings_modal_toggles = [
             'general'  => [

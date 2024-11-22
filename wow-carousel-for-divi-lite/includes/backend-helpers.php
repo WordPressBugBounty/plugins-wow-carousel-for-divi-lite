@@ -24,13 +24,13 @@ class BackendHelpers
         $dummyData = $this->dummyData();
 
         $image_carousel_child = $this->generate_module_shortcodes('wdcl_image_carousel_child', [
-            ['photo' => 'https://placehold.co/800x800/AED581/FFFFFF?text=Divi+Carousel+Lite&font=montserrat'],
-            ['photo' => 'https://placehold.co/800x800/FF8A65/FFFFFF?text=Divi+Carousel+Pro&font=montserrat'],
+            ['photo' => 'https://placehold.co/800x800/AED581/FFFFFF?text=Divi+Torque+Pro&font=montserrat'],
+            ['photo' => 'https://placehold.co/800x800/FF8A65/FFFFFF?text=Divi+Torque+Pro&font=montserrat'],
             ['photo' => 'https://placehold.co/800x800/4DD0E1/FFFFFF?text=Divi+Torque+Pro&font=montserrat'],
-            ['photo' => 'https://placehold.co/800x800/BA68C8/FFFFFF?text=Divi+Blog+Pro&font=montserrat'],
-            ['photo' => 'https://placehold.co/800x800/FFD54F/333333?text=Divi+Social+Plus&font=montserrat'],
-            ['photo' => 'https://placehold.co/800x800/4DB6AC/FFFFFF?text=Divi+Instagram+Feed&font=montserrat'],
-            ['photo' => 'https://placehold.co/800x800/4DB6AC/FFFFFF?text=DiviEpic.Com&font=montserrat'],
+            ['photo' => 'https://placehold.co/800x800/BA68C8/FFFFFF?text=Divi+Torque+Pro&font=montserrat'],
+            ['photo' => 'https://placehold.co/800x800/FFD54F/333333?text=Divi+Torque+Pro&font=montserrat'],
+            ['photo' => 'https://placehold.co/800x800/4DB6AC/FFFFFF?text=Divi+Torque+Pro&font=montserrat'],
+            ['photo' => 'https://placehold.co/800x800/4DB6AC/FFFFFF?text=Divi+Torque+Pro&font=montserrat'],
         ]);
 
         $logo_carousel_child = $this->generate_module_shortcodes('wdcl_logo_carousel_child', [
