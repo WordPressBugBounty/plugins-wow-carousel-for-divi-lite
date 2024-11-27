@@ -60,24 +60,12 @@ class Dashboard
             return;
         }
 
-        // Add top level menu
-        add_menu_page(
-            __('Divi Carousel', 'divi-carousel-lite'),
-            __('Divi Carousel', 'divi-carousel-lite'),
-            'manage_options',
-            'divi-carousel',
-            [$this, 'load_page'],
-            'dashicons-slides',
-            55 // Position after Divi menu
-        );
-
-        // Add submenu pages
         add_submenu_page(
-            'divi-carousel',
-            __('Dashboard', 'divi-carousel-lite'),
-            __('Dashboard', 'divi-carousel-lite'),
+            'et_divi_options',
+            __('Divi Carousel Lite', 'divi-carousel-lite'),
+            __('Divi Carousel Lite', 'divi-carousel-lite'),
             'manage_options',
-            'divi-carousel',
+            'divi-carousel-lite',
             [$this, 'load_page']
         );
     }
@@ -130,7 +118,7 @@ class Dashboard
             'pro_module_info' => ModulesManager::get_all_pro_modules(),
             'module_icon_path' => $module_icon_path,
             'isProInstalled' => AdminHelper::is_pro_installed(),
-            'upgradeLink' => dcp_fs()->get_upgrade_url(),
+            'upgradeLink' => 'https://diviepic.com/pricing/',
             'rollbackLink' => esc_url(add_query_arg('version', 'VERSION', wp_nonce_url(admin_url('admin-post.php?action=divi_carousel_lite_rollback'), 'divi_carousel_lite_rollback'))),
             'rollbackVersions' => AdminHelper::get_rollback_versions(),
             'currentVersion' => DCL_PLUGIN_VERSION,

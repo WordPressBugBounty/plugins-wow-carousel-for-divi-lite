@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: DiviEpic <help@diviepic.com>\n"
-"POT-Creation-Date: 2024-11-22 22:27+0000\n"
+"POT-Creation-Date: 2024-11-27 18:34+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -31,11 +31,7 @@ msgid "<p>Your content goes here. Edit or remove this text inline or in the modu
 msgstr ""
 
 #: includes/dashboard.php:65, includes/dashboard.php:66
-msgid "Divi Carousel"
-msgstr ""
-
-#: includes/dashboard.php:77, includes/dashboard.php:78
-msgid "Dashboard"
+msgid "Divi Carousel Lite"
 msgstr ""
 
 #: includes/divi4/base/base.php:33
@@ -835,13 +831,13 @@ msgid "Avatar Box Shadow"
 msgstr ""
 
 #: plugin-loader.php:65
-msgid "🔥 Black Friday Deal: 100 Sites for Life!"
+msgid "Cyber Sale - Lifetime Access to Divi Torque just $89!"
 msgstr ""
 
 #: plugin-loader.php:66
-msgid "Upgrade to <strong>Divi Torque Pro</strong> with an amazing Black Friday offer. Get lifetime access for 100 sites at just <strong>$89</strong>! Limited time offer, don't miss out!"
+msgid "Hurry! Get lifetime access to Divi Torque just $89/lifetime!  Limited Time Offer!!"
 msgstr ""
 
 #: plugin-loader.php:72
-msgid "Claim Black Friday Offer"
+msgid "Claim Your Cyber Sale Offer Now"
 msgstr ""

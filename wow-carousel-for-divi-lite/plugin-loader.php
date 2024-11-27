@@ -61,16 +61,16 @@ class Plugin_Loader
         Dashboard::get_instance();
 
         new Admin_Notices([
-            'slug' => 'divi_carousel_lite_black_friday_deal',
-            'title' => __('🔥 Black Friday Deal: 100 Sites for Life!', 'divi-carousel-lite'),
-            'message' => __('Upgrade to <strong>Divi Torque Pro</strong> with an amazing Black Friday offer. Get lifetime access for 100 sites at just <strong>$89</strong>! Limited time offer, don\'t miss out!', 'divi-carousel-lite'),
+            'slug' => 'divi_carousel_lite_cyber_sale',
+            'title' => __('Cyber Sale - Lifetime Access to Divi Torque just $89!', 'divi-carousel-lite'),
+            'message' => __('Hurry! Get lifetime access to Divi Torque just $89/lifetime!  Limited Time Offer!!', 'divi-carousel-lite'),
             'type' => 'success',
-            'show_after' => 'minute',
-            'screens' => ['plugins', 'themes'],
+            'show_after' => 'hour',
+            'screens' => ['plugins', 'dashboard'],
             'buttons' => [
                 [
-                    'text' => __('Claim Black Friday Offer', 'divi-carousel-lite'),
-                    'url' => 'https://diviepic.com/divi-torque-pro/',
+                    'text' => __('Claim Your Cyber Sale Offer Now', 'divi-carousel-lite'),
+                    'url' => 'https://diviepic.com/sale/',
                     'class' => 'button-primary',
                     'target' => '_blank'
                 ]
