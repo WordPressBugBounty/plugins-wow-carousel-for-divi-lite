@@ -170,7 +170,7 @@ class Admin_Notices
                 <?php endif; ?>
 
                 <button type="button" class="notice-dismiss" data-notice-id="<?php echo esc_attr($this->slug); ?>">
-                    <span class="screen-reader-text"><?php esc_html_e('Dismiss this notice.', 'addons-for-divi'); ?></span>
+                    <span class="screen-reader-text"><?php esc_html_e('Dismiss this notice.', 'divi-carousel-lite'); ?></span>
                 </button>
             </div>
 <?php

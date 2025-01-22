@@ -69,7 +69,7 @@ class Plugin_Upgrader
             'url'    => 'update.php?action=upgrade-plugin&plugin=' . urlencode($this->plugin_name),
             'plugin' => $this->plugin_name,
             'nonce'  => 'upgrade-plugin_' . $this->plugin_name,
-            'title' => __('Divi Carousel Lite <p>Rollback to Previous Version</p>', ' divi-carousel-lite'),
+            'title' => __('Divi Carousel Lite <p>Rollback to Previous Version</p>', 'divi-carousel-lite'),
         );
 
         $this->print_inline_style();

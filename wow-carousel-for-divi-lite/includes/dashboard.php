@@ -62,10 +62,10 @@ class Dashboard
 
         add_submenu_page(
             'et_divi_options',
-            __('Divi Carousel Lite', 'divi-carousel-lite'),
-            __('Divi Carousel Lite', 'divi-carousel-lite'),
+            __('Carousel Maker', 'divi-carousel-lite'),
+            __('Carousel Maker', 'divi-carousel-lite'),
             'manage_options',
-            'divi-carousel-lite',
+            'divi-carousel-maker',
             [$this, 'load_page']
         );
     }
@@ -118,7 +118,7 @@ class Dashboard
             'pro_module_info' => ModulesManager::get_all_pro_modules(),
             'module_icon_path' => $module_icon_path,
             'isProInstalled' => AdminHelper::is_pro_installed(),
-            'upgradeLink' => 'https://diviepic.com/pricing/',
+            'upgradeLink' => 'https://diviepic.com/divi-carousel-pro/',
             'rollbackLink' => esc_url(add_query_arg('version', 'VERSION', wp_nonce_url(admin_url('admin-post.php?action=divi_carousel_lite_rollback'), 'divi_carousel_lite_rollback'))),
             'rollbackVersions' => AdminHelper::get_rollback_versions(),
             'currentVersion' => DCL_PLUGIN_VERSION,
@@ -157,8 +157,8 @@ class Dashboard
     {
         if (!current_user_can('install_plugins')) {
             wp_die(
-                esc_html__('You do not have permission to access this page.', ' divi-carousel-lite'),
-                esc_html__('Rollback to Previous Version', ' divi-carousel-lite'),
+                esc_html__('You do not have permission to access this page.', 'divi-carousel-lite'),
+                esc_html__('Rollback to Previous Version', 'divi-carousel-lite'),
                 array(
                     'response' => 200,
                 )
@@ -170,7 +170,7 @@ class Dashboard
         $plugin_version  = isset($_GET['version']) ? sanitize_text_field($_GET['version']) : '';
 
         if (empty($plugin_version)) {
-            wp_die(esc_html__('Error occurred, The version selected is invalid. Try selecting different version.', ' divi-carousel-lite'));
+            wp_die(esc_html__('Error occurred, The version selected is invalid. Try selecting different version.', 'divi-carousel-lite'));
         }
 
         $plugin_slug = basename(DCL_PLUGIN_FILE, '.php');
@@ -188,7 +188,7 @@ class Dashboard
 
         wp_die(
             ' ',
-            esc_html__('Rollback to Previous Version', ' divi-carousel-lite'),
+            esc_html__('Rollback to Previous Version', 'divi-carousel-lite'),
             array(
                 'response' => 200,
             )

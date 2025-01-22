@@ -109,7 +109,7 @@ class WDCL_LogoCarouselChild extends Divi_Carousel_Lite_Builder_Module
 
         $advanced_fields['margin_padding'] = [
             'css' => [
-                'main'      => '%%order_class%% .wdcl-logo-carousel-item',
+                'main'      => '%%order_class%% .dcm-logo-carousel-item',
                 'important' => 'all',
             ],
         ];
@@ -165,16 +165,16 @@ class WDCL_LogoCarouselChild extends Divi_Carousel_Lite_Builder_Module
             $link_url     = $this->props['link_url'];
 
             return sprintf(
-                '<a target="%1$s" href="%2$s" %3$s><img class="wdcl-swapped-img" data-mfp-src="%4$s" src="%4$s" alt="%5$s" /></a>',
-                $target,
-                $link_url,
+                '<a target="%1$s" href="%2$s" %3$s><img class="dcm-swapped-img" data-mfp-src="%4$s" src="%4$s" alt="%5$s" /></a>',
+                esc_attr($target),
+                esc_url($link_url),
                 $this->_render_ref_attr(),
-                $logo,
-                $logo_alt
+                esc_url($logo),
+                esc_attr($logo_alt)
             );
         }
 
-        return sprintf('<div><img class="wdcl-swapped-img" data-mfp-src="%1$s" src="%1$s" alt="%2$s"/></div>', $logo, $logo_alt);
+        return sprintf('<div><img class="dcm-swapped-img" data-mfp-src="%1$s" src="%1$s" alt="%2$s"/></div>', $logo, $logo_alt);
     }
 
     public function render($attrs, $content, $render_slug)
@@ -188,8 +188,8 @@ class WDCL_LogoCarouselChild extends Divi_Carousel_Lite_Builder_Module
         $overlay_icon           = !empty($processed_overlay_icon) ? $processed_overlay_icon : '';
 
         return sprintf(
-            '<div class="wdcl-carousel-item wdcl-logo-carousel-item wdcl-swapped-img-selector">
-			<div class="wdcl-overlay" data-icon="%2$s"></div>
+            '<div class="dcm-carousel-item dcm-logo-carousel-item dcm-image-swap">
+			<div class="dcm-overlay" data-icon="%2$s"></div>
 				%1$s
 			</div>',
             $this->_render_logo(),

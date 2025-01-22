@@ -260,7 +260,7 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Lite_Builder_Module
         $advanced_fields['fonts']['title'] = [
             'label'           => esc_html__('Title', 'divi-carousel-lite'),
             'css'             => [
-                'main'      => '%%order_class%% .wdcl-image-title, .et-db #et-boc %%order_class%% .wdcl-image-title',
+                'main'      => '%%order_class%% .dcm-image-title, .et-db #et-boc %%order_class%% .dcm-image-title',
                 'important' => 'all',
             ],
             'tab_slug'        => 'advanced',
@@ -282,7 +282,7 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Lite_Builder_Module
         $advanced_fields['fonts']['subtitle'] = [
             'label'           => esc_html__('Subtitle', 'divi-carousel-lite'),
             'css'             => [
-                'main'      => '%%order_class%% .wdcl-image-subtitle, .et-db #et-boc %%order_class%% .wdcl-image-subtitle',
+                'main'      => '%%order_class%% .dcm-image-subtitle, .et-db #et-boc %%order_class%% .dcm-image-subtitle',
                 'important' => 'all',
             ],
             'tab_slug'        => 'advanced',
@@ -316,19 +316,19 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Lite_Builder_Module
 
     public function _render_figure()
     {
-        $photo                  =  $this->props['photo'];
+        $photo = esc_url($this->props['photo']);
 
         $processed_overlay_icon = esc_attr(et_pb_process_font_icon($this->props['overlay_icon']));
-        $overlay_icon           = !empty($processed_overlay_icon) ? $processed_overlay_icon : '';
+        $overlay_icon = !empty($processed_overlay_icon) ? esc_attr($processed_overlay_icon) : '';
 
         return sprintf(
-            '<figure class="wdcl-lightbox-ctrl">
-				<div class="wdcl-overlay" data-icon="%2$s"></div>
-				<img class="wdcl-main-img" data-mfp-src="%1$s" src="%1$s" alt="%3$s"/>
+            '<figure class="dcm-lightbox-ctrl">
+				<div class="dcm-overlay" data-icon="%2$s"></div>
+				<img class="dcm-main-img" data-mfp-src="%1$s" src="%1$s" alt="%3$s"/>
             </figure>',
-            $photo,
-            $overlay_icon,
-            $this->props['photo_alt']
+            esc_url($photo),
+            esc_attr($overlay_icon),
+            esc_attr($this->props['photo_alt'])
         );
     }
 
@@ -341,7 +341,7 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Lite_Builder_Module
         $processed_title_level = esc_html($processed_title_level);
 
         if (!empty($title_text)) {
-            return sprintf('<%2$s class="wdcl-image-title">%1$s</%2$s>', $title_text, $processed_title_level);
+            return sprintf('<%2$s class="dcm-image-title">%1$s</%2$s>', $title_text, $processed_title_level);
         }
     }
 
@@ -354,7 +354,7 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Lite_Builder_Module
         $processed_subtitle_level = esc_html($processed_subtitle_level);
 
         if (!empty($sub_title)) {
-            return sprintf('<%2$s class="wdcl-image-subtitle">%1$s</%2$s>', $sub_title, $processed_subtitle_level);
+            return sprintf('<%2$s class="dcm-image-subtitle">%1$s</%2$s>', $sub_title, $processed_subtitle_level);
         }
     }
 
@@ -382,20 +382,18 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Lite_Builder_Module
 
     public function render($attrs, $content, $render_slug)
     {
-
-        $content_pos_x         = $this->props['content_pos_x'];
-        $content_pos_y         = $this->props['content_pos_y'];
-        $content_type          = $this->props['content_type'];
-        $content_width         = $this->props['content_width'];
-        $title_bottom_spacing  = $this->props['title_bottom_spacing'];
-        $image_hover_animation = $this->props['image_hover_animation'];
-        $image_height          = $this->props['image_height'];
-
-        $content_padding                   = $this->props['content_padding'];
-        $content_padding_tablet            = $this->props['content_padding_tablet'];
-        $content_padding_phone             = $this->props['content_padding_phone'];
-        $content_padding_last_edited       = $this->props['content_padding_last_edited'];
-        $content_padding_responsive_status = et_pb_get_responsive_status($content_padding_last_edited);
+        $content_pos_x                      = $this->props['content_pos_x'];
+        $content_pos_y                      = $this->props['content_pos_y'];
+        $content_type                       = $this->props['content_type'];
+        $content_width                      = $this->props['content_width'];
+        $title_bottom_spacing               = $this->props['title_bottom_spacing'];
+        $image_hover_animation              = $this->props['image_hover_animation'];
+        $image_height                       = $this->props['image_height'];
+        $content_padding                    = $this->props['content_padding'];
+        $content_padding_tablet             = $this->props['content_padding_tablet'];
+        $content_padding_phone              = $this->props['content_padding_phone'];
+        $content_padding_last_edited        = $this->props['content_padding_last_edited'];
+        $content_padding_responsive_status  = et_pb_get_responsive_status($content_padding_last_edited);
 
         if ($content_type === 'absolute') {
 
@@ -415,7 +413,7 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Lite_Builder_Module
             ET_Builder_Element::set_style(
                 $render_slug,
                 [
-                    'selector'    => '%%order_class%% .wdcl-image-carousel-item figure',
+                    'selector'    => '%%order_class%% .dcm-carousel-item figure',
                     'declaration' => sprintf('height: %1$s;', $image_height),
                 ]
             );
@@ -423,8 +421,8 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Lite_Builder_Module
             ET_Builder_Element::set_style(
                 $render_slug,
                 [
-                    'selector'    => '%%order_class%% .wdcl-image-carousel-item figure img',
-                    'declaration' => 'height: 100%; object-fit: cover;width:100%;',
+                    'selector'    => '%%order_class%% .dcm-carousel-item figure img',
+                    'declaration' => 'height: 100%; object-fit: cover; width:100%;',
                 ]
             );
         }
@@ -433,7 +431,7 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Lite_Builder_Module
         ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-image-carousel-item h3, .et-db #et-boc %%order_class%% .wdcl-image-carousel-item h3',
+                'selector'    => '%%order_class%% .dcm-carousel-item h3, .et-db #et-boc %%order_class%% .dcm-carousel-item h3',
                 'declaration' => sprintf('padding-bottom: %1$s;', $title_bottom_spacing),
             ]
         );
@@ -456,7 +454,7 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Lite_Builder_Module
         ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-image-carousel-item .content .content-inner',
+                'selector'    => '%%order_class%% .dcm-carousel-item .content .content-inner',
                 'declaration' => sprintf(
                     'width: %1$s; %2$s',
                     $content_width,
@@ -470,7 +468,7 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Lite_Builder_Module
             ET_Builder_Element::set_style(
                 $render_slug,
                 [
-                    'selector'    => '%%order_class%% .wdcl-image-carousel-item .content .content-inner',
+                    'selector'    => '%%order_class%% .dcm-carousel-item .content .content-inner',
                     'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
                     'declaration' => Divi_Carousel_Lite_Builder_Module::_process_padding($content_padding_tablet, false),
                 ]
@@ -482,7 +480,7 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Lite_Builder_Module
             ET_Builder_Element::set_style(
                 $render_slug,
                 [
-                    'selector'    => '%%order_class%% .wdcl-image-carousel-item .content .content-inner',
+                    'selector'    => '%%order_class%% .dcm-carousel-item .content .content-inner',
                     'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
                     'declaration' => Divi_Carousel_Lite_Builder_Module::_process_padding($content_padding_phone, false),
                 ]
@@ -490,7 +488,7 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Lite_Builder_Module
         endif;
 
         // Content background
-        $this->_get_custom_bg_style($render_slug, 'content', '%%order_class%% .wdcl-image-carousel-item .content .content-inner', '%%order_class%% .wdcl-image-carousel-item .content .content-inner:hover');
+        $this->_get_custom_bg_style($render_slug, 'content', '%%order_class%% .dcm-carousel-item .content .content-inner', '%%order_class%% .dcm-carousel-item .content .content-inner:hover');
 
         // Overlay Styles
         $this->_get_overlay_style($render_slug);
@@ -500,7 +498,7 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Lite_Builder_Module
         $this->add_classname('wdc_et_pb_module');
 
         return sprintf(
-            '<div class="wdcl-carousel-item wdcl-image-carousel-item wdcl-swapped-img-selector wdcl-hover--%3$s">
+            '<div class="dcm-carousel-item dcm-image-swap dcm-hover--%3$s">
 				%1$s %2$s
 			</div>',
             $this->_render_figure(),

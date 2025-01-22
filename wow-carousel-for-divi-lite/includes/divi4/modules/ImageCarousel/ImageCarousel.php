@@ -98,19 +98,19 @@ class WDCL_ImageCarousel extends Divi_Carousel_Lite_Builder_Module
         $sliding_dir      = $this->props['sliding_dir'];
 
         $this->apply_css($render_slug);
-        array_push($classes, "wdcl-lightbox-{$use_lightbox}");
+        array_push($classes, "dcm-lightbox-{$use_lightbox}");
 
         if ('on' === $is_center) {
-            array_push($classes, 'wdcl-centered');
-            array_push($classes, "wdcl-centered--{$center_mode_type}");
+            array_push($classes, 'dcm-centered');
+            array_push($classes, "dcm-centered--{$center_mode_type}");
         }
 
         if ('on' === $custom_cursor) {
-            array_push($classes, 'wdcl-cursor');
+            array_push($classes, 'dcm-cursor');
         }
 
         $output = sprintf(
-            '<div dir="%4$s" class="wdcl-carousel wdcl-image-carousel wdcl-carousel-frontend %3$s" %2$s >
+            '<div dir="%4$s" class="dcm-container dcm-carousel-maker dcm-container-frontend %3$s" %2$s>
                 %1$s
             </div>',
             $content,

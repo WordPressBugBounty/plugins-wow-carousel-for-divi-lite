@@ -11,7 +11,7 @@ class Divi_Carousel_Lite_Builder_Module extends ET_Builder_Module
 
     public $icon_path;
 
-    public $folder_name = 'divi_carousel_lite';
+    public $folder_name = 'carousel_maker';
 
     protected function _custom_advanced_background_fields($option_name, $option_label, $tab_slug, $toggle_slug, array $background_tab = [], $show_if = [])
     {
@@ -29,8 +29,9 @@ class Divi_Carousel_Lite_Builder_Module extends ET_Builder_Module
 
         $advanced_fields = [];
 
+        /* translators: %s: Label for the background option */
         $advanced_fields["{$option_name}_bg_color"] = [
-            'label'             => sprintf(esc_html__('%1$s Background', 'divi-carousel-lite'), $option_label),
+            'label'             => sprintf(__('%s Background', 'divi-carousel-lite'), $option_label),
             'type'              => 'background-field',
             'base_name'         => "{$option_name}_bg",
             'context'           => "{$option_name}_bg_color",
@@ -1004,7 +1005,7 @@ class Divi_Carousel_Lite_Builder_Module extends ET_Builder_Module
             ET_Builder_Element::set_style(
                 $render_slug,
                 [
-                    'selector'    => '%%order_class%% .wdcl-carousel .slick-prev',
+                    'selector'    => '%%order_class%% .dcm-container .slick-prev',
                     'declaration' => 'right: auto!important;',
                 ]
             );
@@ -1012,7 +1013,7 @@ class Divi_Carousel_Lite_Builder_Module extends ET_Builder_Module
             ET_Builder_Element::set_style(
                 $render_slug,
                 [
-                    'selector'    => '%%order_class%% .wdcl-carousel .slick-next',
+                    'selector'    => '%%order_class%% .dcm-container .slick-next',
                     'declaration' => 'left: auto!important;',
                 ]
             );
@@ -1135,7 +1136,7 @@ class Divi_Carousel_Lite_Builder_Module extends ET_Builder_Module
             ET_Builder_Element::set_style(
                 $render_slug,
                 [
-                    'selector'    => '%%order_class%% .wdcl-carousel .slick-next',
+                    'selector'    => '%%order_class%% .dcm-container .slick-next',
                     'declaration' => 'left: auto!important;',
                 ]
             );
@@ -1450,7 +1451,7 @@ class Divi_Carousel_Lite_Builder_Module extends ET_Builder_Module
         \ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-centered--highlighted .slick-slide',
+                'selector'    => '%%order_class%% .dcm-centered--highlighted .slick-slide',
                 'declaration' => sprintf('transition: transform %1$s;', $animation_speed),
             ]
         );
@@ -1795,7 +1796,7 @@ class Divi_Carousel_Lite_Builder_Module extends ET_Builder_Module
         $center_padding_tablet  = $this->props['center_padding_tablet'];
         $center_padding_phone   = $this->props['center_padding_phone'];
         $is_vertical            = $this->props['is_vertical'];
-        $slide_infinite         = $this->props['is_infinite'];
+        $slide_infinite          = $this->props['is_infinite'];
         $slide_count            = $this->props['slide_count'];
         $slide_count_tablet     = $this->props['slide_count_tablet'] ? $this->props['slide_count_tablet'] : $slide_count;
         $slide_count_phone      = $this->props['slide_count_phone'] ? $this->props['slide_count_phone'] : $slide_count_tablet;
@@ -1979,12 +1980,12 @@ class Divi_Carousel_Lite_Builder_Module extends ET_Builder_Module
         $overlay_icon_opacity_hover = $this->get_hover_value('overlay_icon_opacity');
 
         // Overlay background.
-        $this->_get_custom_bg_style($render_slug, 'overlay', '%%order_class%% .wdcl-overlay', '%%order_class%% .wdcl-carousel-item:hover .wdcl-overlay');
+        $this->_get_custom_bg_style($render_slug, 'overlay', '%%order_class%% .dcm-overlay', '%%order_class%% .dcm-carousel-item:hover .dcm-overlay');
 
         \ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-overlay',
+                'selector'    => '%%order_class%% .dcm-overlay',
                 'declaration' => sprintf('color: %1$s;', $overlay_icon_color),
             ]
         );
@@ -1993,7 +1994,7 @@ class Divi_Carousel_Lite_Builder_Module extends ET_Builder_Module
             \ET_Builder_Element::set_style(
                 $render_slug,
                 [
-                    'selector'    => '%%order_class%%:hover .wdcl-overlay',
+                    'selector'    => '%%order_class%%:hover .dcm-overlay',
                     'declaration' => sprintf('color: %1$s;', $overlay_icon_color_hover),
                 ]
             );
@@ -2002,7 +2003,7 @@ class Divi_Carousel_Lite_Builder_Module extends ET_Builder_Module
         \ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-overlay:after',
+                'selector'    => '%%order_class%% .dcm-overlay:after',
                 'declaration' => "font-size:{$overlay_icon_size};",
             ]
         );
@@ -2011,7 +2012,7 @@ class Divi_Carousel_Lite_Builder_Module extends ET_Builder_Module
             \ET_Builder_Element::set_style(
                 $render_slug,
                 [
-                    'selector'    => '%%order_class%%:hover .wdcl-overlay:after',
+                    'selector'    => '%%order_class%%:hover .dcm-overlay:after',
                     'declaration' => "font-size:{$overlay_icon_size_hover};",
                 ]
             );
@@ -2020,7 +2021,7 @@ class Divi_Carousel_Lite_Builder_Module extends ET_Builder_Module
         \ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-overlay:after',
+                'selector'    => '%%order_class%% .dcm-overlay:after',
                 'declaration' => "opacity:{$overlay_icon_opacity};",
             ]
         );
@@ -2029,7 +2030,7 @@ class Divi_Carousel_Lite_Builder_Module extends ET_Builder_Module
             \ET_Builder_Element::set_style(
                 $render_slug,
                 [
-                    'selector'    => '%%order_class%%:hover .wdcl-overlay:after',
+                    'selector'    => '%%order_class%%:hover .dcm-overlay:after',
                     'declaration' => "opacity:{$overlay_icon_opacity_hover};",
                 ]
             );

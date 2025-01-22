@@ -518,8 +518,8 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         $advanced_fields['borders']['tweets'] = [
             'css'          => [
                 'main'      => [
-                    'border_radii'  => '%%order_class%% .wdcl-twitter-feed-item-inner',
-                    'border_styles' => '%%order_class%% .wdcl-twitter-feed-item-inner',
+                    'border_radii'  => '%%order_class%% .dcm-twitter-feed-item-inner',
+                    'border_styles' => '%%order_class%% .dcm-twitter-feed-item-inner',
                 ],
                 'important' => 'all',
             ],
@@ -539,8 +539,8 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         $advanced_fields['borders']['avatar'] = [
             'css'          => [
                 'main'      => [
-                    'border_radii'  => '%%order_class%% .wdcl-twitter-feed-avatar',
-                    'border_styles' => '%%order_class%% .wdcl-twitter-feed-avatar',
+                    'border_radii'  => '%%order_class%% .dcm-twitter-feed-avatar',
+                    'border_styles' => '%%order_class%% .dcm-twitter-feed-avatar',
                 ],
                 'important' => 'all',
             ],
@@ -560,7 +560,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         $advanced_fields['box_shadow']['tweets'] = [
             'label'       => esc_html__('Tweets Box Shadow', 'divi-carousel-lite'),
             'css'         => [
-                'main'      => '%%order_class%% .wdcl-twitter-feed-item-inner',
+                'main'      => '%%order_class%% .dcm-twitter-feed-item-inner',
                 'important' => 'all',
             ],
             'tab_slug'    => 'advanced',
@@ -570,7 +570,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         $advanced_fields['box_shadow']['avatar'] = [
             'label'       => esc_html__('Avatar Box Shadow', 'divi-carousel-lite'),
             'css'         => [
-                'main'      => '%%order_class%% .wdcl-twitter-feed-avatar',
+                'main'      => '%%order_class%% .dcm-twitter-feed-avatar',
                 'important' => 'all',
             ],
             'tab_slug'    => 'advanced',
@@ -579,7 +579,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
 
         $advanced_fields['fonts']['name'] = [
             'css'             => [
-                'main'      => '%%order_class%% .wdcl-twitter-feed-author-name',
+                'main'      => '%%order_class%% .dcm-twitter-feed-author-name',
                 'important' => 'all',
             ],
             'line_height'     => [
@@ -597,7 +597,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
 
         $advanced_fields['fonts']['username'] = [
             'css'             => [
-                'main'      => '%%order_class%% .wdcl-twitter-feed-username',
+                'main'      => '%%order_class%% .dcm-twitter-feed-username',
                 'important' => 'all',
             ],
             'line_height'     => [
@@ -615,7 +615,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
 
         $advanced_fields['fonts']['description'] = [
             'css'             => [
-                'main'      => '%%order_class%% .wdcl-twitter-feed-content p',
+                'main'      => '%%order_class%% .dcm-twitter-feed-content p',
                 'important' => 'all',
             ],
             'line_height'     => [
@@ -633,7 +633,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
 
         $advanced_fields['fonts']['readmore'] = [
             'css'             => [
-                'main'      => '%%order_class%% .wdcl-twitter-feed-content p a',
+                'main'      => '%%order_class%% .dcm-twitter-feed-content p a',
                 'important' => 'all',
             ],
             'line_height'     => [
@@ -651,7 +651,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
 
         $advanced_fields['fonts']['date'] = [
             'css'             => [
-                'main'      => '%%order_class%% .wdcl-twitter-feed-date',
+                'main'      => '%%order_class%% .dcm-twitter-feed-date',
                 'important' => 'all',
             ],
             'line_height'     => [
@@ -755,7 +755,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         if (!empty($messages)) {
 
             foreach ($messages as $key => $message) {
-                $output = sprintf('<div class="wdcl-%2$s wdcl-tweet-error-message">%1$s</div>', esc_html($message), esc_html($key));
+                $output = sprintf('<div class="dcm-%2$s dcm-tweet-error-message">%1$s</div>', esc_html($message), esc_html($key));
             }
 
             return $output;
@@ -820,14 +820,14 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
 
         foreach ($items as $item) : ?>
 
-            <div class="wdcl-twitter-has-shadow wdcl-twitter-feed-item-inner">
+            <div class="dcm-twitter-has-shadow dcm-twitter-feed-item-inner">
 
                 <?php
 
                 if ($args['show_twitter_icon'] == 'on') : ?>
-                    <div class="wdcl-twitter-feed-icon">
+                    <div class="dcm-twitter-feed-icon">
                         <span>
-                            <svg version="1.1" id="wdcl-twitter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <svg version="1.1" id="dcm-twitter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                                 <path style="fill:#1da1f2;" d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
 								c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
 								c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
@@ -841,25 +841,25 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
                     </div>
                 <?php endif; ?>
 
-                <div class="wdcl-twitter-feed-inner-wrapper">
-                    <div class="wdcl-twitter-feed-author">
+                <div class="dcm-twitter-feed-inner-wrapper">
+                    <div class="dcm-twitter-feed-author">
 
                         <?php
 
                         if ($args['show_user_image'] == 'on') : ?>
 
                             <a href="<?php echo esc_url('https://twitter.com/' . $user_name); ?>">
-                                <img src="<?php echo esc_url($item['user']['profile_image_url_https']); ?>" alt="<?php echo esc_attr($item['user']['name']); ?>" class="wdcl-twitter-feed-avatar">
+                                <img src="<?php echo esc_url($item['user']['profile_image_url_https']); ?>" alt="<?php echo esc_attr($item['user']['name']); ?>" class="dcm-twitter-feed-avatar">
                             </a>
 
                         <?php endif; ?>
 
-                        <div class="wdcl-twitter-feed-user">
+                        <div class="dcm-twitter-feed-user">
 
                             <?php
 
                             if ($args['show_name'] == 'on') : ?>
-                                <a href="<?php echo esc_url('https://twitter.com/' . $user_name); ?>" class="wdcl-twitter-feed-author-name">
+                                <a href="<?php echo esc_url('https://twitter.com/' . $user_name); ?>" class="dcm-twitter-feed-author-name">
                                     <?php echo esc_html($item['user']['name']); ?>
                                 </a>
                             <?php endif; ?>
@@ -867,13 +867,13 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
                             <?php
 
                             if ($args['show_user_name'] == 'on') : ?>
-                                <a href="<?php echo esc_url('https://twitter.com/' . $user_name); ?>" class="wdcl-twitter-feed-username">
+                                <a href="<?php echo esc_url('https://twitter.com/' . $user_name); ?>" class="dcm-twitter-feed-username">
                                     <?php echo esc_html($args['user_name']); ?>
                                 </a>
                             <?php endif; ?>
                         </div>
                     </div>
-                    <div class="wdcl-twitter-feed-content">
+                    <div class="dcm-twitter-feed-content">
 
                         <?php
 
@@ -885,7 +885,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
 
                         ?>
 
-                        <div class="wdcl-inner-twitter-feed-content">
+                        <div class="dcm-inner-twitter-feed-content">
                             <p>
                                 <?php echo esc_html($content); ?>
                                 <?php
@@ -901,7 +901,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
                         <?php
 
                         if ($args['show_date'] == 'on') : ?>
-                            <div class="wdcl-twitter-feed-date">
+                            <div class="dcm-twitter-feed-date">
                                 <?php echo esc_html(date('M d Y', strtotime($item['created_at']))); ?>
                             </div>
                         <?php endif; ?>
@@ -911,23 +911,23 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
                 <?php
 
                 if ($args['show_favorite'] == 'on' || $args['show_retweet'] == 'on') : ?>
-                    <div class="wdcl-twitter-feed-footer-wrapper">
-                        <div class="wdcl-twitter-feed-footer">
+                    <div class="dcm-twitter-feed-footer-wrapper">
+                        <div class="dcm-twitter-feed-footer">
                             <?php
 
                             if ($args['show_favorite'] == 'on') : ?>
-                                <div class="wdcl-tweet-favorite">
+                                <div class="dcm-tweet-favorite">
                                     <?php echo esc_html($item['favorite_count']); ?>
-                                    <span class="et-pb-icon wdcl-icon wdcl-tweet-favorite-icon"></span>
+                                    <span class="et-pb-icon dcm-icon dcm-tweet-favorite-icon"></span>
                                 </div>
                             <?php endif; ?>
 
                             <?php
 
                             if ($args['show_retweet'] == 'on') : ?>
-                                <div class="wdcl-tweet-retweet">
+                                <div class="dcm-tweet-retweet">
                                     <?php echo esc_html($item['retweet_count']); ?>
-                                    <span class="et-pb-icon wdcl-icon wdcl-tweet-retweet-icon"></span>
+                                    <span class="et-pb-icon dcm-icon dcm-tweet-retweet-icon"></span>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -1043,7 +1043,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         if (!empty($messages)) {
 
             foreach ($messages as $key => $message) {
-                $output = sprintf('<div class="wdcl-tweet-error-message">%1$s</div>', esc_html($message));
+                $output = sprintf('<div class="dcm-tweet-error-message">%1$s</div>', esc_html($message));
             }
 
             return $output;
@@ -1109,15 +1109,15 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
 
         foreach ($items as $item) :
         ?>
-            <div class="wdcl-twitter-feed-item">
-                <div class="wdcl-twitter-feed-item-inner">
+            <div class="dcm-twitter-feed-item">
+                <div class="dcm-twitter-feed-item-inner">
 
                     <?php
 
                     if ($show_twitter_icon == 'on') : ?>
-                        <div class="wdcl-twitter-feed-icon">
+                        <div class="dcm-twitter-feed-icon">
                             <span>
-                                <svg version="1.1" id="wdcl-twitter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                <svg version="1.1" id="dcm-twitter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                                     <path style="fill:#1da1f2;" d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
 									c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
 									c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
@@ -1131,22 +1131,22 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
                         </div>
                     <?php endif; ?>
 
-                    <div class="wdcl-twitter-feed-inner-wrapper">
-                        <div class="wdcl-twitter-feed-author">
+                    <div class="dcm-twitter-feed-inner-wrapper">
+                        <div class="dcm-twitter-feed-author">
 
                             <?php
 
                             if ($show_user_image == 'on') : ?>
                                 <a href="<?php echo esc_url('https://twitter.com/' . $user_name); ?>">
-                                    <img src="<?php echo esc_url($item['user']['profile_image_url_https']); ?>" alt="<?php echo esc_attr($item['user']['name']); ?>" class="wdcl-twitter-feed-avatar">
+                                    <img src="<?php echo esc_url($item['user']['profile_image_url_https']); ?>" alt="<?php echo esc_attr($item['user']['name']); ?>" class="dcm-twitter-feed-avatar">
                                 </a>
                             <?php endif; ?>
-                            <div class="wdcl-twitter-feed-user">
+                            <div class="dcm-twitter-feed-user">
 
                                 <?php
 
                                 if ($show_name == 'on') : ?>
-                                    <a href="<?php echo esc_url('https://twitter.com/' . $user_name); ?>" class="wdcl-twitter-feed-author-name">
+                                    <a href="<?php echo esc_url('https://twitter.com/' . $user_name); ?>" class="dcm-twitter-feed-author-name">
                                         <?php echo esc_html($item['user']['name']); ?>
                                     </a>
                                 <?php endif; ?>
@@ -1154,7 +1154,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
                                 <?php
 
                                 if ($show_user_name == 'on') : ?>
-                                    <a href="<?php echo esc_url('https://twitter.com/' . $user_name); ?>" class="wdcl-twitter-feed-username">
+                                    <a href="<?php echo esc_url('https://twitter.com/' . $user_name); ?>" class="dcm-twitter-feed-username">
                                         <?php echo esc_html($user_name); ?>
                                     </a>
                                 <?php endif; ?>
@@ -1163,7 +1163,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
 
                         </div>
 
-                        <div class="wdcl-twitter-feed-content">
+                        <div class="dcm-twitter-feed-content">
 
                             <?php
 
@@ -1175,7 +1175,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
 
                             ?>
 
-                            <div class="wdcl-inner-twitter-feed-content">
+                            <div class="dcm-inner-twitter-feed-content">
                                 <p>
                                     <?php echo esc_html($content); ?>
                                     <?php
@@ -1191,7 +1191,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
                             <?php
 
                             if ($show_date == 'on') : ?>
-                                <div class="wdcl-twitter-feed-date">
+                                <div class="dcm-twitter-feed-date">
                                     <?php echo esc_html(date('M d Y', strtotime($item['created_at']))); ?>
                                 </div>
                             <?php endif; ?>
@@ -1201,23 +1201,23 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
                     <?php
 
                     if ($show_favorite == 'on' || $show_retweet == 'on') : ?>
-                        <div class="wdcl-twitter-feed-footer-wrapper">
-                            <div class="wdcl-twitter-feed-footer">
+                        <div class="dcm-twitter-feed-footer-wrapper">
+                            <div class="dcm-twitter-feed-footer">
                                 <?php
 
                                 if ($show_favorite == 'on') : ?>
-                                    <div class="wdcl-tweet-favorite">
+                                    <div class="dcm-tweet-favorite">
                                         <?php echo esc_html($item['favorite_count']); ?>
-                                        <span class="et-pb-icon wdcl-icon wdcl-tweet-favorite-icon"></span>
+                                        <span class="et-pb-icon dcm-icon dcm-tweet-favorite-icon"></span>
                                     </div>
                                 <?php endif; ?>
 
                                 <?php
 
                                 if ($show_retweet == 'on') : ?>
-                                    <div class="wdcl-tweet-retweet">
+                                    <div class="dcm-tweet-retweet">
                                         <?php echo esc_html($item['retweet_count']); ?>
-                                        <span class="et-pb-icon wdcl-icon wdcl-tweet-retweet-icon"></span>
+                                        <span class="et-pb-icon dcm-icon dcm-tweet-retweet-icon"></span>
                                     </div>
                                 <?php endif; ?>
                             </div>
@@ -1237,20 +1237,20 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         $classes = [];
 
         if ($is_center === 'on') {
-            array_push($classes, 'wdcl-centered');
-            array_push($classes, "wdcl-centered--{$center_mode_type}");
+            array_push($classes, 'dcm-centered');
+            array_push($classes, "dcm-centered--{$center_mode_type}");
         }
 
         if ($custom_cursor === 'on') {
-            array_push($classes, 'wdcl-cursor');
+            array_push($classes, 'dcm-cursor');
         }
 
-        array_push($classes, "wdcl-twitter-{$alignment}");
+        array_push($classes, "dcm-twitter-{$alignment}");
         array_push($classes, "equal-height-{$is_equal_height}");
         $sliding_dir = $this->props['sliding_dir'];
 
         $output = sprintf(
-            '<div dir="%4$s" class="wdcl-carousel wdcl-carousel-jq wdcl-twitter-feed-carousel wdcl-carousel-frontend %2$s" %3$s>
+            '<div dir="%4$s" class="dcm-container dcm-container-jq dcm-twitter-feed-carousel dcm-container-frontend %2$s" %3$s>
 				%1$s
 			</div>',
             $twitter_items,
@@ -1276,7 +1276,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-twitter-feed-author',
+                'selector'    => '%%order_class%% .dcm-twitter-feed-author',
                 'declaration' => sprintf('margin-bottom: %1$s;', $user_info_spacing),
             ]
         );
@@ -1286,7 +1286,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
             ET_Builder_Element::set_style(
                 $render_slug,
                 [
-                    'selector'    => '%%order_class%% .wdcl-twitter-feed-author',
+                    'selector'    => '%%order_class%% .dcm-twitter-feed-author',
                     'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
                     'declaration' => sprintf('margin-bottom: %1$s;', $user_info_spacing_tablet),
                 ]
@@ -1298,7 +1298,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
             ET_Builder_Element::set_style(
                 $render_slug,
                 [
-                    'selector'    => '%%order_class%% .wdcl-twitter-feed-author',
+                    'selector'    => '%%order_class%% .dcm-twitter-feed-author',
                     'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
                     'declaration' => sprintf('margin-bottom: %1$s;', $user_info_spacing_phone),
                 ]
@@ -1309,7 +1309,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-twitter-feed-icon span',
+                'selector'    => '%%order_class%% .dcm-twitter-feed-icon span',
                 'declaration' => sprintf('width: %1$s; height: %1$s;', $this->props['twitter_icon_size']),
             ]
         );
@@ -1318,7 +1318,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-twitter-feed-avatar',
+                'selector'    => '%%order_class%% .dcm-twitter-feed-avatar',
                 'declaration' => sprintf('width: %1$s; height: %1$s;', $this->props['profile_image_size']),
             ]
         );
@@ -1340,7 +1340,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-tweet-favorite',
+                'selector'    => '%%order_class%% .dcm-tweet-favorite',
                 'declaration' => sprintf('color: %1$s !important;', $favorite_color),
             ]
         );
@@ -1348,7 +1348,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-tweet-favorite',
+                'selector'    => '%%order_class%% .dcm-tweet-favorite',
                 'declaration' => sprintf('font-size: %1$s !important;', $favorite_font_size),
             ]
         );
@@ -1356,7 +1356,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-tweet-favorite span',
+                'selector'    => '%%order_class%% .dcm-tweet-favorite span',
                 'declaration' => sprintf('color: %1$s !important;', $favorite_icon_color),
             ]
         );
@@ -1364,7 +1364,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-tweet-favorite span',
+                'selector'    => '%%order_class%% .dcm-tweet-favorite span',
                 'declaration' => sprintf('font-size: %1$s !important;', $favorite_icon_size),
             ]
         );
@@ -1373,7 +1373,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-tweet-retweet',
+                'selector'    => '%%order_class%% .dcm-tweet-retweet',
                 'declaration' => sprintf('color: %1$s !important;', $retweet_color),
             ]
         );
@@ -1381,7 +1381,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-tweet-retweet span',
+                'selector'    => '%%order_class%% .dcm-tweet-retweet span',
                 'declaration' => sprintf('color: %1$s !important;', $retweet_icon_color),
             ]
         );
@@ -1389,7 +1389,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-tweet-retweet',
+                'selector'    => '%%order_class%% .dcm-tweet-retweet',
                 'declaration' => sprintf('font-size: %1$s !important;', $retweet_font_size),
             ]
         );
@@ -1397,7 +1397,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-tweet-retweet span',
+                'selector'    => '%%order_class%% .dcm-tweet-retweet span',
                 'declaration' => sprintf('font-size: %1$s !important;', $retweet_icon_size),
             ]
         );
@@ -1415,7 +1415,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-twitter-feed-content p',
+                'selector'    => '%%order_class%% .dcm-twitter-feed-content p',
                 'declaration' => sprintf('margin-bottom: %1$s !important;', $description_spacing),
             ]
         );
@@ -1424,7 +1424,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
             ET_Builder_Element::set_style(
                 $render_slug,
                 [
-                    'selector'    => '%%order_class%% .wdcl-twitter-feed-content p',
+                    'selector'    => '%%order_class%% .dcm-twitter-feed-content p',
                     'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
                     'declaration' => sprintf('margin-bottom: %1$s !important;', $description_spacing_tablet),
                 ]
@@ -1435,7 +1435,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
             ET_Builder_Element::set_style(
                 $render_slug,
                 [
-                    'selector'    => '%%order_class%% .wdcl-twitter-feed-content p',
+                    'selector'    => '%%order_class%% .dcm-twitter-feed-content p',
                     'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
                     'declaration' => sprintf('margin-bottom: %1$s !important;', $description_spacing_phone),
                 ]
@@ -1451,7 +1451,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-twitter-feed-inner-wrapper',
+                'selector'    => '%%order_class%% .dcm-twitter-feed-inner-wrapper',
                 'declaration' => $this->_process_padding($content_padding, false),
             ]
         );
@@ -1461,7 +1461,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
             ET_Builder_Element::set_style(
                 $render_slug,
                 [
-                    'selector'    => '%%order_class%% .wdcl-twitter-feed-inner-wrapper',
+                    'selector'    => '%%order_class%% .dcm-twitter-feed-inner-wrapper',
                     'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
                     'declaration' => $this->_process_padding($content_padding_tablet, false),
                 ]
@@ -1472,7 +1472,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
             ET_Builder_Element::set_style(
                 $render_slug,
                 [
-                    'selector'    => '%%order_class%% .wdcl-twitter-feed-inner-wrapper',
+                    'selector'    => '%%order_class%% .dcm-twitter-feed-inner-wrapper',
                     'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
                     'declaration' => $this->_process_padding($content_padding_phone, false),
                 ]
@@ -1493,7 +1493,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-twitter-feed-item-inner',
+                'selector'    => '%%order_class%% .dcm-twitter-feed-item-inner',
                 'declaration' => $tweets_item_background,
             ]
         );
@@ -1504,7 +1504,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-twitter-feed-item-inner:hover',
+                'selector'    => '%%order_class%% .dcm-twitter-feed-item-inner:hover',
                 'declaration' => $tweets_item_hover_background,
             ]
         );
@@ -1517,7 +1517,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         ET_Builder_Element::set_style(
             $render_slug,
             [
-                'selector'    => '%%order_class%% .wdcl-twitter-feed-footer',
+                'selector'    => '%%order_class%% .dcm-twitter-feed-footer',
                 'declaration' => sprintf('text-align: %1$s !important;', $footer_alignment),
             ]
         );

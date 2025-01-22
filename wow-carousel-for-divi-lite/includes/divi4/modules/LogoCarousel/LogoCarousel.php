@@ -82,11 +82,11 @@ class WDCL_LogoCarousel extends Divi_Carousel_Lite_Builder_Module
                 'toggle_slug' => 'logo_settings',
                 'default'     => 'zoom_in',
                 'options'     => [
-                    'no_hover'      => esc_html__('None', 'dp-divi-addons'),
-                    'zoom_in'       => esc_html__('Zoom In', 'dp-divi-addons'),
-                    'zoom_out'      => esc_html__('Zoom Out', 'dp-divi-addons'),
-                    'fade'          => esc_html__('Fade', 'dp-divi-addons'),
-                    'black_n_white' => esc_html__('Black and White', 'dp-divi-addons'),
+                    'no_hover'      => esc_html__('None', 'divi-carousel-lite'),
+                    'zoom_in'       => esc_html__('Zoom In', 'divi-carousel-lite'),
+                    'zoom_out'      => esc_html__('Zoom Out', 'divi-carousel-lite'),
+                    'fade'          => esc_html__('Fade', 'divi-carousel-lite'),
+                    'black_n_white' => esc_html__('Black and White', 'divi-carousel-lite'),
                 ],
             ],
 
@@ -157,16 +157,16 @@ class WDCL_LogoCarousel extends Divi_Carousel_Lite_Builder_Module
         array_push($classes, $logo_hover);
 
         if ($is_center === 'on') {
-            array_push($classes, 'wdcl-centered');
-            array_push($classes, "wdcl-centered--{$center_mode_type}");
+            array_push($classes, 'dcm-centered');
+            array_push($classes, "dcm-centered--{$center_mode_type}");
         }
 
         if ($custom_cursor === 'on') {
-            array_push($classes, 'wdcl-cursor');
+            array_push($classes, 'dcm-cursor');
         }
 
         $output = sprintf(
-            '<div dir="%4$s" class="wdcl-carousel wdcl-logo-carousel wdcl-carousel-frontend %3$s" %2$s >
+            '<div dir="%4$s" class="dcm-container dcm-logo-carousel dcm-container-frontend %3$s" %2$s >
                 %1$s
             </div>',
             $content,
@@ -198,7 +198,7 @@ class WDCL_LogoCarousel extends Divi_Carousel_Lite_Builder_Module
             \ET_Builder_Element::set_style(
                 $render_slug,
                 [
-                    'selector'    => '%%order_class%% .wdcl-logo-carousel-item',
+                    'selector'    => '%%order_class%% .dcm-logo-carousel-item',
                     'declaration' => sprintf('height: %1$s;display: flex; justify-content: center; align-items: center;', $logo_height),
                 ]
             );
@@ -207,7 +207,7 @@ class WDCL_LogoCarousel extends Divi_Carousel_Lite_Builder_Module
                 \ET_Builder_Element::set_style(
                     $render_slug,
                     [
-                        'selector'    => '%%order_class%% .wdcl-logo-carousel-item',
+                        'selector'    => '%%order_class%% .dcm-logo-carousel-item',
                         'declaration' => sprintf('height: %1$s;display: flex; justify-content: center; align-items: center; ', $logo_height_tablet),
                         'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
                     ]
@@ -218,7 +218,7 @@ class WDCL_LogoCarousel extends Divi_Carousel_Lite_Builder_Module
                 \ET_Builder_Element::set_style(
                     $render_slug,
                     [
-                        'selector'    => '%%order_class%% .wdcl-logo-carousel-item',
+                        'selector'    => '%%order_class%% .dcm-logo-carousel-item',
                         'declaration' => sprintf('height: %1$s; display: flex; justify-content: center; align-items: center;`', $logo_height_phone),
                         'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
                     ]
@@ -231,7 +231,7 @@ class WDCL_LogoCarousel extends Divi_Carousel_Lite_Builder_Module
             \ET_Builder_Element::set_style(
                 $render_slug,
                 [
-                    'selector'    => '%%order_class%% .wdcl-logo-carousel-item img',
+                    'selector'    => '%%order_class%% .dcm-logo-carousel-item img',
                     'declaration' => sprintf('width: %1$s;', $logo_width),
                 ]
             );
@@ -240,7 +240,7 @@ class WDCL_LogoCarousel extends Divi_Carousel_Lite_Builder_Module
                 \ET_Builder_Element::set_style(
                     $render_slug,
                     [
-                        'selector'    => '%%order_class%% .wdcl-logo-carousel-item img',
+                        'selector'    => '%%order_class%% .dcm-logo-carousel-item img',
                         'declaration' => sprintf('width: %1$s;', $logo_width_tablet),
                         'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
                     ]
@@ -251,7 +251,7 @@ class WDCL_LogoCarousel extends Divi_Carousel_Lite_Builder_Module
                 \ET_Builder_Element::set_style(
                     $render_slug,
                     [
-                        'selector'    => '%%order_class%% .wdcl-logo-carousel-item img',
+                        'selector'    => '%%order_class%% .dcm-logo-carousel-item img',
                         'declaration' => sprintf('width: %1$s;`', $logo_width_phone),
                         'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
                     ]

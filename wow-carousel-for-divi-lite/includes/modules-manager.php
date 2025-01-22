@@ -10,6 +10,14 @@ class ModulesManager
 
     private $modules_lite = [
         [
+            'name' => 'carousel-maker',
+            'title' => 'Carousel Maker',
+            'icon' => '',
+            'child_name' => 'carousel-maker-child',
+            'demo_link' => '',
+
+        ],
+        [
             'name' => 'image-carousel',
             'title' => 'Image Carousel',
             'icon' => '',

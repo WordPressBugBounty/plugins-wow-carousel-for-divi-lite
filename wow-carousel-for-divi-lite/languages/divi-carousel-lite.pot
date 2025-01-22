@@ -1,4 +1,4 @@
-# Copyright (C) 2024 Divi Carousel Lite
+# Copyright (C) 2025 Divi Carousel Lite
 # This file is distributed under the same license as the Divi Carousel Lite package.
 msgid ""
 msgstr ""
@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: DiviEpic <help@diviepic.com>\n"
-"POT-Creation-Date: 2024-11-27 18:34+0000\n"
+"POT-Creation-Date: 2025-01-22 09:38+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -15,399 +15,441 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: includes/backend-helpers.php:13
-msgctxt "Modules dummy content"
+#: includes/backend-helpers.php:23
 msgid "Your Title Goes Here"
 msgstr ""
 
-#: includes/backend-helpers.php:14
-msgctxt "divi-carousel-lite"
+#: includes/backend-helpers.php:24
 msgid "Subtitle goes Here"
 msgstr ""
 
-#: includes/backend-helpers.php:15
-msgctxt "divi-carousel-lite"
+#: includes/backend-helpers.php:25
 msgid "<p>Your content goes here. Edit or remove this text inline or in the module Content settings. You can also style every aspect of this content in the module Design settings and even apply custom CSS to this text in the module Advanced settings.</p>"
 msgstr ""
 
 #: includes/dashboard.php:65, includes/dashboard.php:66
-msgid "Divi Carousel Lite"
+msgid "Carousel Maker"
 msgstr ""
 
-#: includes/divi4/base/base.php:33
-msgid "%1$s Background"
+#: includes/dashboard.php:160
+msgid "You do not have permission to access this page."
 msgstr ""
 
-#: includes/divi4/base/base.php:205
+#: includes/dashboard.php:161, includes/dashboard.php:191
+msgid "Rollback to Previous Version"
+msgstr ""
+
+#: includes/dashboard.php:173
+msgid "Error occurred, The version selected is invalid. Try selecting different version."
+msgstr ""
+
+#: includes/plugin-upgrader.php:72
+msgid "Divi Carousel Lite <p>Rollback to Previous Version</p>"
+msgstr ""
+
+#: includes/upsell/notices.php:173
+msgid "Dismiss this notice."
+msgstr ""
+
+#. translators: %s: Label for the background option
+#: includes/divi4/base/base.php:34
+msgid "%s Background"
+msgstr ""
+
+#: includes/divi4/base/base.php:206
 msgid "Animation Speed"
 msgstr ""
 
-#: includes/divi4/base/base.php:220
+#: includes/divi4/base/base.php:221
 msgid "Autoplay"
 msgstr ""
 
-#: includes/divi4/base/base.php:227, includes/divi4/base/base.php:273, includes/divi4/base/base.php:342, includes/divi4/base/base.php:368, includes/divi4/base/base.php:385, includes/divi4/base/base.php:414, includes/divi4/base/base.php:427, includes/divi4/base/base.php:476, includes/divi4/base/base.php:715, includes/divi4/base/base.php:960, includes/divi4/base/base.php:974, includes/divi4/modules/LogoCarouselChild/LogoCarouselChild.php:56, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:164, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:176, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:188, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:200, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:212, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:224, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:236, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:248, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:351
+#: includes/divi4/base/base.php:228, includes/divi4/base/base.php:274, includes/divi4/base/base.php:343, includes/divi4/base/base.php:369, includes/divi4/base/base.php:386, includes/divi4/base/base.php:415, includes/divi4/base/base.php:428, includes/divi4/base/base.php:477, includes/divi4/base/base.php:716, includes/divi4/base/base.php:961, includes/divi4/base/base.php:975, includes/divi4/modules/LogoCarouselChild/LogoCarouselChild.php:56, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:164, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:176, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:188, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:200, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:212, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:224, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:236, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:248, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:351
 msgid "Yes"
 msgstr ""
 
-#: includes/divi4/base/base.php:228, includes/divi4/base/base.php:274, includes/divi4/base/base.php:343, includes/divi4/base/base.php:369, includes/divi4/base/base.php:386, includes/divi4/base/base.php:415, includes/divi4/base/base.php:428, includes/divi4/base/base.php:477, includes/divi4/base/base.php:716, includes/divi4/base/base.php:961, includes/divi4/base/base.php:975, includes/divi4/modules/LogoCarouselChild/LogoCarouselChild.php:57, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:165, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:177, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:189, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:201, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:213, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:225, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:237, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:249, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:352
+#: includes/divi4/base/base.php:229, includes/divi4/base/base.php:275, includes/divi4/base/base.php:344, includes/divi4/base/base.php:370, includes/divi4/base/base.php:387, includes/divi4/base/base.php:416, includes/divi4/base/base.php:429, includes/divi4/base/base.php:478, includes/divi4/base/base.php:717, includes/divi4/base/base.php:962, includes/divi4/base/base.php:976, includes/divi4/modules/LogoCarouselChild/LogoCarouselChild.php:57, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:165, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:177, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:189, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:201, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:213, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:225, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:237, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:249, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:352
 msgid "No"
 msgstr ""
 
-#: includes/divi4/base/base.php:233
+#: includes/divi4/base/base.php:234
 msgid "Autoplay Speed"
 msgstr ""
 
-#: includes/divi4/base/base.php:251, includes/divi4/base/base.php:261
+#: includes/divi4/base/base.php:252, includes/divi4/base/base.php:262
 msgid "Navigation & Pagination"
 msgstr ""
 
-#: includes/divi4/base/base.php:258, includes/divi4/base/base.php:489, includes/divi4/base/base.php:785, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:192
+#: includes/divi4/base/base.php:259, includes/divi4/base/base.php:490, includes/divi4/base/base.php:786, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:192, includes/divi4/modules/LogoCarousel/LogoCarousel.php:85
 msgid "None"
 msgstr ""
 
-#: includes/divi4/base/base.php:259, includes/divi4/modules/ImageCarousel/ImageCarousel.php:38, includes/divi4/modules/LogoCarousel/LogoCarousel.php:41, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:68
+#: includes/divi4/base/base.php:260, includes/divi4/modules/CarouselMaker/CarouselMaker.php:40, includes/divi4/modules/ImageCarousel/ImageCarousel.php:38, includes/divi4/modules/LogoCarousel/LogoCarousel.php:41, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:68
 msgid "Navigation"
 msgstr ""
 
-#: includes/divi4/base/base.php:260, includes/divi4/modules/ImageCarousel/ImageCarousel.php:53, includes/divi4/modules/LogoCarousel/LogoCarousel.php:56
+#: includes/divi4/base/base.php:261, includes/divi4/modules/CarouselMaker/CarouselMaker.php:56, includes/divi4/modules/ImageCarousel/ImageCarousel.php:53, includes/divi4/modules/LogoCarousel/LogoCarousel.php:56
 msgid "Pagination"
 msgstr ""
 
-#: includes/divi4/base/base.php:266
+#: includes/divi4/base/base.php:267
 msgid "Use Fixed Width Slide"
 msgstr ""
 
-#: includes/divi4/base/base.php:279
+#: includes/divi4/base/base.php:280
 msgid "Slide Width"
 msgstr ""
 
-#: includes/divi4/base/base.php:298
+#: includes/divi4/base/base.php:299
 msgid "Slides To Show"
 msgstr ""
 
-#: includes/divi4/base/base.php:305
+#: includes/divi4/base/base.php:306
 msgid "1"
 msgstr ""
 
-#: includes/divi4/base/base.php:306
+#: includes/divi4/base/base.php:307
 msgid "2"
 msgstr ""
 
-#: includes/divi4/base/base.php:307
+#: includes/divi4/base/base.php:308
 msgid "3"
 msgstr ""
 
-#: includes/divi4/base/base.php:308
+#: includes/divi4/base/base.php:309
 msgid "4"
 msgstr ""
 
-#: includes/divi4/base/base.php:309
+#: includes/divi4/base/base.php:310
 msgid "5"
 msgstr ""
 
-#: includes/divi4/base/base.php:310
+#: includes/divi4/base/base.php:311
 msgid "6"
 msgstr ""
 
-#: includes/divi4/base/base.php:311
+#: includes/divi4/base/base.php:312
 msgid "7"
 msgstr ""
 
-#: includes/divi4/base/base.php:312
+#: includes/divi4/base/base.php:313
 msgid "8"
 msgstr ""
 
-#: includes/divi4/base/base.php:320
+#: includes/divi4/base/base.php:321
 msgid "Slide Spacing"
 msgstr ""
 
-#: includes/divi4/base/base.php:335
+#: includes/divi4/base/base.php:336
 msgid "Infinite looping"
 msgstr ""
 
-#: includes/divi4/base/base.php:348
+#: includes/divi4/base/base.php:349
 msgid "Sliding Direction"
 msgstr ""
 
-#: includes/divi4/base/base.php:349
+#: includes/divi4/base/base.php:350
 msgid "Define sliding direction. RTL sliding will only work on frontend. "
 msgstr ""
 
-#: includes/divi4/base/base.php:355
+#: includes/divi4/base/base.php:356
 msgid "Left to Right"
 msgstr ""
 
-#: includes/divi4/base/base.php:356
+#: includes/divi4/base/base.php:357
 msgid "Right to Left"
 msgstr ""
 
-#: includes/divi4/base/base.php:361
+#: includes/divi4/base/base.php:362
 msgid "Fade Effect"
 msgstr ""
 
-#: includes/divi4/base/base.php:378
+#: includes/divi4/base/base.php:379
 msgid "Auto Height"
 msgstr ""
 
-#: includes/divi4/base/base.php:391
+#: includes/divi4/base/base.php:392
 msgid "Items to Scroll"
 msgstr ""
 
-#: includes/divi4/base/base.php:407
+#: includes/divi4/base/base.php:408
 msgid "Vertical Mode"
 msgstr ""
 
-#: includes/divi4/base/base.php:420
+#: includes/divi4/base/base.php:421
 msgid "Center Mode"
 msgstr ""
 
-#: includes/divi4/base/base.php:433
+#: includes/divi4/base/base.php:434
 msgid "Center Mode Type"
 msgstr ""
 
-#: includes/divi4/base/base.php:439
+#: includes/divi4/base/base.php:440
 msgid "Classic"
 msgstr ""
 
-#: includes/divi4/base/base.php:440
+#: includes/divi4/base/base.php:441
 msgid "Highlighted"
 msgstr ""
 
-#: includes/divi4/base/base.php:448
+#: includes/divi4/base/base.php:449
 msgid "Center Padding"
 msgstr ""
 
-#: includes/divi4/base/base.php:469
+#: includes/divi4/base/base.php:470
 msgid "Use Custom Cursor"
 msgstr ""
 
-#: includes/divi4/base/base.php:482
+#: includes/divi4/base/base.php:483
 msgid "Cursor Name"
 msgstr ""
 
-#: includes/divi4/base/base.php:488, includes/divi4/base/base.php:543
+#: includes/divi4/base/base.php:489, includes/divi4/base/base.php:544
 msgid "Default"
 msgstr ""
 
-#: includes/divi4/base/base.php:490
+#: includes/divi4/base/base.php:491
 msgid "Grab"
 msgstr ""
 
-#: includes/divi4/base/base.php:491
+#: includes/divi4/base/base.php:492
 msgid "Pointer"
 msgstr ""
 
-#: includes/divi4/base/base.php:492
+#: includes/divi4/base/base.php:493
 msgid "Move"
 msgstr ""
 
-#: includes/divi4/base/base.php:493
+#: includes/divi4/base/base.php:494
 msgid "Pizza"
 msgstr ""
 
-#: includes/divi4/base/base.php:494
+#: includes/divi4/base/base.php:495
 msgid "Burger"
 msgstr ""
 
-#: includes/divi4/base/base.php:503
+#: includes/divi4/base/base.php:504
 msgid "Carousel Spacing Top"
 msgstr ""
 
-#: includes/divi4/base/base.php:519
+#: includes/divi4/base/base.php:520
 msgid "Carousel Spacing Bottom"
 msgstr ""
 
-#: includes/divi4/base/base.php:536
+#: includes/divi4/base/base.php:537
 msgid "Type"
 msgstr ""
 
-#: includes/divi4/base/base.php:544
+#: includes/divi4/base/base.php:545
 msgid "Alongside"
 msgstr ""
 
-#: includes/divi4/base/base.php:550
+#: includes/divi4/base/base.php:551
 msgid "Vertical Placement"
 msgstr ""
 
-#: includes/divi4/base/base.php:557, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:152
+#: includes/divi4/base/base.php:558, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:152
 msgid "Top"
 msgstr ""
 
-#: includes/divi4/base/base.php:558, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:153
+#: includes/divi4/base/base.php:559, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:153
 msgid "Bottom"
 msgstr ""
 
-#: includes/divi4/base/base.php:567
+#: includes/divi4/base/base.php:568
 msgid "Horizontal Placement"
 msgstr ""
 
-#: includes/divi4/base/base.php:574, includes/divi4/modules/ImageCarousel/ImageCarousel.php:45, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:136, includes/divi4/modules/LogoCarousel/LogoCarousel.php:48
+#: includes/divi4/base/base.php:575, includes/divi4/modules/ImageCarousel/ImageCarousel.php:45, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:136, includes/divi4/modules/LogoCarousel/LogoCarousel.php:48
 msgid "Left"
 msgstr ""
 
-#: includes/divi4/base/base.php:575, includes/divi4/modules/ImageCarousel/ImageCarousel.php:48, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:137, includes/divi4/modules/LogoCarousel/LogoCarousel.php:51
+#: includes/divi4/base/base.php:576, includes/divi4/modules/ImageCarousel/ImageCarousel.php:48, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:137, includes/divi4/modules/LogoCarousel/LogoCarousel.php:51
 msgid "Right"
 msgstr ""
 
-#: includes/divi4/base/base.php:584, includes/divi4/base/base.php:852, includes/divi4/modules/LogoCarousel/LogoCarousel.php:94
+#: includes/divi4/base/base.php:585, includes/divi4/base/base.php:853, includes/divi4/modules/LogoCarousel/LogoCarousel.php:94
 msgid "Height"
 msgstr ""
 
-#: includes/divi4/base/base.php:601, includes/divi4/base/base.php:867, includes/divi4/base/base.php:931, includes/divi4/modules/LogoCarousel/LogoCarousel.php:109
+#: includes/divi4/base/base.php:602, includes/divi4/base/base.php:868, includes/divi4/base/base.php:932, includes/divi4/modules/LogoCarousel/LogoCarousel.php:109
 msgid "Width"
 msgstr ""
 
-#: includes/divi4/base/base.php:618
+#: includes/divi4/base/base.php:619
 msgid "Icon Size"
 msgstr ""
 
-#: includes/divi4/base/base.php:634
+#: includes/divi4/base/base.php:635
 msgid "Icon Color"
 msgstr ""
 
-#: includes/divi4/base/base.php:644
+#: includes/divi4/base/base.php:645
 msgid "Background"
 msgstr ""
 
-#: includes/divi4/base/base.php:654
+#: includes/divi4/base/base.php:655
 msgid "Skew"
 msgstr ""
 
-#: includes/divi4/base/base.php:671
+#: includes/divi4/base/base.php:672
 msgid "Spacing Between"
 msgstr ""
 
-#: includes/divi4/base/base.php:692, includes/divi4/base/base.php:891
+#: includes/divi4/base/base.php:693, includes/divi4/base/base.php:892
 msgid "Vertical Position"
 msgstr ""
 
-#: includes/divi4/base/base.php:708
+#: includes/divi4/base/base.php:709
 msgid "Use Horizontal Position Center"
 msgstr ""
 
-#: includes/divi4/base/base.php:725
+#: includes/divi4/base/base.php:726
 msgid "Horizontal Position"
 msgstr ""
 
-#: includes/divi4/base/base.php:744
+#: includes/divi4/base/base.php:745
 msgid "Border Width"
 msgstr ""
 
-#: includes/divi4/base/base.php:760
+#: includes/divi4/base/base.php:761
 msgid "Border Color"
 msgstr ""
 
-#: includes/divi4/base/base.php:770
+#: includes/divi4/base/base.php:771
 msgid "Border Type"
 msgstr ""
 
-#: includes/divi4/base/base.php:777
+#: includes/divi4/base/base.php:778
 msgid "Solid"
 msgstr ""
 
-#: includes/divi4/base/base.php:778
+#: includes/divi4/base/base.php:779
 msgid "Dashed"
 msgstr ""
 
-#: includes/divi4/base/base.php:779
+#: includes/divi4/base/base.php:780
 msgid "Dotted"
 msgstr ""
 
-#: includes/divi4/base/base.php:780
+#: includes/divi4/base/base.php:781
 msgid "Double"
 msgstr ""
 
-#: includes/divi4/base/base.php:781
+#: includes/divi4/base/base.php:782
 msgid "Groove"
 msgstr ""
 
-#: includes/divi4/base/base.php:782
+#: includes/divi4/base/base.php:783
 msgid "Ridge"
 msgstr ""
 
-#: includes/divi4/base/base.php:783
+#: includes/divi4/base/base.php:784
 msgid "Inset"
 msgstr ""
 
-#: includes/divi4/base/base.php:784
+#: includes/divi4/base/base.php:785
 msgid "Outset"
 msgstr ""
 
-#: includes/divi4/base/base.php:791
+#: includes/divi4/base/base.php:792
 msgid "Left Icon"
 msgstr ""
 
-#: includes/divi4/base/base.php:800, includes/divi4/base/base.php:819, includes/divi4/base/base.php:882
+#: includes/divi4/base/base.php:801, includes/divi4/base/base.php:820, includes/divi4/base/base.php:883
 msgid "Border Radius"
 msgstr ""
 
-#: includes/divi4/base/base.php:810
+#: includes/divi4/base/base.php:811
 msgid "Right Icon"
 msgstr ""
 
-#: includes/divi4/base/base.php:829, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:272
+#: includes/divi4/base/base.php:830, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:272
 msgid "Alignment"
 msgstr ""
 
-#: includes/divi4/base/base.php:842, includes/divi4/base/base.php:922
+#: includes/divi4/base/base.php:843, includes/divi4/base/base.php:923
 msgid "Color"
 msgstr ""
 
-#: includes/divi4/base/base.php:906
+#: includes/divi4/base/base.php:907
 msgid "Spacing"
 msgstr ""
 
-#: includes/divi4/base/base.php:953
+#: includes/divi4/base/base.php:954
 msgid "Open Image in Lightbox"
 msgstr ""
 
-#: includes/divi4/base/base.php:969, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:346
+#: includes/divi4/base/base.php:970, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:346
 msgid "Use Equal Height"
 msgstr ""
 
-#: includes/divi4/base/base.php:1913
+#: includes/divi4/base/base.php:1914
 msgid "Overlay Icon"
 msgstr ""
 
-#: includes/divi4/base/base.php:1923
+#: includes/divi4/base/base.php:1924
 msgid "Overlay Icon Color"
 msgstr ""
 
-#: includes/divi4/base/base.php:1933
+#: includes/divi4/base/base.php:1934
 msgid "Overlay Icon Size"
 msgstr ""
 
-#: includes/divi4/base/base.php:1948
+#: includes/divi4/base/base.php:1949
 msgid "Overlay Icon Opacity"
+msgstr ""
+
+#: includes/divi4/modules/CarouselMaker/CarouselMaker.php:23, includes/divi4/modules/ImageCarousel/ImageCarousel.php:18, includes/divi4/modules/LogoCarousel/LogoCarousel.php:18, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:20
+msgid "Carousel Settings"
+msgstr ""
+
+#: includes/divi4/modules/CarouselMaker/CarouselMaker.php:27, includes/divi4/modules/ImageCarousel/ImageCarousel.php:22, includes/divi4/modules/LogoCarousel/LogoCarousel.php:22, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:24
+msgid "General"
+msgstr ""
+
+#: includes/divi4/modules/CarouselMaker/CarouselMaker.php:30, includes/divi4/modules/ImageCarousel/ImageCarousel.php:25, includes/divi4/modules/LogoCarousel/LogoCarousel.php:25, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:27
+msgid "Advanced"
+msgstr ""
+
+#: includes/divi4/modules/CarouselMaker/CarouselMaker.php:44, includes/divi4/modules/CarouselMaker/CarouselMaker.php:60, includes/divi4/modules/ImageCarousel/ImageCarousel.php:42, includes/divi4/modules/ImageCarousel/ImageCarousel.php:57, includes/divi4/modules/LogoCarousel/LogoCarousel.php:45, includes/divi4/modules/LogoCarousel/LogoCarousel.php:60, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:36
+msgid "Common"
+msgstr ""
+
+#: includes/divi4/modules/CarouselMaker/CarouselMaker.php:47
+msgid "Prev"
+msgstr ""
+
+#: includes/divi4/modules/CarouselMaker/CarouselMaker.php:50
+msgid "Next"
+msgstr ""
+
+#: includes/divi4/modules/CarouselMaker/CarouselMaker.php:63, includes/divi4/modules/ImageCarousel/ImageCarousel.php:60, includes/divi4/modules/LogoCarousel/LogoCarousel.php:63
+msgid "Active"
+msgstr ""
+
+#: includes/divi4/modules/CarouselMaker/CarouselMaker.php:89, includes/divi4/modules/CarouselMaker/CarouselMaker.php:101, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:41, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:78, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:261
+msgid "Title"
+msgstr ""
+
+#: includes/divi4/modules/CarouselMakerChild/CarouselMakerChild.php:26, includes/divi4/modules/CarouselMakerChild/CarouselMakerChild.php:58
+msgid "Divi Library"
+msgstr ""
+
+#: includes/divi4/modules/CarouselMakerChild/CarouselMakerChild.php:53, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:237, includes/divi4/modules/LogoCarouselChild/LogoCarouselChild.php:89
+msgid "Admin Label"
+msgstr ""
+
+#: includes/divi4/modules/CarouselMakerChild/CarouselMakerChild.php:116
+msgid "No Content available"
 msgstr ""
 
 #: includes/divi4/modules/ImageCarousel/ImageCarousel.php:12
 msgid "Image Carousel"
 msgstr ""
 
-#: includes/divi4/modules/ImageCarousel/ImageCarousel.php:18, includes/divi4/modules/LogoCarousel/LogoCarousel.php:18, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:20
-msgid "Carousel Settings"
-msgstr ""
-
-#: includes/divi4/modules/ImageCarousel/ImageCarousel.php:22, includes/divi4/modules/LogoCarousel/LogoCarousel.php:22, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:24
-msgid "General"
-msgstr ""
-
-#: includes/divi4/modules/ImageCarousel/ImageCarousel.php:25, includes/divi4/modules/LogoCarousel/LogoCarousel.php:25, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:27
-msgid "Advanced"
-msgstr ""
-
 #: includes/divi4/modules/ImageCarousel/ImageCarousel.php:35, includes/divi4/modules/LogoCarousel/LogoCarousel.php:38
 msgid "Carousel"
-msgstr ""
-
-#: includes/divi4/modules/ImageCarousel/ImageCarousel.php:42, includes/divi4/modules/ImageCarousel/ImageCarousel.php:57, includes/divi4/modules/LogoCarousel/LogoCarousel.php:45, includes/divi4/modules/LogoCarousel/LogoCarousel.php:60, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:36
-msgid "Common"
-msgstr ""
-
-#: includes/divi4/modules/ImageCarousel/ImageCarousel.php:60, includes/divi4/modules/LogoCarousel/LogoCarousel.php:63
-msgid "Active"
 msgstr ""
 
 #: includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:14, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:305
@@ -428,10 +470,6 @@ msgstr ""
 
 #: includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:37
 msgid "Texts"
-msgstr ""
-
-#: includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:41, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:78, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:261
-msgid "Title"
 msgstr ""
 
 #: includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:44, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:85, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:283
@@ -506,11 +544,11 @@ msgstr ""
 msgid "Image Hover Animation"
 msgstr ""
 
-#: includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:193
+#: includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:193, includes/divi4/modules/LogoCarousel/LogoCarousel.php:86
 msgid "Zoom In"
 msgstr ""
 
-#: includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:194
+#: includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:194, includes/divi4/modules/LogoCarousel/LogoCarousel.php:87
 msgid "Zoom Out"
 msgstr ""
 
@@ -586,10 +624,6 @@ msgstr ""
 msgid "Title Spacing Bottom"
 msgstr ""
 
-#: includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:237, includes/divi4/modules/LogoCarouselChild/LogoCarouselChild.php:89
-msgid "Admin Label"
-msgstr ""
-
 #: includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:239, includes/divi4/modules/LogoCarouselChild/LogoCarouselChild.php:91
 msgid "This will change the label of the item"
 msgstr ""
@@ -600,6 +634,14 @@ msgstr ""
 
 #: includes/divi4/modules/LogoCarousel/LogoCarousel.php:30
 msgid "Logo Settings"
+msgstr ""
+
+#: includes/divi4/modules/LogoCarousel/LogoCarousel.php:88
+msgid "Fade"
+msgstr ""
+
+#: includes/divi4/modules/LogoCarousel/LogoCarousel.php:89
+msgid "Black and White"
 msgstr ""
 
 #: includes/divi4/modules/LogoCarouselChild/LogoCarouselChild.php:12
@@ -830,14 +872,6 @@ msgstr ""
 msgid "Avatar Box Shadow"
 msgstr ""
 
-#: plugin-loader.php:65
-msgid "Cyber Sale - Lifetime Access to Divi Torque just $89!"
-msgstr ""
-
-#: plugin-loader.php:66
-msgid "Hurry! Get lifetime access to Divi Torque just $89/lifetime!  Limited Time Offer!!"
-msgstr ""
-
-#: plugin-loader.php:72
-msgid "Claim Your Cyber Sale Offer Now"
+#: wow-divi-carousel-lite.php:45
+msgid " --Select a Slide-- "
 msgstr ""

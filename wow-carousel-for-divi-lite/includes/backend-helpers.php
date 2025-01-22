@@ -2,37 +2,53 @@
 
 namespace Divi_Carousel_Lite;
 
+/**
+ * Helper class for backend functionality
+ */
 class BackendHelpers
 {
-
+    /**
+     * Path to assets directory
+     */
     const ASSETS_PATH = 'assets';
 
+    /**
+     * Get default dummy content data
+     * 
+     * @return array Default content data
+     */
     private function dummyData()
     {
         return array(
-            'title'    => _x('Your Title Goes Here', 'Modules dummy content', 'divi-carousel-lite'),
-            'subtitle' => _x('Subtitle goes Here', 'divi-carousel-lite'),
-            'body'     => _x(
+            'title'    => __('Your Title Goes Here', 'divi-carousel-lite'),
+            'subtitle' => __('Subtitle goes Here', 'divi-carousel-lite'),
+            'body'     => __(
                 '<p>Your content goes here. Edit or remove this text inline or in the module Content settings. You can also style every aspect of this content in the module Design settings and even apply custom CSS to this text in the module Advanced settings.</p>',
                 'divi-carousel-lite'
             ),
         );
     }
 
+    /**
+     * Generate static asset helper data
+     * 
+     * @param array $exists Existing helper data to merge with
+     * @return array Combined helper data
+     */
     public function static_asset_helpers($exists = array())
     {
         $dummyData = $this->dummyData();
 
+        // Generate image carousel demo items
         $image_carousel_child = $this->generate_module_shortcodes('wdcl_image_carousel_child', [
-            ['photo' => 'https://placehold.co/800x800/AED581/FFFFFF?text=Divi+Torque+Pro&font=montserrat'],
-            ['photo' => 'https://placehold.co/800x800/FF8A65/FFFFFF?text=Divi+Torque+Pro&font=montserrat'],
-            ['photo' => 'https://placehold.co/800x800/4DD0E1/FFFFFF?text=Divi+Torque+Pro&font=montserrat'],
-            ['photo' => 'https://placehold.co/800x800/BA68C8/FFFFFF?text=Divi+Torque+Pro&font=montserrat'],
-            ['photo' => 'https://placehold.co/800x800/FFD54F/333333?text=Divi+Torque+Pro&font=montserrat'],
-            ['photo' => 'https://placehold.co/800x800/4DB6AC/FFFFFF?text=Divi+Torque+Pro&font=montserrat'],
-            ['photo' => 'https://placehold.co/800x800/4DB6AC/FFFFFF?text=Divi+Torque+Pro&font=montserrat'],
+            ['photo' => 'https://placehold.co/800x800/E5E5E5/C2C2C2?text=Divi+Carousel+Maker&font=montserrat'],
+            ['photo' => 'https://placehold.co/800x800/E5E5E5/C2C2C2?text=Divi+Carousel+Maker&font=montserrat'],
+            ['photo' => 'https://placehold.co/800x800/E5E5E5/C2C2C2?text=Divi+Carousel+Maker&font=montserrat'],
+            ['photo' => 'https://placehold.co/800x800/E5E5E5/C2C2C2?text=Divi+Carousel+Maker&font=montserrat'],
+            ['photo' => 'https://placehold.co/800x800/E5E5E5/C2C2C2?text=Divi+Carousel+Maker&font=montserrat'],
         ]);
 
+        // Generate logo carousel demo items
         $logo_carousel_child = $this->generate_module_shortcodes('wdcl_logo_carousel_child', [
             ['logo' => DCL_PLUGIN_URL . self::ASSETS_PATH . '/imgs/demo/logo/logoipsum1.svg'],
             ['logo' => DCL_PLUGIN_URL . self::ASSETS_PATH . '/imgs/demo/logo/logoipsum2.svg'],
@@ -43,6 +59,7 @@ class BackendHelpers
             ['logo' => DCL_PLUGIN_URL . self::ASSETS_PATH . '/imgs/demo/logo/logoipsum7.svg']
         ]);
 
+        // Combine helper data
         $helpers = [
             'defaults' => [
                 'wdcl_logo_carousel' => array_merge($dummyData, [
@@ -60,6 +77,13 @@ class BackendHelpers
         return array_merge_recursive($exists, $helpers);
     }
 
+    /**
+     * Generate multiple module shortcodes
+     * 
+     * @param string $child_name Module name
+     * @param array $optionsArray Array of options for each shortcode
+     * @return string Combined shortcode string
+     */
     private function generate_module_shortcodes($child_name, $optionsArray)
     {
         return implode('', array_map(function ($options) use ($child_name) {
@@ -67,6 +91,13 @@ class BackendHelpers
         }, $optionsArray));
     }
 
+    /**
+     * Generate a single module shortcode
+     * 
+     * @param string $child_name Module name
+     * @param array $options Shortcode attributes
+     * @return string Generated shortcode
+     */
     private function dummy_module_shortcode($child_name, $options)
     {
         $shortcode = sprintf('[%1$s', $child_name);
@@ -77,6 +108,12 @@ class BackendHelpers
         return $shortcode;
     }
 
+    /**
+     * Add asset helpers to builder content
+     * 
+     * @param string $content Existing builder content
+     * @return string Modified content with helpers
+     */
     public function asset_helpers($content)
     {
         $helpers = $this->static_asset_helpers();

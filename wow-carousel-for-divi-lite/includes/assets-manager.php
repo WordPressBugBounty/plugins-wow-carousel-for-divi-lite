@@ -1,74 +1,44 @@
 <?php
 
-/**
- * Assets Manager Class
- * 
- * Handles all asset (JS/CSS) loading for the Divi Carousel Lite plugin.
- * Manages script/style registration and enqueuing for both frontend and builder.
- * 
- * @package Divi_Carousel_Lite
- * @since 1.0.0
- */
-
 namespace Divi_Carousel_Lite;
 
-use Divi_Carousel_Lite\BackendHelpers;
+use Divi_Carousel_Lite\Backend_Helpers;
 
 class Assets_Manager
 {
-    /**
-     * Singleton instance
-     * @var Assets_Manager|null
-     */
+
     private static $instance = null;
 
-    /**
-     * Get singleton instance
-     * @return Assets_Manager Instance of the class
-     */
     public static function get_instance()
     {
-        if (null === self::$instance) {
+        if (self::$instance === null) {
             self::$instance = new self();
         }
         return self::$instance;
     }
 
-    /**
-     * Constructor - Sets up action hooks
-     */
-    public function __construct()
+    private function __construct()
     {
-        add_action('wp_enqueue_scripts', [$this, 'enqueueFrontendScripts']);
-        add_action('wp_enqueue_scripts', [$this, 'enqueueBuilderScripts']);
-        add_action('wp_loaded', [$this, 'load_backend_data']);
+        add_action('wp_enqueue_scripts', [$this, 'enqueue_frontend_scripts']);
+        add_action('wp_enqueue_scripts', [$this, 'enqueue_builder_scripts']);
+        // add_action('wp_loaded', [$this, 'load_backend_data']);
     }
 
-    /**
-     * Main method to enqueue styles and scripts
-     * 
-     * @param string $prefix Asset prefix/name
-     * @param array $dependencies Script dependencies
-     * @param bool $isStyle Whether to enqueue styles
-     * @param bool $isScript Whether to enqueue scripts
-     */
-    public function enqueueStylesAndScripts($prefix, $dependencies = ['react-dom', 'react'], $isStyle = true, $isScript = true)
+    public function enqueue_assets($prefix, $dependencies = ['react-dom', 'react'], $include_style = true, $include_script = true)
     {
-        $manifest = $this->getManifest();
+        $manifest = $this->get_manifest();
 
         if ($manifest) {
-            $this->enqueueFromManifest($prefix, $dependencies, $isStyle, $isScript, $manifest);
+            $this->enqueue_from_manifest($prefix, $dependencies, $include_style, $include_script, $manifest);
         } else {
-            $this->enqueueFallback($prefix, $dependencies, $isStyle, $isScript);
+            $this->enqueue_fallback($prefix, $dependencies, $include_style, $include_script);
         }
     }
 
-    /**
-     * Get the manifest file contents
-     * @return array|null Manifest data or null if invalid
-     */
-    private function getManifest()
+    private function get_manifest()
     {
+        $manifest_path = DCL_PLUGIN_DIR . 'assets/mix-manifest.json';
+
         $context = stream_context_create([
             'ssl' => [
                 'verify_peer' => false,
@@ -76,18 +46,14 @@ class Assets_Manager
             ],
         ]);
 
-        $manifestPath = DCL_PLUGIN_DIR . 'assets/mix-manifest.json';
-        $manifest = json_decode(file_get_contents($manifestPath, false, $context), true);
+        $manifest = json_decode(@file_get_contents($manifest_path, false, $context), true);
 
         return is_array($manifest) ? $manifest : null;
     }
 
-    /**
-     * Enqueue assets using manifest file
-     */
-    private function enqueueFromManifest($prefix, $dependencies, $isStyle, $isScript, $manifest)
+    private function enqueue_from_manifest($prefix, $dependencies, $include_style, $include_script, $manifest)
     {
-        if ($isScript) {
+        if ($include_script) {
             wp_enqueue_script(
                 "dcl-{$prefix}",
                 DCL_PLUGIN_ASSETS . $manifest["/js/{$prefix}.js"],
@@ -97,107 +63,79 @@ class Assets_Manager
             );
         }
 
-        if ($isStyle) {
+        if ($include_style && isset($manifest["/css/{$prefix}.css"])) {
             wp_enqueue_style(
                 "dcl-{$prefix}",
                 DCL_PLUGIN_ASSETS . $manifest["/css/{$prefix}.css"],
                 [],
-                DCL_PLUGIN_VERSION,
-                'all'
+                DCL_PLUGIN_VERSION
             );
         }
     }
 
-    /**
-     * Fallback enqueue method when manifest is not available
-     */
-    private function enqueueFallback($prefix, $dependencies, $isStyle, $isScript)
+    private function enqueue_fallback($prefix, $dependencies, $include_style, $include_script)
     {
-        if ($isStyle) {
-            wp_enqueue_style(
-                "dcl-{$prefix}",
-                DCL_PLUGIN_ASSETS . "css/{$prefix}.css",
-                [],
-                DCL_PLUGIN_VERSION,
-                'all'
-            );
-        }
-
-        if ($isScript) {
-            wp_register_script(
+        if ($include_script) {
+            wp_enqueue_script(
                 "dcl-{$prefix}",
                 DCL_PLUGIN_ASSETS . "js/{$prefix}.js",
-                $dependencies[0] === 'jquery' ? ['jquery'] : $dependencies,
+                $dependencies,
                 DCL_PLUGIN_VERSION,
                 true
             );
         }
+
+        if ($include_style) {
+            $style_path = DCL_PLUGIN_ASSETS . "css/{$prefix}.css";
+            if (file_exists($style_path)) {
+                wp_enqueue_style(
+                    "dcl-{$prefix}",
+                    $style_path,
+                    [],
+                    DCL_PLUGIN_VERSION
+                );
+            }
+        }
     }
 
-    /**
-     * Enqueue frontend scripts and styles
-     */
-    public function enqueueFrontendScripts()
+    public function enqueue_frontend_scripts()
     {
-        $this->enqueueLibraries();
-        $this->enqueueStylesAndScripts('frontend');
+        $this->enqueue_libraries();
+        $this->enqueue_assets('frontend');
     }
 
-    /**
-     * Enqueue third-party libraries
-     */
-    private function enqueueLibraries()
+    private function enqueue_libraries()
     {
-        // Enqueue Scripts
         wp_enqueue_script('dcl-slick', DCL_PLUGIN_ASSETS . 'libs/slick/slick.min.js', ['jquery'], DCL_PLUGIN_VERSION, true);
         wp_enqueue_script('dcl-magnific', DCL_PLUGIN_ASSETS . 'libs/magnific/magnific-popup.min.js', ['jquery'], DCL_PLUGIN_VERSION, true);
 
-        // Enqueue Styles
-        wp_enqueue_style('dcl-slick', DCL_PLUGIN_ASSETS . 'libs/slick/slick.min.css', null, DCL_PLUGIN_VERSION);
-        wp_enqueue_style('dcl-magnific', DCL_PLUGIN_ASSETS . 'libs/magnific/magnific-popup.min.css', null, DCL_PLUGIN_VERSION);
+        wp_enqueue_style('dcl-slick', DCL_PLUGIN_ASSETS . 'libs/slick/slick.min.css', [], DCL_PLUGIN_VERSION);
+        wp_enqueue_style('dcl-magnific', DCL_PLUGIN_ASSETS . 'libs/magnific/magnific-popup.min.css', [], DCL_PLUGIN_VERSION);
     }
 
-    /**
-     * Enqueue Divi builder specific scripts
-     * Only loads when Divi builder is active
-     */
-    public function enqueueBuilderScripts()
+    public function enqueue_builder_scripts()
     {
-        // Use global namespace for Divi function
-        if (!\function_exists('\et_core_is_fb_enabled') || !\et_core_is_fb_enabled()) {
-            return;
+        if (function_exists('et_core_is_fb_enabled') && et_core_is_fb_enabled()) {
+            $this->enqueue_assets('builder', ['react-dom', 'react'], false, true);
         }
-
-        $this->enqueueStylesAndScripts('builder');
     }
 
-    /**
-     * Load backend data for Divi builder integration
-     */
-    public function load_backend_data()
-    {
-        if (!function_exists('et_fb_process_shortcode') || !class_exists(BackendHelpers::class)) {
-            return;
-        }
+    // public function load_backend_data()
+    // {
+    //     if (!function_exists('et_fb_process_shortcode') || !class_exists(Backend_Helpers::class)) {
+    //         return;
+    //     }
 
-        $helpers = new BackendHelpers();
-        $this->registerFiltersAndActions($helpers);
-    }
+    //     $helpers = new Backend_Helpers();
 
-    /**
-     * Register filters and actions for backend helpers
-     * @param BackendHelpers $helpers Instance of backend helpers
-     */
-    private function registerFiltersAndActions(BackendHelpers $helpers)
-    {
-        add_filter('et_fb_backend_helpers', [$helpers, 'static_asset_helpers'], 11);
-        add_filter('et_fb_get_asset_helpers', [$helpers, 'asset_helpers'], 11);
+    //     add_filter('et_fb_backend_helpers', [$helpers, 'static_asset_helpers'], 11);
+    //     add_filter('et_fb_get_asset_helpers', [$helpers, 'asset_helpers'], 11);
 
-        $enqueueScriptsCallback = function () use ($helpers) {
-            wp_localize_script('et-frontend-builder', 'DCLBuilderBackend', $helpers->static_asset_helpers());
-        };
+    //     $enqueue_scripts_callback = function () use ($helpers) {
+    //         wp_localize_script('et-frontend-builder', 'DCLBuilderBackend', $helpers->static_asset_helpers());
+    //     };
 
-        add_action('wp_enqueue_scripts', $enqueueScriptsCallback);
-        add_action('admin_enqueue_scripts', $enqueueScriptsCallback);
-    }
+    //     add_action('wp_enqueue_scripts', $enqueue_scripts_callback);
+    //     add_action('admin_enqueue_scripts', $enqueue_scripts_callback);
+    // }
 }
