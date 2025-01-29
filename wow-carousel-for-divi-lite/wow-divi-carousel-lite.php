@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Carousel Maker for Divi
+Plugin Name: Divi Carousel Maker
 Plugin URI:  https://diviepic.com/
 Description: Carousel Maker the most powerful and user-friendly Divi Carousel plugin to create beautiful carousels with any modules.
-Version: 2.1.0
+Version: 2.1.1
 Author: DiviEpic
 Author URI:  https://diviepic.com
 License:     GPL2
@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('DCL_PLUGIN_VERSION', '2.1.0');
+define('DCL_PLUGIN_VERSION', '2.1.1');
 define('DCL_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('DCL_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('DCL_PLUGIN_ASSETS', trailingslashit(DCL_PLUGIN_URL . 'assets'));

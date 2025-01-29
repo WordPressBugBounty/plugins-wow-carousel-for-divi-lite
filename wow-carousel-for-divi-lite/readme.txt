@@ -1,10 +1,10 @@
 
-=== Carousel Maker for Divi ===
+=== Divi Carousel Maker ===
 
 Contributors: plugpressco, badhonrocks
-Tags: divi carousel, divi theme, divi builder, logo carousel, image carousel
+Tags: divi, divi carousel, divi theme, divi builder, logo carousel, image carousel
 Tested up to: 6.7.1
-Stable tag: 3.0
+Stable tag: 2.1.1
 Requires PHP: 7.4
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,7 +12,24 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Divi Carousel Maker the most powerful and user-friendly Divi Carousel plugin to create beautiful carousels with any modules.
 
 == Description ==
+
+### Divi Carousel Maker - Best Carousel Plugin for Divi ###
+**1st Divi Carousel Plugin to Create Any Carousel Using Other Modules** 🦾
+★★★★★<br>
+
 The Fastest ⚡ Way to Create a Carousel Maker for Divi. With Divi Carousel Maker, you can create any carousel using other modules.
+
+Explore the [Demo](https://diviepic.com/divi-carousel-pro/?utm_campaign=wporg&utm_source=carousel&utm_medium=readme&utm_content=demo_link) to experience its capabilities.
+
+== Key Features ==
+
+- Full Customization
+- Responsive Design
+- SEO Optimization
+- Lightweight
+- High Performance
+- User-Friendly Interface
+- Complete Customization
 
 ### Complete Customization
 Our carousel modules come with extensive customization options, allowing you to create a unique and visually appealing experience. Build any carousel design you envision with ease.
@@ -71,6 +88,9 @@ A: Visit our [Knowledge Base](https://diviepic.com/docs/?utm_campaign=wporg&utm_
 2. Logo Carousel in Action.
 
 == Changelog ==
+
+= 2.1.1 =
+* Fixed: Lightbox issue.
 
 = 2.1.0 =
 * Fixed: Name conflict with another plugin resolved

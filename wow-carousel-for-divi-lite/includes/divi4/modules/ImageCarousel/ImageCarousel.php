@@ -94,10 +94,11 @@ class WDCL_ImageCarousel extends Divi_Carousel_Lite_Builder_Module
         $is_center        = $this->props['is_center'];
         $center_mode_type = $this->props['center_mode_type'];
         $custom_cursor    = $this->props['custom_cursor'];
-        $use_lightbox     = $this->props['use_lightbox'];
+        $use_lightbox     = $this->props['use_lightbox'] === 'on' ? 'enabled' : 'disabled';
         $sliding_dir      = $this->props['sliding_dir'];
 
         $this->apply_css($render_slug);
+
         array_push($classes, "dcm-lightbox-{$use_lightbox}");
 
         if ('on' === $is_center) {
