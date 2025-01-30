@@ -11,12 +11,12 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Lite_Builder_Module
     public function init()
     {
 
-        $this->name = esc_html__('Item', 'divi-carousel-lite');
+        $this->name = esc_html__('Carousel Item', 'divi-carousel-lite');
 
         $this->settings_modal_toggles = [
             'general'  => [
                 'toggles' => [
-                    'carousel_content' => [
+                    'main_content' => [
                         'title' => esc_html__('Content', 'divi-carousel-lite'),
                     ],
                 ],
@@ -62,7 +62,7 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Lite_Builder_Module
                 'label'              => esc_html__('Upload Image', 'divi-carousel-lite'),
                 'type'               => 'upload',
                 'option_category'    => 'basic_option',
-                'toggle_slug'        => 'carousel_content',
+                'toggle_slug'        => 'main_content',
                 'upload_button_text' => esc_attr__('Upload an image', 'divi-carousel-lite'),
                 'choose_text'        => esc_attr__('Choose an Image', 'divi-carousel-lite'),
                 'update_text'        => esc_attr__('Set As Image', 'divi-carousel-lite'),
@@ -71,20 +71,20 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Lite_Builder_Module
             'photo_alt'                 => [
                 'label'           => esc_html__('Image Alt Text', 'divi-carousel-lite'),
                 'type'            => 'text',
-                'toggle_slug'     => 'carousel_content',
+                'toggle_slug'     => 'main_content',
             ],
 
             'title'                 => [
                 'label'           => esc_html__('Title', 'divi-carousel-lite'),
                 'type'            => 'text',
-                'toggle_slug'     => 'carousel_content',
+                'toggle_slug'     => 'main_content',
                 'dynamic_content' => 'text',
             ],
 
             'sub_title'             => [
                 'label'           => esc_html__('Subtitle', 'divi-carousel-lite'),
                 'type'            => 'text',
-                'toggle_slug'     => 'carousel_content',
+                'toggle_slug'     => 'main_content',
                 'dynamic_content' => 'text',
             ],
 

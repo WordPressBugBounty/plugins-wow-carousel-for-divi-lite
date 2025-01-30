@@ -68,20 +68,12 @@ class WDCL_ImageCarousel extends Divi_Carousel_Lite_Builder_Module
 
     public function get_fields()
     {
-
         return Divi_Carousel_Lite_Builder_Module::_get_carousel_option_fields('carousel', ['lightbox']);
     }
 
     public function get_advanced_fields_config()
     {
-
         $advanced_fields = [];
-
-        $advanced_fields['text']         = [];
-        $advanced_fields['borders']      = [];
-        $advanced_fields['text_shadow']  = [];
-        $advanced_fields['link_options'] = [];
-        $advanced_fields['fonts']        = [];
 
         return $advanced_fields;
     }

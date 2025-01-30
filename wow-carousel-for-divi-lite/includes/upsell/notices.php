@@ -123,9 +123,9 @@ class Admin_Notices
 
         wp_enqueue_script(
             'divi-torque-lite-admin-notice',
-            DCL_PLUGIN_ASSETS . '/admin/js/admin-notice.js',
+            DCM_PLUGIN_ASSETS . '/admin/js/admin-notice.js',
             [],
-            DCL_PLUGIN_VERSION,
+            DCM_PLUGIN_VERSION,
             true
         );
 

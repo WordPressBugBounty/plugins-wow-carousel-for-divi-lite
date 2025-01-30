@@ -50,13 +50,13 @@ class BackendHelpers
 
         // Generate logo carousel demo items
         $logo_carousel_child = $this->generate_module_shortcodes('wdcl_logo_carousel_child', [
-            ['logo' => DCL_PLUGIN_URL . self::ASSETS_PATH . '/imgs/demo/logo/logoipsum1.svg'],
-            ['logo' => DCL_PLUGIN_URL . self::ASSETS_PATH . '/imgs/demo/logo/logoipsum2.svg'],
-            ['logo' => DCL_PLUGIN_URL . self::ASSETS_PATH . '/imgs/demo/logo/logoipsum3.svg'],
-            ['logo' => DCL_PLUGIN_URL . self::ASSETS_PATH . '/imgs/demo/logo/logoipsum4.svg'],
-            ['logo' => DCL_PLUGIN_URL . self::ASSETS_PATH . '/imgs/demo/logo/logoipsum5.svg'],
-            ['logo' => DCL_PLUGIN_URL . self::ASSETS_PATH . '/imgs/demo/logo/logoipsum6.svg'],
-            ['logo' => DCL_PLUGIN_URL . self::ASSETS_PATH . '/imgs/demo/logo/logoipsum7.svg']
+            ['logo' => DCM_PLUGIN_URL . self::ASSETS_PATH . '/imgs/demo/logo/logoipsum1.svg'],
+            ['logo' => DCM_PLUGIN_URL . self::ASSETS_PATH . '/imgs/demo/logo/logoipsum2.svg'],
+            ['logo' => DCM_PLUGIN_URL . self::ASSETS_PATH . '/imgs/demo/logo/logoipsum3.svg'],
+            ['logo' => DCM_PLUGIN_URL . self::ASSETS_PATH . '/imgs/demo/logo/logoipsum4.svg'],
+            ['logo' => DCM_PLUGIN_URL . self::ASSETS_PATH . '/imgs/demo/logo/logoipsum5.svg'],
+            ['logo' => DCM_PLUGIN_URL . self::ASSETS_PATH . '/imgs/demo/logo/logoipsum6.svg'],
+            ['logo' => DCM_PLUGIN_URL . self::ASSETS_PATH . '/imgs/demo/logo/logoipsum7.svg']
         ]);
 
         // Combine helper data

@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: DiviEpic <help@diviepic.com>\n"
-"POT-Creation-Date: 2025-01-29 18:23+0000\n"
+"POT-Creation-Date: 2025-01-30 09:23+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -452,8 +452,8 @@ msgstr ""
 msgid "Carousel"
 msgstr ""
 
-#: includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:14, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:305
-msgid "Item"
+#: includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:14
+msgid "Carousel Item"
 msgstr ""
 
 #: includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:20, includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:34, includes/divi4/modules/LogoCarouselChild/LogoCarouselChild.php:18, includes/divi4/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:52
@@ -626,6 +626,10 @@ msgstr ""
 
 #: includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:239, includes/divi4/modules/LogoCarouselChild/LogoCarouselChild.php:91
 msgid "This will change the label of the item"
+msgstr ""
+
+#: includes/divi4/modules/ImageCarouselChild/ImageCarouselChild.php:305
+msgid "Item"
 msgstr ""
 
 #: includes/divi4/modules/LogoCarousel/LogoCarousel.php:9

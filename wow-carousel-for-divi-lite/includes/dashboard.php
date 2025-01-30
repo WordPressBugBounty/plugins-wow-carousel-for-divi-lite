@@ -88,7 +88,7 @@ class Dashboard
      */
     public function enqueue_scripts()
     {
-        $manifest_path = DCL_PLUGIN_DIR . 'assets/mix-manifest.json';
+        $manifest_path = DCM_PLUGIN_DIR . 'assets/mix-manifest.json';
         if (!file_exists($manifest_path)) {
             return;
         }
@@ -100,20 +100,20 @@ class Dashboard
             return;
         }
 
-        $assets_url = DCL_PLUGIN_URL . 'assets';
+        $assets_url = DCM_PLUGIN_URL . 'assets';
         $app_js = $assets_url . $manifest['/admin/js/app.js'];
         $app_css = $assets_url . $manifest['/admin/css/app.css'];
 
-        wp_enqueue_script('divi-carousel-lite-app', $app_js, $this->wp_deps(), DCL_PLUGIN_VERSION, true);
-        wp_enqueue_style('divi-carousel-lite-app', $app_css, ['wp-components'], DCL_PLUGIN_VERSION);
+        wp_enqueue_script('divi-carousel-lite-app', $app_js, $this->wp_deps(), DCM_PLUGIN_VERSION, true);
+        wp_enqueue_style('divi-carousel-lite-app', $app_css, ['wp-components'], DCM_PLUGIN_VERSION);
 
-        $module_icon_path = DCL_PLUGIN_URL . 'assets/imgs/icons';
+        $module_icon_path = DCM_PLUGIN_URL . 'assets/imgs/icons';
 
         $localize = [
             'root' => esc_url_raw(get_rest_url()),
             'nonce' => wp_create_nonce('wp_rest'),
             'assetsPath' => esc_url_raw($assets_url),
-            'version' => DCL_PLUGIN_VERSION,
+            'version' => DCM_PLUGIN_VERSION,
             'module_info' => ModulesManager::get_all_modules(),
             'pro_module_info' => ModulesManager::get_all_pro_modules(),
             'module_icon_path' => $module_icon_path,
@@ -121,7 +121,7 @@ class Dashboard
             'upgradeLink' => 'https://diviepic.com/divi-carousel-pro/',
             'rollbackLink' => esc_url(add_query_arg('version', 'VERSION', wp_nonce_url(admin_url('admin-post.php?action=divi_carousel_lite_rollback'), 'divi_carousel_lite_rollback'))),
             'rollbackVersions' => AdminHelper::get_rollback_versions(),
-            'currentVersion' => DCL_PLUGIN_VERSION,
+            'currentVersion' => DCM_PLUGIN_VERSION,
         ];
 
         wp_localize_script('divi-carousel-lite-app', 'diviCarouselLite', $localize);
@@ -173,12 +173,12 @@ class Dashboard
             wp_die(esc_html__('Error occurred, The version selected is invalid. Try selecting different version.', 'divi-carousel-lite'));
         }
 
-        $plugin_slug = basename(DCL_PLUGIN_FILE, '.php');
+        $plugin_slug = basename(DCM_PLUGIN_FILE, '.php');
 
         $rollback = new Plugin_Upgrader(
             array(
                 'version'           => $plugin_version,
-                'plugin_name'       => DCL_PLUGIN_BASE,
+                'plugin_name'       => DCM_PLUGIN_BASE,
                 'plugin_slug'       => $plugin_slug,
                 'package'           => sprintf('https://downloads.wordpress.org/plugin/%s.%s.zip', $plugin_slug, $plugin_version),
             )

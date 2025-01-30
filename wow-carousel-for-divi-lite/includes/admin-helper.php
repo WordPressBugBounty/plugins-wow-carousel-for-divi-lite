@@ -47,7 +47,7 @@ class AdminHelper
     public static function get_rollback_versions()
     {
         // Set cache key and maximum number of versions to keep.
-        $cacheKey = 'divi_carousel_lite_rollback_versions_' . DCL_PLUGIN_VERSION;
+        $cacheKey = 'divi_carousel_lite_rollback_versions_' . DCM_PLUGIN_VERSION;
         $max_versions = 5;
 
         // Retrieve cached rollback versions.

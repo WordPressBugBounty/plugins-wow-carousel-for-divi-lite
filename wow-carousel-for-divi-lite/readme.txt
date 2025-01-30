@@ -4,7 +4,7 @@
 Contributors: plugpressco, badhonrocks
 Tags: divi, divi carousel, divi theme, divi builder, logo carousel, image carousel
 Tested up to: 6.7.1
-Stable tag: 2.1.1
+Stable tag: 2.1.2
 Requires PHP: 7.4
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -88,6 +88,9 @@ A: Visit our [Knowledge Base](https://diviepic.com/docs/?utm_campaign=wporg&utm_
 2. Logo Carousel in Action.
 
 == Changelog ==
+
+= 2.1.2 =
+* Fixed: Image Carousel title and description alignment.
 
 = 2.1.1 =
 * Fixed: Lightbox issue.

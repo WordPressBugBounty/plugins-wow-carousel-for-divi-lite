@@ -37,7 +37,7 @@ class Assets_Manager
 
     private function get_manifest()
     {
-        $manifest_path = DCL_PLUGIN_DIR . 'assets/mix-manifest.json';
+        $manifest_path = DCM_PLUGIN_DIR . 'assets/mix-manifest.json';
 
         $context = stream_context_create([
             'ssl' => [
@@ -56,9 +56,9 @@ class Assets_Manager
         if ($include_script) {
             wp_enqueue_script(
                 "dcl-{$prefix}",
-                DCL_PLUGIN_ASSETS . $manifest["/js/{$prefix}.js"],
+                DCM_PLUGIN_ASSETS . $manifest["/js/{$prefix}.js"],
                 $dependencies,
-                DCL_PLUGIN_VERSION,
+                DCM_PLUGIN_VERSION,
                 true
             );
         }
@@ -66,9 +66,9 @@ class Assets_Manager
         if ($include_style && isset($manifest["/css/{$prefix}.css"])) {
             wp_enqueue_style(
                 "dcl-{$prefix}",
-                DCL_PLUGIN_ASSETS . $manifest["/css/{$prefix}.css"],
+                DCM_PLUGIN_ASSETS . $manifest["/css/{$prefix}.css"],
                 [],
-                DCL_PLUGIN_VERSION
+                DCM_PLUGIN_VERSION
             );
         }
     }
@@ -78,21 +78,21 @@ class Assets_Manager
         if ($include_script) {
             wp_enqueue_script(
                 "dcl-{$prefix}",
-                DCL_PLUGIN_ASSETS . "js/{$prefix}.js",
+                DCM_PLUGIN_ASSETS . "js/{$prefix}.js",
                 $dependencies,
-                DCL_PLUGIN_VERSION,
+                DCM_PLUGIN_VERSION,
                 true
             );
         }
 
         if ($include_style) {
-            $style_path = DCL_PLUGIN_ASSETS . "css/{$prefix}.css";
+            $style_path = DCM_PLUGIN_ASSETS . "css/{$prefix}.css";
             if (file_exists($style_path)) {
                 wp_enqueue_style(
                     "dcl-{$prefix}",
                     $style_path,
                     [],
-                    DCL_PLUGIN_VERSION
+                    DCM_PLUGIN_VERSION
                 );
             }
         }
@@ -106,11 +106,11 @@ class Assets_Manager
 
     private function enqueue_libraries()
     {
-        wp_enqueue_script('dcl-slick', DCL_PLUGIN_ASSETS . 'libs/slick/slick.min.js', ['jquery'], DCL_PLUGIN_VERSION, true);
-        wp_enqueue_script('dcl-magnific', DCL_PLUGIN_ASSETS . 'libs/magnific/magnific-popup.min.js', ['jquery'], DCL_PLUGIN_VERSION, true);
+        wp_enqueue_script('dcl-slick', DCM_PLUGIN_ASSETS . 'libs/slick/slick.min.js', ['jquery'], DCM_PLUGIN_VERSION, true);
+        wp_enqueue_script('dcl-magnific', DCM_PLUGIN_ASSETS . 'libs/magnific/magnific-popup.min.js', ['jquery'], DCM_PLUGIN_VERSION, true);
 
-        wp_enqueue_style('dcl-slick', DCL_PLUGIN_ASSETS . 'libs/slick/slick.min.css', [], DCL_PLUGIN_VERSION);
-        wp_enqueue_style('dcl-magnific', DCL_PLUGIN_ASSETS . 'libs/magnific/magnific-popup.min.css', [], DCL_PLUGIN_VERSION);
+        wp_enqueue_style('dcl-slick', DCM_PLUGIN_ASSETS . 'libs/slick/slick.min.css', [], DCM_PLUGIN_VERSION);
+        wp_enqueue_style('dcl-magnific', DCM_PLUGIN_ASSETS . 'libs/magnific/magnific-popup.min.css', [], DCM_PLUGIN_VERSION);
     }
 
     public function enqueue_builder_scripts()

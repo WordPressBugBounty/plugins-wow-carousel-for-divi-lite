@@ -3,12 +3,12 @@
 Plugin Name: Divi Carousel Maker
 Plugin URI:  https://diviepic.com/
 Description: Carousel Maker the most powerful and user-friendly Divi Carousel plugin to create beautiful carousels with any modules.
-Version: 2.1.1
-Author: DiviEpic
-Author URI:  https://diviepic.com
+Version:     2.1.2
+Author:      PlugPress
+Author URI:  https://plugpress.co
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain:divi-carousel-lite
+Text Domain: divi-carousel-lite
 Domain Path: /languages
 */
 
@@ -16,12 +16,12 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('DCL_PLUGIN_VERSION', '2.1.1');
-define('DCL_PLUGIN_DIR', plugin_dir_path(__FILE__));
-define('DCL_PLUGIN_URL', plugin_dir_url(__FILE__));
-define('DCL_PLUGIN_ASSETS', trailingslashit(DCL_PLUGIN_URL . 'assets'));
-define('DCL_PLUGIN_FILE', __FILE__);
-define('DCL_PLUGIN_BASE', plugin_basename(__FILE__));
+define('DCM_PLUGIN_VERSION', '2.1.2');
+define('DCM_PLUGIN_DIR', plugin_dir_path(__FILE__));
+define('DCM_PLUGIN_URL', plugin_dir_url(__FILE__));
+define('DCM_PLUGIN_ASSETS', trailingslashit(DCM_PLUGIN_URL . 'assets'));
+define('DCM_PLUGIN_FILE', __FILE__);
+define('DCM_PLUGIN_BASE', plugin_basename(__FILE__));
 
 if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
     return;

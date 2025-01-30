@@ -17,8 +17,8 @@ class Plugin_Loader
      */
     private static $instance;
 
-    const PLUGIN_PATH   = DCL_PLUGIN_DIR;
-    const BASENAME      = DCL_PLUGIN_BASE;
+    const PLUGIN_PATH   = DCM_PLUGIN_DIR;
+    const BASENAME      = DCM_PLUGIN_BASE;
 
     public static function get_instance()
     {
@@ -31,14 +31,14 @@ class Plugin_Loader
 
     public function __construct()
     {
-        register_activation_hook(DCL_PLUGIN_FILE, array($this, 'activation'));
+        register_activation_hook(DCM_PLUGIN_FILE, array($this, 'activation'));
         add_action('plugins_loaded', array($this, 'hooks_init'));
         add_action('init', array($this, 'load_textdomain'));
     }
 
     public function activation()
     {
-        update_option('divi_carousel_lite_version', DCL_PLUGIN_VERSION);
+        update_option('divi_carousel_lite_version', DCM_PLUGIN_VERSION);
 
         if (!get_option('divi_carousel_lite_activation_time')) {
             update_option('divi_carousel_lite_activation_time', time());
