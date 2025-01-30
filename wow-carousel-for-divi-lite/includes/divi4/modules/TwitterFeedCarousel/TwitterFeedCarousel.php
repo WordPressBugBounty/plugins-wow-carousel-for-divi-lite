@@ -1250,7 +1250,7 @@ class WDCL_Twitter_Feed_Carousel extends Divi_Carousel_Lite_Builder_Module
         $sliding_dir = $this->props['sliding_dir'];
 
         $output = sprintf(
-            '<div dir="%4$s" class="dcm-container dcm-container-jq dcm-twitter-feed-carousel dcm-container-frontend %2$s" %3$s>
+            '<div dir="%4$s" class="dcm-container dcm-container-jq dcm-twitter-feed-carousel %2$s" %3$s>
 				%1$s
 			</div>',
             $twitter_items,

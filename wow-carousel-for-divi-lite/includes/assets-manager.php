@@ -21,7 +21,6 @@ class Assets_Manager
     {
         add_action('wp_enqueue_scripts', [$this, 'enqueue_frontend_scripts']);
         add_action('wp_enqueue_scripts', [$this, 'enqueue_builder_scripts']);
-        // add_action('wp_loaded', [$this, 'load_backend_data']);
     }
 
     public function enqueue_assets($prefix, $dependencies = ['react-dom', 'react'], $include_style = true, $include_script = true)

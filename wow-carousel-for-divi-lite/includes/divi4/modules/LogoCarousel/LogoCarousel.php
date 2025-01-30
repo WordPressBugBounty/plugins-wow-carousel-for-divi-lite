@@ -166,7 +166,7 @@ class WDCL_LogoCarousel extends Divi_Carousel_Lite_Builder_Module
         }
 
         $output = sprintf(
-            '<div dir="%4$s" class="dcm-container dcm-logo-carousel dcm-container-frontend %3$s" %2$s >
+            '<div dir="%4$s" class="dcm-container dcm-logo-carousel %3$s" %2$s >
                 %1$s
             </div>',
             $content,

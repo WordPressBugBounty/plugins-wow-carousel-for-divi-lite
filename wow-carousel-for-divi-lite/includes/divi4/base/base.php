@@ -4,16 +4,17 @@ class Divi_Carousel_Lite_Builder_Module extends ET_Builder_Module
 {
 
     protected $module_credits = [
-        'module_uri' => 'https://diviepic.com/',
-        'author'     => 'DiviEpic',
-        'author_uri' => 'https://diviepic.com/',
+        'module_uri' => 'https://wpcarouselmaker.com/',
+        'author'     => 'WP Carousel Maker',
+        'author_uri' => 'https://wpcarouselmaker.com/',
     ];
 
     public $icon_path;
 
     public $folder_name = 'carousel_maker';
 
-    protected function _custom_advanced_background_fields($option_name, $option_label, $tab_slug, $toggle_slug, array $background_tab = [], $show_if = [])
+    protected function _custom_advanced_background_fields($option_name, $option_label, $tab_slug, $toggle_slug, array
+    $background_tab = [], $show_if = [])
     {
 
         $color    = [];
@@ -1136,7 +1137,7 @@ class Divi_Carousel_Lite_Builder_Module extends ET_Builder_Module
             ET_Builder_Element::set_style(
                 $render_slug,
                 [
-                    'selector'    => '%%order_class%% .dcm-container .slick-next',
+                    'selector'    => '%%order_class%% .slick-next',
                     'declaration' => 'left: auto!important;',
                 ]
             );
@@ -1777,6 +1778,37 @@ class Divi_Carousel_Lite_Builder_Module extends ET_Builder_Module
 
             $this->_render_alongside_arrow_css($render_slug);
         }
+
+        dcm_inject_fa_icons($this->props['icon_left']);
+        dcm_inject_fa_icons($this->props['icon_right']);
+
+        $this->generate_styles(
+            array(
+                'utility_arg'    => 'icon_font_family',
+                'render_slug'    => $render_slug,
+                'base_attr_name' => 'icon_left',
+                'important'      => true,
+                'selector'       => '%%order_class%% .slick-prev:before',
+                'processor'      => array(
+                    'ET_Builder_Module_Helper_Style_Processor',
+                    'process_extended_icon',
+                ),
+            )
+        );
+
+        $this->generate_styles(
+            array(
+                'utility_arg'    => 'icon_font_family',
+                'render_slug'    => $render_slug,
+                'base_attr_name' => 'icon_right',
+                'important'      => true,
+                'selector'       => '%%order_class%% .slick-next:before',
+                'processor'      => array(
+                    'ET_Builder_Module_Helper_Style_Processor',
+                    'process_extended_icon',
+                ),
+            )
+        );
 
         // Carousel Pagination.
         $this->_render_pagination_css($render_slug);

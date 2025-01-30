@@ -103,7 +103,7 @@ class WDCL_ImageCarousel extends Divi_Carousel_Lite_Builder_Module
         }
 
         $output = sprintf(
-            '<div dir="%4$s" class="dcm-container dcm-carousel-maker dcm-container-frontend %3$s" %2$s>
+            '<div dir="%4$s" class="dcm-container dcm-carousel-maker %3$s" %2$s>
                 %1$s
             </div>',
             $content,
