@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Divi Carousel Maker
-Plugin URI:  https://diviepic.com/
+Plugin Name: Carousel Maker for Divi
+Plugin URI:  https://divicarouselmaker.com/
 Description: Carousel Maker the most powerful and user-friendly Divi Carousel plugin to create beautiful carousels with any modules.
-Version:     2.1.3
+Version:     2.1.4
 Author:      PlugPress
 Author URI:  https://plugpress.co
 License:     GPL2
@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('DCM_PLUGIN_VERSION', '2.1.3');
+define('DCM_PLUGIN_VERSION', '2.1.4');
 define('DCM_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('DCM_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('DCM_PLUGIN_ASSETS', trailingslashit(DCM_PLUGIN_URL . 'assets'));

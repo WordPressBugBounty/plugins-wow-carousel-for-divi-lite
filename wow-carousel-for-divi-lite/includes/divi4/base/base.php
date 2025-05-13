@@ -4,9 +4,9 @@ class Divi_Carousel_Lite_Builder_Module extends ET_Builder_Module
 {
 
     protected $module_credits = [
-        'module_uri' => 'https://wpcarouselmaker.com/',
-        'author'     => 'WP Carousel Maker',
-        'author_uri' => 'https://wpcarouselmaker.com/',
+        'module_uri' => 'https://divicarouselmaker.com/',
+        'author'     => 'Carousel Maker for Divi',
+        'author_uri' => 'https://divicarouselmaker.com/',
     ];
 
     public $icon_path;

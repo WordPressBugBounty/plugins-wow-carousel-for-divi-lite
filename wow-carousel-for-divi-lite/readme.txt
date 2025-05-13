@@ -1,25 +1,23 @@
 
-=== Divi Carousel Maker ===
+=== Carousel Maker for Divi ( Logo Carousel, Image Carousel, Carousel Maker ) ===
 
 Contributors: plugpressco, badhonrocks
-Tags: divi, divi carousel, divi theme, logo carousel, image carousel
+Tags: divi, divi carousel, carousel maker, logo carousel, image carousel
 Tested up to: 6.7.1
-Stable tag: 2.1.3
+Stable tag: 2.1.4
 Requires PHP: 7.4
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Divi Carousel Maker the most powerful and user-friendly Divi Carousel plugin to create beautiful carousels with any modules.
+Carousel Maker for Divi is the most powerful and user-friendly Divi Carousel plugin to create beautiful carousels with any modules.
 
 == Description ==
 
-### Divi Carousel Maker - Best Carousel Plugin for Divi ###
+### Carousel Maker for Divi - Best Carousel Plugin for Divi ###
 **1st Divi Carousel Plugin to Create Any Carousel Using Other Modules** 🦾
 ★★★★★<br>
 
-The Fastest ⚡ Way to Create a Carousel Maker for Divi. With Divi Carousel Maker, you can create any carousel using other modules.
-
-Explore the [Demo](https://diviepic.com/divi-carousel-pro/?utm_campaign=wporg&utm_source=carousel&utm_medium=readme&utm_content=demo_link) to experience its capabilities.
+The Fastest ⚡ Way to Create a Carousel Maker for Divi. With Carousel Maker for Divi, you can create any carousel using other modules.
 
 == Key Features ==
 
@@ -54,9 +52,11 @@ We offer 3 free carousel modules to get you started, allowing you to easily crea
 
 With Divi Carousel, you can craft engaging, responsive, and SEO-friendly carousels for your website. It's lightweight, easy to use, and fully customizable, helping you showcase images, logos, testimonials, and more in a space-efficient way.
 
-**Why Use Divi Carousel Maker?**
+**Why Use Carousel Maker for Divi?**
 
 Using our custom carousel modules, you can display a lot of information in a compact format, keeping your website clean and attractive while enhancing user engagement.
+
+> Disclaimer: This plugin is not affiliated with or endorsed by Elegant Themes or Pee-Aye Creative. "Divi" is a registered trademark of Elegant Themes, Inc.
 
 == Installation ==
 
@@ -88,6 +88,9 @@ A: Visit our [Knowledge Base](https://diviepic.com/docs/?utm_campaign=wporg&utm_
 2. Logo Carousel in Action.
 
 == Changelog ==
+
+= 2.1.4 =
+* Name changed to Carousel Maker for Divi.
 
 = 2.1.3 =
 * Fixed: Navigation arrow icon issue.
