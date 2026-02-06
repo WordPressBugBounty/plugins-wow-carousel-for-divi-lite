@@ -1,190 +1,243 @@
+=== Divi Carousel Free – Turn any Divi module, row, or section into a carousel ===
 
-=== Carousel Maker for Divi ( Logo Carousel, Image Carousel, Carousel Maker ) ===
-
-Contributors: plugpressco, badhonrocks
-Tags: divi, divi carousel, carousel maker, logo carousel, image carousel
-Tested up to: 6.7.1
-Stable tag: 2.1.4
+Contributors: plugpressco, badhonrocks, divipeople
+Tags: divi, carousel, divi carousel, logo carousel, image carousel, slider
+Tested up to: 6.8
+Stable tag: 2.1.5
 Requires PHP: 7.4
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Carousel Maker for Divi is the most powerful and user-friendly Divi Carousel plugin to create beautiful carousels with any modules.
+Divi Carousel Free lets you turn any Divi module, row, or section into a responsive, touch-friendly carousel in just a few clicks — no code needed.
 
 == Description ==
 
-### Carousel Maker for Divi - Best Carousel Plugin for Divi ###
-**1st Divi Carousel Plugin to Create Any Carousel Using Other Modules** 🦾
-★★★★★<br>
+**Divi Carousel Free** is a powerful carousel plugin designed exclusively for the Divi Theme and Divi Builder. Create stunning, responsive carousels in minutes without any coding knowledge.
 
-The Fastest ⚡ Way to Create a Carousel Maker for Divi. With Carousel Maker for Divi, you can create any carousel using other modules.
+Whether you need an image or logo carousel or want to turn any Divi module into one, this plugin makes it simple and intuitive. Perfect for showcasing portfolios, client logos, testimonials, products, and more.
 
-== Key Features ==
+👉 [Try Live Demo](https://divipeople.com/divi-carousel-free/)
+👉 [View Documentation](https://divipeople.com/docs-category/carousel-pro/)
+👉 [Upgrade to Divi Carousel Pro](https://divipeople.com/divi-carousel-pro/)
+👉 [Buy Divi Slider Pro](https://divipeople.com/divi-slider-pro/)(Recommended)
 
-- Full Customization
-- Responsive Design
-- SEO Optimization
-- Lightweight
-- High Performance
-- User-Friendly Interface
-- Complete Customization
+### Why Choose Divi Carousel?
 
-### Complete Customization
-Our carousel modules come with extensive customization options, allowing you to create a unique and visually appealing experience. Build any carousel design you envision with ease.
+**Easy to Use** – Built specifically for Divi with a drag-and-drop interface
+**Lightning Fast** – Optimized code ensures fast loading times
+**Fully Responsive** – Works perfectly on desktop, tablet, and mobile devices
+**Touch-Enabled** – Swipe gestures for smooth mobile navigation
+**Highly Customizable** – Complete control over design and functionality
+**SEO Friendly** – Clean, semantic code for better search rankings
 
-### Optimized for Speed
-Divi Carousel is built to be lightweight and fast, ensuring quick load times without sacrificing functionality. No unnecessary code means your site remains optimized.
+### Included Modules
 
-### Manage Modules Efficiently
-Enabling or disabling specific modules can help you manage the performance of your carousels. By only using what you need, you can keep your site fast and efficient.
+**Image Carousel Module**
+Create beautiful image carousels with customizable transitions, autoplay, navigation arrows, and pagination dots. Perfect for photo galleries, product showcases, and portfolio presentations.
 
-### Dedicated Support
-Our dedicated support team is available to assist you with any questions or issues. Reach out via our support forum or contact form for fast and friendly assistance.
+**Logo Carousel Module**
+Display client logos, partner brands, or sponsor images in a professional carousel. Add custom links, hover effects, and control spacing for the perfect presentation.
 
-### [Divi Theme](https://www.elegantthemes.com/gallery/divi/) or [Divi Builder](https://www.elegantthemes.com/gallery/divi/) is required to use this plugin.
+**Carousel Maker Module**
+Transform any Divi module into a carousel. This powerful feature gives you unlimited creative possibilities – use it with testimonials, blog posts, team members, pricing tables, or any custom module.
 
-<h3>Carousel Modules Available</h3>
-We offer 3 free carousel modules to get you started, allowing you to easily create impactful carousels.
+### Divi Slider Pro Features
 
-- **Carousel Maker**: With Carousel Maker, you can create any carousel using other modules.
-- **Image Carousel**: Full customization with transition effects, slide duration, autoplay options, and navigation styles.
-- **Logo Carousel**: Display client, partner, sponsor, or affiliate logos with clickable links for additional information.
+Upgrade to **Divi Slider Pro** to unlock premium modules and advanced features:
 
-With Divi Carousel, you can craft engaging, responsive, and SEO-friendly carousels for your website. It's lightweight, easy to use, and fully customizable, helping you showcase images, logos, testimonials, and more in a space-efficient way.
+**Premium Carousel Modules**
+- [Divi Testimonial Slider](https://divipeople.com/divi-slider-pro/divi-testimonial-slider/) – Display customer reviews and testimonials
+- Divi Product Slider – WooCommerce product slider with cart integration
+- Divi Team Carousel – Showcase team members with bios and social links
+- Divi Video Carousel – Embed YouTube and Vimeo videos
+- Blog Post Carousel – Latest posts with featured images and excerpts
 
-**Why Use Carousel Maker for Divi?**
+**Advanced Features**
+- 3D Effects (cube, coverflow, flip) 
+- Lightbox integration for images and videos
+- Vertical slide direction
+- Center mode with partial slides
+- Multiple carousels per page
+- Custom animation effects
+- Advanced navigation styles
+- Priority email support
 
-Using our custom carousel modules, you can display a lot of information in a compact format, keeping your website clean and attractive while enhancing user engagement.
+👉 [Buy Divi Slider Pro](https://divipeople.com/divi-slider-pro/) (Recommended)
+👉 [Upgrade to Divi Carousel Pro](https://divipeople.com/divi-carousel-pro/)
 
-> Disclaimer: This plugin is not affiliated with or endorsed by Elegant Themes or Pee-Aye Creative. "Divi" is a registered trademark of Elegant Themes, Inc.
+### Compatibility
+
+- WordPress 5.0 or higher
+- Divi Theme by Elegant Themes
+- Divi Builder plugin
+- PHP 7.4 or higher
+- All modern browsers
+
+### Useful Links
+
+👉 [Official Website](https://divipeople.com)
+👉 [Divi Slider Pro](https://divipeople.com/divi-slider-pro/)
+👉 [Live Demo](https://demo.divipeople.com/divi-slider-pro/)
+👉 [Documentation](https://divipeople.com/docs)
+👉 [Video Tutorials](https://www.youtube.com/@plugpreshq)
+👉 [Support Forum](https://wordpress.org/support/plugin/wow-carousel-for-divi-lite/)
+👉 [Facebook Community](https://facebook.com/groups/plugpress)
 
 == Installation ==
 
-> Note: This plugin works with Divi. Ensure you have [Divi Theme](https://www.elegantthemes.com/) installed.
+### Automatic Installation
 
-1. Install Divi Carousel via the WordPress plugin directory or by uploading the files to your server at `wp-content/plugins`.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Add the carousel modules to your Divi Builder and customize them as needed.
+1. Log in to your WordPress dashboard
+2. Navigate to Plugins > Add New
+3. Search for "Divi Carousel Free."
+4. Click "Install Now" and then "Activate."
+5. Start using the carousel modules in Divi Builder
 
-For more information, please visit our [Knowledge Base](https://diviepic.com/docs-category/carousel-pro/?utm_campaign=wporg&utm_source=carousel).
+### Manual Installation
+
+1. Download the plugin zip file
+2. Go to Plugins > Add New > Upload Plugin
+3. Choose the downloaded zip file
+4. Click "Install Now" and then "Activate Plugin."
+5. Access the carousel modules through Divi Builder
+
+### Getting Started
+
+1. Edit any page with Divi Builder (Visual Builder or Backend Builder)
+2. Add a new section or row
+3. Click to add a new module
+4. Search for "Carousel" in the module search
+5. Select Image Carousel, Logo Carousel, or Carousel Maker
+6. Configure your carousel settings
+7. Add your content (images, logos, or child modules)
+8. Customize the design using Divi's design options
+9. Save and view your beautiful carousel
+
+For detailed instructions, visit our documentation at: https://divipeople.com/docs
 
 == Frequently Asked Questions ==
 
-**Q: Does Divi Carousel work with any theme?**
+= Does Divi Carousel work with any WordPress theme? =
 
-A: No, Divi Carousel is specifically built for the Divi Theme by Elegant Themes.
+No, Divi Carousel is built exclusively for the Divi Theme and Divi Builder by Elegant Themes. You must have either Divi Theme or Divi Builder plugin installed to use this carousel plugin.
 
-**Q: Is the plugin responsive?**
+= Is Divi Carousel responsive? =
 
-A: Yes, all modules are fully responsive and look great on all devices.
+Yes, absolutely! Divi Carousel is fully responsive and mobile-friendly. All carousels automatically adapt to different screen sizes and include touch-swipe gestures for mobile devices.
 
-**Q: How can I get support?**
+= Can I use any Divi module inside the Carousel Maker? =
 
-A: Visit our [Knowledge Base](https://diviepic.com/docs/?utm_campaign=wporg&utm_source=carousel) or [Contact Support](https://diviepic.com/contact/?utm_campaign=wporg&utm_source=carousel).
+Yes! The Carousel Maker module allows you to use any Divi module – including custom modules and third-party modules – inside a carousel layout.
+
+= Will Divi Carousel slow down my website? =
+
+No. Divi Carousel is optimized for performance with lightweight code, efficient JavaScript, and optimized loading. It only loads the resources needed for the carousels on your page.
+
+= What's the difference between the free and pro versions? =
+
+The free version includes the Image Carousel, Logo Carousel, and Carousel Maker modules, each with core carousel features. Divi Carousel Pro adds premium modules (Testimonial, Team, Video, Product, Blog Post, Twitter Feed, Google Reviews, Instagram Feed) and advanced features like 3D effects, lightbox, vertical mode, and priority support.
+
+= Do I need coding knowledge to use Divi Carousel? =
+
+Not at all! Divi Carousel is designed to be user-friendly with a visual interface. All settings and customizations are done through Divi's intuitive builder interface.
+
+= Can I display WooCommerce products in a carousel? =
+
+The Product Carousel module is available in Divi Carousel Pro. It allows you to display WooCommerce products with add-to-cart buttons, prices, ratings, and more.
+
+= Does Divi Carousel support RTL languages? =
+
+Yes, Divi Carousel includes full support for RTL (Right-to-Left) languages like Arabic and Hebrew.
+
+= Where can I get support? =
+
+Free support is available through the WordPress.org support forum. Divi Carousel Pro users receive priority email support with faster response times.
+
+= Can I use Divi Carousel on client websites? =
+
+Yes! You can use Divi Carousel Free on unlimited websites. Divi Carousel Pro also includes a commercial license for client projects.
+
+= Is there a money-back guarantee for the pro version? =
+
+Yes, Divi Carousel Pro includes a 30-day money-back guarantee. If you're not satisfied, you can request a full refund within 30 days of purchase.
 
 == Screenshots ==
 
-1. Image Carousel Example.
-2. Logo Carousel in Action.
+1. Image Carousel with multiple slides and navigation controls
+2. Logo Carousel showcasing client brands
+3. Carousel Maker with Divi modules
+4. Module settings in Divi Builder
+5. Responsive design on mobile devices
+6. Dashboard settings panel
 
 == Changelog ==
 
+= 2.1.5 - 2025-01-27 =
+* Update: Enhanced WordPress 6.8 compatibility
+* Update: Improved performance and loading speed
+* Fix: Minor bug fixes and improvements
+
 = 2.1.4 =
-* Name changed to Carousel Maker for Divi.
+* Update: Plugin renamed to Divi Carousel Free
+* Update: Improved branding and consistency
 
 = 2.1.3 =
-* Fixed: Navigation arrow icon issue.
+* Fix: Navigation arrow icon display issue
 
 = 2.1.2 =
-* Fixed: Image Carousel title and description alignment.
+* Fix: Image Carousel title and description alignment
 
 = 2.1.1 =
-* Fixed: Lightbox issue.
+* Fix: Lightbox functionality restored
 
 = 2.1.0 =
-* Fixed: Name conflict with another plugin resolved
-* Added: New carousel maker module for enhanced functionality
-* Updated: Completely redesigned dashboard interface
-* Improved: Overall performance and stability
-* Tested: Compatible with WordPress 6.7.1
+* New: Carousel Maker module added
+* Update: Redesigned admin dashboard
+* Fix: Resolved plugin conflict issues
+* Update: WordPress 6.7.1 compatibility
+* Improvement: Overall performance enhancements
 
 = 2.0.4 =
-* Fixed: PHP notice.
-* Removed: Freemius analytics. ( for security reasons )
-
-= 2.0.3 =
-* Fixed: Minor bug fixes and performance improvements.
-
-= 2.0.2 =
-* Fixed: Compatibility issues with WordPress 6.7.1.
-
-= 2.0.1 =
-* Fixed: Navigation arrows and pagination dots issues.
+* Fix: PHP notice resolved
+* Update: Security improvements
 
 = 2.0.0 =
-* Codebase cleanup.
-* Compatibility: Tested with WordPress 6.4.
-* Dummy data default option added for image carousel and logo carousel.
+* Update: Major codebase cleanup
+* New: Default dummy data for quick setup
+* Update: WordPress 6.4 compatibility
+* Improvement: Code optimization
 
 = 1.2.14 =
-* Fixed: Module name and JS error.
-* Removed: Old feedback notice.
+* Fix: Module naming conflicts
+* Fix: JavaScript errors
 
 = 1.2.13 =
-* Fixed: PHP 8 warnings.
-
-= 1.2.12 =
-* Fixed: Minor issues.
-
-= 1.2.11 =
-* Removed: Freemius analytics.
-* Removed: About section in the admin page.
+* Fix: PHP 8 compatibility warnings
 
 = 1.2.8 =
-* Resolved: PHP 8 warning.
-* Introduced: RTL support.
-
-= 1.2.7 =
-* Rectified: Missing scripts and styles bug.
-
-= 1.2.6 =
-* Fixed: Conflicts between Pro and Lite versions.
-
-= 1.2.3 =
-* Integrated: Freemius SDK.
-* Updated: Security issue addressed.
-
-= 1.2.2 =
-* Removed: Appsero analytics.
-
-= 1.2.0 =
-* Implemented: Lite version design compatibility in the Pro version.
-* Added: Appsero analytics.
-
-= 1.1.1 =
-* Resolved: Logo carousel PHP notice.
-* Compatibility: Updated for the new Divi version.
-
-= 1.1.0 =
-* Added: New demo links.
-* Fixed: Image module issue.
-
-= 1.0.8 =
-* Introduced: Fade effect.
-
-= 1.0.7 =
-* Added: Admin label for child module.
-* Fixed: Slide highlight feature issue.
-
-= 1.0.6 =
-* Implemented: Lightbox feature.
-* Rectified: Minor bugs.
-* Compatibility: Tested with WordPress and Divi.
+* Update: Full RTL support added
+* Fix: PHP 8 warnings resolved
 
 = 1.0.0 =
-* Initial public release.
+* Initial release of Divi Carousel
 
 == Upgrade Notice ==
 
+= 2.1.5 =
+Important update with WordPress 6.8 compatibility and performance improvements. Recommended for all users.
+
 = 2.1.0 =
-Important update with major improvements including plugin conflict resolution, new carousel maker module, redesigned dashboard, and enhanced compatibility with WordPress 6.7.1. Upgrade recommended for all users.
+Major update with new Carousel Maker module, redesigned dashboard, and enhanced compatibility. Highly recommended upgrade.
+
+== Support ==
+
+For support, documentation, and feature requests:
+
+👉 [Support Forum](https://wordpress.org/support/plugin/wow-carousel-for-divi-lite/)
+👉 [Documentation](https://divipeople.com/docs)
+👉 [Video Tutorials](https://www.youtube.com/@plugpresshq)
+👉 [Facebook Community](https://facebook.com/groups/plugpress)
+
+Enjoying Divi Carousel? Please leave a review to help others discover it!
+
+👉 [Leave a Review](https://wordpress.org/support/plugin/wow-carousel-for-divi-lite/reviews/)

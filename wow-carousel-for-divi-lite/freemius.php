@@ -1,59 +1,47 @@
 <?php
 
-if (!function_exists('dcp_fs')) {
-
-    function dcp_fs()
+if (!function_exists('dcl_fs')) {
+    // Create a helper function for easy SDK access.
+    function dcl_fs()
     {
-        global $dcp_fs;
+        global $dcl_fs;
 
-        if (!isset($dcp_fs)) {
+        if (!isset($dcl_fs)) {
             // Include Freemius SDK.
-            require_once dirname(__FILE__) . '/freemius/start.php';
+            require_once dirname(__FILE__) . '/vendor/freemius/start.php';
 
-            $dcp_fs = fs_dynamic_init(array(
+            $dcl_fs = fs_dynamic_init(array(
                 'id'                  => '15011',
                 'slug'                => 'wow-carousel-for-divi-lite',
+                'premium_slug'        => 'divi-carousel-pro',
                 'type'                => 'plugin',
                 'public_key'          => 'pk_252a2b82cb841adfe6f9c575ca5d9',
                 'is_premium'          => false,
-                'is_premium_only'     => false,
-                'has_addons'          => false,
+                'has_premium_version' => true,
                 'has_paid_plans'      => true,
+                'has_addons'          => false,
                 'menu'                => array(
-                    'slug'           => 'divi-carousel',
+                    'slug'           => 'divi-carousel-free',
+                    'account'        => true,
                     'contact'        => false,
                     'support'        => false,
-                    'account'        => false,
-                    'parent'         => array(
-                        'slug' => 'diviepic-plugins',
-                    ),
-                ),
+                )
             ));
         }
 
-        return $dcp_fs;
+        return $dcl_fs;
     }
-}
 
-// Register hooks and actions.
-function dcp_init_hooks()
-{
-    $dcp_fs = dcp_fs();
+    // Init Freemius.
+    dcl_fs();
+
+    $dcl_fs = dcl_fs();
 
     // Set plugin icon
-    $dcp_fs->add_filter('plugin_icon', function () {
-        return __DIR__ . '/assets/imgs/icon.png';
+    $dcl_fs->add_filter('plugin_icon', function () {
+        return __DIR__ . '/assets/imgs/icon.svg';
     });
 
-    // Disable affiliate notice
-    $dcp_fs->add_filter('show_affiliate_program_notice', '__return_false');
-    // Disable auto deactivation
-    $dcp_fs->add_filter('deactivate_on_activation', '__return_false');
-    // Disable redirect on activation
-    $dcp_fs->add_filter('redirect_on_activation', '__return_false');
-
     // Signal that SDK was initiated.
-    do_action('dcp_fs_loaded');
+    do_action('dcl_fs_loaded');
 }
-
-dcp_init_hooks();

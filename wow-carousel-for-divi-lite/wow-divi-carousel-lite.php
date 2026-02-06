@@ -1,14 +1,14 @@
 <?php
 /*
-Plugin Name: Carousel Maker for Divi
-Plugin URI:  https://divicarouselmaker.com/
-Description: Carousel Maker the most powerful and user-friendly Divi Carousel plugin to create beautiful carousels with any modules.
-Version:     2.1.4
-Author:      PlugPress
-Author URI:  https://plugpress.co
+Plugin Name: Divi Carousel Free
+Plugin URI:  https://divistack.io/divi-slider-pro/
+Description: Divi Carousel plugin to create beautiful carousels with any modules.
+Version:     2.1.5
+Author:      DiviStack
+Author URI:  https://divistack.io
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: divi-carousel-lite
+Text Domain: divi-carousel-free
 Domain Path: /languages
 */
 
@@ -16,69 +16,82 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('DCM_PLUGIN_VERSION', '2.1.4');
-define('DCM_PLUGIN_DIR', plugin_dir_path(__FILE__));
-define('DCM_PLUGIN_URL', plugin_dir_url(__FILE__));
-define('DCM_PLUGIN_ASSETS', trailingslashit(DCM_PLUGIN_URL . 'assets'));
-define('DCM_PLUGIN_FILE', __FILE__);
-define('DCM_PLUGIN_BASE', plugin_basename(__FILE__));
-
-if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
-    return;
-}
-
-require_once __DIR__ . '/vendor/autoload.php';
-
-function dcl_is_pro_installed()
+// Prevent duplicate plugin activation
+function dcf_check_plugin_conflict()
 {
-    return defined('DIVI_CAROUSEL_PRO_VERSION');
-}
+    $conflicts = ['divi-carousel-free/divi-carousel-free.php', 'wow-carousel-for-divi-lite/wow-divi-carousel-lite.php'];
+    $current = plugin_basename(__FILE__);
 
-function dcl_is_dm_pro_installed()
-{
-    return defined('DIVI_CAROUSEL_PRO_VERSION') && 'wow-divi-carousel' === DIVI_CAROUSEL_PRO_BASE;
-}
-
-function divi_carousel_maker_library()
-{
-    $layouts = array(
-        '-1' => esc_html__(' --Select a Slide-- ', 'divi-carousel-lite')
-    );
-
-    $saved_layouts = get_posts(array(
-        'post_type'      => 'et_pb_layout',
-        'post_status'    => 'publish',
-        'posts_per_page' => -1,
-        'orderby'        => 'title',
-    ));
-
-    if (!empty($saved_layouts)) {
-        $layout_options = wp_list_pluck($saved_layouts, 'post_title', 'ID');
-        $layouts = array_merge($layouts, $layout_options);
-    }
-
-    return $layouts;
-}
-
-function dcm_global_assets_list($global_list)
-{
-
-    $assets_list   = array();
-    $assets_prefix = et_get_dynamic_assets_path();
-
-    $assets_list['et_icons_fa'] = array(
-        'css' => "{$assets_prefix}/css/icons_fa_all.css",
-    );
-
-    return array_merge($global_list, $assets_list);
-}
-
-function dcm_inject_fa_icons($icon_data)
-{
-    if (function_exists('et_pb_maybe_fa_font_icon') && et_pb_maybe_fa_font_icon($icon_data)) {
-        add_filter('et_global_assets_list', 'dcm_global_assets_list');
-        add_filter('et_late_global_assets_list', 'dcm_global_assets_list');
+    foreach ($conflicts as $plugin) {
+        if ($plugin !== $current && is_plugin_active($plugin)) {
+            deactivate_plugins($current);
+            wp_die(
+                __('Another version of Divi Carousel is already active. Please deactivate it first.', 'divi-carousel-free'),
+                __('Plugin Conflict', 'divi-carousel-free'),
+                ['back_link' => true]
+            );
+        }
     }
 }
 
-require_once 'plugin-loader.php';
+register_activation_hook(__FILE__, 'dcf_check_plugin_conflict');
+
+add_action('plugins_loaded', function () {
+    if (!function_exists('is_plugin_active')) {
+        require_once ABSPATH . 'wp-admin/includes/plugin.php';
+    }
+
+    $conflicts = ['divi-carousel-free/divi-carousel-free.php', 'wow-carousel-for-divi-lite/wow-divi-carousel-lite.php'];
+    $current = plugin_basename(__FILE__);
+
+    foreach ($conflicts as $plugin) {
+        if ($plugin !== $current && is_plugin_active($plugin)) {
+            deactivate_plugins($current, true);
+            add_action('admin_notices', function () {
+                echo '<div class="notice notice-error"><p>' . __('Divi Carousel has been deactivated due to a conflict with another version.', 'divi-carousel-free') . '</p></div>';
+            });
+            return;
+        }
+    }
+}, 1);
+
+define('DCF_PLUGIN_VERSION', '2.1.5');
+define('DCF_PLUGIN_DIR', plugin_dir_path(__FILE__));
+define('DCF_PLUGIN_URL', plugin_dir_url(__FILE__));
+define('DCF_PLUGIN_ASSETS', trailingslashit(DCF_PLUGIN_URL . 'assets'));
+define('DCF_PLUGIN_FILE', __FILE__);
+define('DCF_PLUGIN_BASE', plugin_basename(__FILE__));
+
+// Freemius flag (et = false, fs = true)
+define('DCF_FS_ENABLE', true);
+
+// Freemius – only load when enabled and file exists
+if (DCF_FS_ENABLE && file_exists(__DIR__ . '/freemius.php')) {
+    require_once __DIR__ . '/freemius.php';
+}
+
+// SPL Autoloader for Divi_Carousel_Free namespace
+spl_autoload_register(function ($class) {
+    $namespace = 'Divi_Carousel_Free\\';
+
+    if (strpos($class, $namespace) !== 0) {
+        return;
+    }
+
+    $class_name = str_replace($namespace, '', $class);
+    $base_dir = DCF_PLUGIN_DIR . 'includes/';
+
+    $file = $base_dir . strtolower(str_replace('_', '-', $class_name)) . '.php';
+
+    if (file_exists($file)) {
+        require_once $file;
+    }
+});
+
+use Divi_Carousel_Free\Plugin;
+
+// Run activation logic when the plugin is activated.
+register_activation_hook(DCF_PLUGIN_FILE, array(Plugin::class, 'activation'));
+
+// Bootstrap the plugin.
+new Plugin();
