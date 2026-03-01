@@ -1,0 +1,69 @@
+{
+  "advanced": {
+    "admin_label": "module.meta.adminLabel",
+    "animation": "module.decoration.animation",
+    "background": "module.decoration.background",
+    "borders": {
+      "default": "module.decoration.border"
+    },
+    "box_shadow": {
+      "default": "module.decoration.boxShadow"
+    },
+    "disabled_on": "module.decoration.disabledOn",
+    "filters": {
+      "default": "module.decoration.filters"
+    },
+    "margin_padding": "module.decoration.spacing",
+    "max_width": "module.decoration.sizing",
+    "overflow": "module.decoration.overflow",
+    "scroll": "module.decoration.scroll",
+    "transform": "module.decoration.transform",
+    "transition": "module.decoration.transition",
+    "z_index": "module.decoration.zIndex"
+  },
+  "css": {
+    "before": "css.*.before",
+    "after": "css.*.after",
+    "main_element": "css.*.mainElement"
+  },
+  "module": {
+    "slide_count": "module.advanced.slideCount.*",
+    "slide_spacing": "module.advanced.slideSpacing.*",
+    "slide_to_scroll": "module.advanced.slideToScroll.*",
+    "animation_speed": "module.advanced.animationSpeed.*",
+    "is_autoplay": "module.advanced.isAutoplay.*",
+    "autoplay_speed": "module.advanced.autoplaySpeed.*",
+    "is_infinite": "module.advanced.isInfinite.*",
+    "is_auto_height": "module.advanced.isAutoHeight.*",
+    "sliding_dir": "module.advanced.slidingDir.*",
+    "is_fade": "module.advanced.isFade.*",
+    "is_vertical": "module.advanced.isVertical.*",
+    "is_center": "module.advanced.isCenter.*",
+    "center_mode_type": "module.advanced.centerModeType.*",
+    "center_padding": "module.advanced.centerPadding.*",
+    "nav_pagi": "module.advanced.navPagi.*",
+    "custom_cursor": "module.advanced.customCursor.*",
+    "carousel_spacing_top": "module.advanced.carouselSpacingTop.*",
+    "carousel_spacing_bottom": "module.advanced.carouselSpacingBottom.*",
+    "arrow_height": "module.advanced.arrowHeight.*",
+    "arrow_width": "module.advanced.arrowWidth.*",
+    "arrow_icon_size": "module.advanced.arrowIconSize.*",
+    "arrow_color": "module.advanced.arrowColor.*",
+    "arrow_bg": "module.advanced.arrowBg.*",
+    "arrow_pos_y": "module.advanced.arrowPosY.*",
+    "arrow_pos_x": "module.advanced.arrowPosX.*",
+    "arrow_border_width": "module.advanced.arrowBorderWidth.*",
+    "arrow_border_color": "module.advanced.arrowBorderColor.*",
+    "arrow_border_style": "module.advanced.arrowBorderStyle.*",
+    "arrow_border_radius": "module.advanced.arrowBorderRadius.*",
+    "pagi_color": "module.advanced.pagiColor.*",
+    "pagi_height": "module.advanced.pagiHeight.*",
+    "pagi_width": "module.advanced.pagiWidth.*",
+    "pagi_radius": "module.advanced.pagiBorderRadius.*",
+    "pagi_pos_y": "module.advanced.pagiPosY.*",
+    "pagi_spacing": "module.advanced.pagiSpacing.*",
+    "pagi_color_active": "module.advanced.pagiColorActive.*",
+    "pagi_width_active": "module.advanced.pagiWidthActive.*",
+    "use_lightbox": "module.advanced.useLightbox.*"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "advanced": {
+    "admin_label": "module.meta.adminLabel",
+    "borders": {
+      "item": "module.decoration.border"
+    },
+    "fonts": {
+      "title": "module.decoration.font",
+      "subtitle": "module.decoration.font"
+    },
+    "margin_padding": "module.decoration.spacing"
+  },
+  "css": {
+    "before": "css.*.before",
+    "after": "css.*.after",
+    "main_element": "css.*.mainElement"
+  },
+  "module": {
+    "photo": "image.innerContent.*",
+    "photo_alt": "module.advanced.photoAlt.*",
+    "title": "module.advanced.title.*",
+    "sub_title": "module.advanced.subtitle.*",
+    "image_height": "module.advanced.imageHeight.*",
+    "image_hover_animation": "module.advanced.imageHoverAnimation.*",
+    "content_type": "module.advanced.contentType.*",
+    "content_alignment": "module.advanced.contentAlignment.*",
+    "content_pos_x": "module.advanced.contentPosX.*",
+    "content_pos_y": "module.advanced.contentPosY.*",
+    "content_width": "module.advanced.contentWidth.*",
+    "title_bottom_spacing": "module.advanced.titleBottomSpacing.*",
+    "overlay_icon": "module.advanced.overlayIcon.*",
+    "overlay_color": "module.advanced.overlayColor.*",
+    "overlay_icon_color": "module.advanced.overlayIconColor.*",
+    "overlay_icon_size": "module.advanced.overlayIconSize.*",
+    "content_bg_color": "module.advanced.contentBgColor.*",
+    "admin_title": "module.meta.adminLabel.*"
+  }
+}
