@@ -58,19 +58,9 @@
               "value": "off"
             }
           },
-          "tickerSpeed": {
+          "carouselHeight": {
             "desktop": {
-              "value": "30s"
-            }
-          },
-          "tickerDirection": {
-            "desktop": {
-              "value": "left"
-            }
-          },
-          "tickerPauseOnHover": {
-            "desktop": {
-              "value": "on"
+              "value": "400px"
             }
           },
           "animationSpeed": {
@@ -121,6 +111,26 @@
           "customCursor": {
             "desktop": {
               "value": "off"
+            }
+          },
+          "tickerSpeed": {
+            "desktop": {
+              "value": "30s"
+            }
+          },
+          "tickerDirection": {
+            "desktop": {
+              "value": "left"
+            }
+          },
+          "tickerPauseOnHover": {
+            "desktop": {
+              "value": "on"
+            }
+          },
+          "tickerItemWidth": {
+            "desktop": {
+              "value": "250px"
             }
           },
           "carouselSpacingTop": {
@@ -337,7 +347,7 @@
               "groupSlug": "carouselSettings",
               "attrName": "module.advanced.slideSpacing",
               "label": "Slide Spacing",
-              "priority": 20,
+              "priority": 15,
               "render": true,
               "features": {
                 "sticky": false,
@@ -368,7 +378,7 @@
               "groupSlug": "carouselSettings",
               "attrName": "module.advanced.slideToScroll",
               "label": "Items to Scroll",
-              "priority": 30,
+              "priority": 20,
               "render": true,
               "features": {
                 "sticky": false,
@@ -416,7 +426,7 @@
               "groupSlug": "carouselSettings",
               "attrName": "module.advanced.slidingDir",
               "label": "Sliding Direction",
-              "priority": 40,
+              "priority": 25,
               "render": true,
               "features": {
                 "sticky": false,
@@ -446,7 +456,7 @@
               "groupSlug": "carouselSettings",
               "attrName": "module.advanced.isFade",
               "label": "Fade Effect",
-              "priority": 50,
+              "priority": 30,
               "render": true,
               "features": {
                 "sticky": false,
@@ -466,7 +476,7 @@
               "groupSlug": "carouselSettings",
               "attrName": "module.advanced.isVertical",
               "label": "Vertical Mode",
-              "priority": 60,
+              "priority": 6,
               "render": true,
               "features": {
                 "sticky": false,
@@ -480,17 +490,17 @@
               }
             }
           },
-          "tickerSpeed": {
+          "carouselHeight": {
             "groupType": "group-item",
             "item": {
-              "groupSlug": "tickerSettings",
-              "attrName": "module.advanced.tickerSpeed",
-              "label": "Ticker Speed",
-              "priority": 10,
+              "groupSlug": "carouselSettings",
+              "attrName": "module.advanced.carouselHeight",
+              "label": "Carousel Height",
+              "priority": 7,
               "render": true,
               "features": {
                 "sticky": false,
-                "responsive": false,
+                "responsive": true,
                 "hover": false,
                 "dynamicContent": false
               },
@@ -498,74 +508,27 @@
                 "type": "field",
                 "name": "divi/range",
                 "props": {
-                  "min": 5,
-                  "max": 120,
-                  "step": 1,
-                  "defaultUnit": "s",
+                  "min": 100,
+                  "max": 1200,
+                  "step": 10,
+                  "defaultUnit": "px",
                   "allowedUnits": [
-                    "s"
+                    "px",
+                    "vh",
+                    "em",
+                    "rem"
                   ]
                 }
-              }
-            }
-          },
-          "tickerDirection": {
-            "groupType": "group-item",
-            "item": {
-              "groupSlug": "tickerSettings",
-              "attrName": "module.advanced.tickerDirection",
-              "label": "Ticker Direction",
-              "priority": 20,
-              "render": true,
-              "features": {
-                "sticky": false,
-                "responsive": false,
-                "hover": false,
-                "dynamicContent": false
-              },
-              "component": {
-                "type": "field",
-                "name": "divi/select",
-                "props": {
-                  "options": {
-                    "left": {
-                      "label": "Left"
-                    },
-                    "right": {
-                      "label": "Right"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "tickerPauseOnHover": {
-            "groupType": "group-item",
-            "item": {
-              "groupSlug": "tickerSettings",
-              "attrName": "module.advanced.tickerPauseOnHover",
-              "label": "Pause on Hover",
-              "priority": 30,
-              "render": true,
-              "features": {
-                "sticky": false,
-                "responsive": false,
-                "hover": false,
-                "dynamicContent": false
-              },
-              "component": {
-                "type": "field",
-                "name": "divi/toggle"
               }
             }
           },
           "animationSpeed": {
             "groupType": "group-item",
             "item": {
-              "groupSlug": "autoplaySettings",
+              "groupSlug": "carouselSettings",
               "attrName": "module.advanced.animationSpeed",
               "label": "Animation Speed",
-              "priority": 10,
+              "priority": 40,
               "render": true,
               "features": {
                 "sticky": false,
@@ -591,10 +554,10 @@
           "isAutoplay": {
             "groupType": "group-item",
             "item": {
-              "groupSlug": "autoplaySettings",
+              "groupSlug": "carouselSettings",
               "attrName": "module.advanced.isAutoplay",
               "label": "Autoplay",
-              "priority": 20,
+              "priority": 45,
               "render": true,
               "features": {
                 "sticky": false,
@@ -611,10 +574,10 @@
           "autoplaySpeed": {
             "groupType": "group-item",
             "item": {
-              "groupSlug": "autoplaySettings",
+              "groupSlug": "carouselSettings",
               "attrName": "module.advanced.autoplaySpeed",
               "label": "Autoplay Speed",
-              "priority": 30,
+              "priority": 50,
               "render": true,
               "features": {
                 "sticky": false,
@@ -640,10 +603,10 @@
           "isInfinite": {
             "groupType": "group-item",
             "item": {
-              "groupSlug": "autoplaySettings",
+              "groupSlug": "carouselSettings",
               "attrName": "module.advanced.isInfinite",
               "label": "Infinite Looping",
-              "priority": 40,
+              "priority": 55,
               "render": true,
               "features": {
                 "sticky": false,
@@ -660,10 +623,10 @@
           "isAutoHeight": {
             "groupType": "group-item",
             "item": {
-              "groupSlug": "autoplaySettings",
+              "groupSlug": "carouselSettings",
               "attrName": "module.advanced.isAutoHeight",
               "label": "Auto Height",
-              "priority": 50,
+              "priority": 60,
               "render": true,
               "features": {
                 "sticky": false,
@@ -680,10 +643,10 @@
           "isCenter": {
             "groupType": "group-item",
             "item": {
-              "groupSlug": "centerModeSettings",
+              "groupSlug": "carouselSettings",
               "attrName": "module.advanced.isCenter",
               "label": "Center Mode",
-              "priority": 10,
+              "priority": 65,
               "render": true,
               "features": {
                 "sticky": false,
@@ -700,10 +663,10 @@
           "centerModeType": {
             "groupType": "group-item",
             "item": {
-              "groupSlug": "centerModeSettings",
+              "groupSlug": "carouselSettings",
               "attrName": "module.advanced.centerModeType",
               "label": "Center Mode Type",
-              "priority": 20,
+              "priority": 70,
               "render": true,
               "features": {
                 "sticky": false,
@@ -730,10 +693,10 @@
           "centerPadding": {
             "groupType": "group-item",
             "item": {
-              "groupSlug": "centerModeSettings",
+              "groupSlug": "carouselSettings",
               "attrName": "module.advanced.centerPadding",
               "label": "Center Padding",
-              "priority": 30,
+              "priority": 75,
               "render": true,
               "features": {
                 "sticky": false,
@@ -759,10 +722,10 @@
           "navPagi": {
             "groupType": "group-item",
             "item": {
-              "groupSlug": "extraSettings",
+              "groupSlug": "carouselSettings",
               "attrName": "module.advanced.navPagi",
               "label": "Navigation & Pagination",
-              "priority": 10,
+              "priority": 80,
               "render": true,
               "features": {
                 "sticky": false,
@@ -795,10 +758,10 @@
           "customCursor": {
             "groupType": "group-item",
             "item": {
-              "groupSlug": "extraSettings",
+              "groupSlug": "carouselSettings",
               "attrName": "module.advanced.customCursor",
               "label": "Use Custom Cursor",
-              "priority": 20,
+              "priority": 85,
               "render": true,
               "features": {
                 "sticky": false,
@@ -809,6 +772,117 @@
               "component": {
                 "type": "field",
                 "name": "divi/toggle"
+              }
+            }
+          },
+          "tickerSpeed": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "carouselSettings",
+              "attrName": "module.advanced.tickerSpeed",
+              "label": "Ticker Speed",
+              "priority": 92,
+              "render": true,
+              "features": {
+                "sticky": false,
+                "responsive": false,
+                "hover": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "type": "field",
+                "name": "divi/range",
+                "props": {
+                  "min": 5,
+                  "max": 120,
+                  "step": 1,
+                  "defaultUnit": "s",
+                  "allowedUnits": [
+                    "s"
+                  ]
+                }
+              }
+            }
+          },
+          "tickerDirection": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "carouselSettings",
+              "attrName": "module.advanced.tickerDirection",
+              "label": "Ticker Direction",
+              "priority": 94,
+              "render": true,
+              "features": {
+                "sticky": false,
+                "responsive": false,
+                "hover": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "type": "field",
+                "name": "divi/select",
+                "props": {
+                  "options": {
+                    "left": {
+                      "label": "Left"
+                    },
+                    "right": {
+                      "label": "Right"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "tickerPauseOnHover": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "carouselSettings",
+              "attrName": "module.advanced.tickerPauseOnHover",
+              "label": "Pause on Hover",
+              "priority": 96,
+              "render": true,
+              "features": {
+                "sticky": false,
+                "responsive": false,
+                "hover": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "type": "field",
+                "name": "divi/toggle"
+              }
+            }
+          },
+          "tickerItemWidth": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "carouselSettings",
+              "attrName": "module.advanced.tickerItemWidth",
+              "label": "Item Width",
+              "priority": 98,
+              "render": true,
+              "features": {
+                "sticky": false,
+                "responsive": true,
+                "hover": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "type": "field",
+                "name": "divi/range",
+                "props": {
+                  "min": 50,
+                  "max": 800,
+                  "step": 1,
+                  "defaultUnit": "px",
+                  "allowedUnits": [
+                    "px",
+                    "em",
+                    "rem",
+                    "%"
+                  ]
+                }
               }
             }
           },
@@ -1606,50 +1680,6 @@
           "name": "divi/composite",
           "props": {
             "groupLabel": "Carousel Settings"
-          }
-        }
-      },
-      "tickerSettings": {
-        "panel": "content",
-        "priority": 15,
-        "groupName": "tickerSettings",
-        "component": {
-          "name": "divi/composite",
-          "props": {
-            "groupLabel": "Ticker Settings"
-          }
-        }
-      },
-      "autoplaySettings": {
-        "panel": "content",
-        "priority": 20,
-        "groupName": "autoplaySettings",
-        "component": {
-          "name": "divi/composite",
-          "props": {
-            "groupLabel": "Autoplay & Speed"
-          }
-        }
-      },
-      "centerModeSettings": {
-        "panel": "content",
-        "priority": 30,
-        "groupName": "centerModeSettings",
-        "component": {
-          "name": "divi/composite",
-          "props": {
-            "groupLabel": "Center Mode"
-          }
-        }
-      },
-      "extraSettings": {
-        "panel": "content",
-        "priority": 40,
-        "groupName": "extraSettings",
-        "component": {
-          "name": "divi/composite",
-          "props": {
-            "groupLabel": "Navigation & Extras"
           }
         }
       },

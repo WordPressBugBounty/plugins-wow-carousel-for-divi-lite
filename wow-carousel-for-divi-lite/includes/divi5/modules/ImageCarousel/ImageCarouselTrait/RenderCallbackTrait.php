@@ -40,6 +40,7 @@ trait RenderCallbackTrait
         $ticker_speed          = $get('module.advanced.tickerSpeed', '30s');
         $ticker_direction      = $get('module.advanced.tickerDirection', 'left');
         $ticker_pause_on_hover = $get('module.advanced.tickerPauseOnHover', 'on');
+        $ticker_item_width     = $get('module.advanced.tickerItemWidth', '250px');
 
         // Carousel settings.
         $use_lightbox     = $get('module.advanced.useLightbox', 'off');
@@ -86,12 +87,21 @@ trait RenderCallbackTrait
             $classes[] = 'dcf-cursor';
         }
 
+        if ($is_vertical) {
+            $classes[] = 'dcf-vertical';
+        }
+
+        // Arrow SVGs.
+        $prev_svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>';
+        $next_svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>';
+
         // Build children HTML.
         if ($is_ticker) {
             $ticker_style = sprintf(
-                '--dcf-ticker-speed:%s;--dcf-ticker-direction:%s;',
+                '--dcf-ticker-speed:%s;--dcf-ticker-direction:%s;--dcf-ticker-item-width:%s;',
                 esc_attr($ticker_speed),
-                $ticker_direction === 'right' ? 'reverse' : 'normal'
+                $ticker_direction === 'right' ? 'reverse' : 'normal',
+                esc_attr($ticker_item_width)
             );
 
             $children = sprintf(
@@ -114,7 +124,7 @@ trait RenderCallbackTrait
             $show_nav  = in_array($nav_pagi, ['nav', 'nav_pagi'], true);
             $show_pagi = in_array($nav_pagi, ['pagi', 'nav_pagi'], true);
 
-            $nav_html  = $show_nav  ? '<div class="swiper-button-prev"></div><div class="swiper-button-next"></div>' : '';
+            $nav_html  = $show_nav  ? '<div class="swiper-button-prev">' . $prev_svg . '</div><div class="swiper-button-next">' . $next_svg . '</div>' : '';
             $pagi_html = $show_pagi ? '<div class="swiper-pagination"></div>' : '';
 
             $children = sprintf(
@@ -184,14 +194,16 @@ trait RenderCallbackTrait
         }
 
         if ($vertical) {
-            $config['direction'] = 'vertical';
+            $config['direction']     = 'vertical';
+            $config['slidesPerView'] = 1;
+            $config['spaceBetween']  = $space;
         }
 
         if ($centered) {
             $config['centeredSlides'] = true;
         }
 
-        if ($auto_height) {
+        if ($auto_height && !$vertical) {
             $config['autoHeight'] = true;
         }
 

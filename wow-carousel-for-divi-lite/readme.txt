@@ -4,7 +4,7 @@ Contributors: plugpressco, badhonrocks, divipeople
 Tags: divi, carousel, divi carousel, logo carousel, image carousel
 Requires at least: 5.0
 Tested up to: 6.9
-Stable tag: 3.0.1
+Stable tag: 3.0.2
 Requires PHP: 7.4
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -15,7 +15,7 @@ Create beautiful, responsive image and logo carousels for the Divi Builder — n
 
 **Divi Carousel Free** is a carousel plugin designed exclusively for the Divi Theme and Divi Builder. Create stunning, responsive carousels in minutes without writing a single line of code.
 
-Whether you need an image gallery carousel or a logo showcase, this plugin integrates seamlessly with Divi's visual builder interface.
+Whether you need an image carousel or a logo showcase, this plugin integrates seamlessly with Divi's visual builder interface.
 
 = Why Choose Divi Carousel Free? =
 
@@ -117,6 +117,13 @@ Free support is available through the [WordPress.org support forum](https://word
 5. Admin dashboard settings panel
 
 == Changelog ==
+
+= 3.0.2 =
+* Fix: Minor bug fixes and performance improvements
+* Fix: Compatibility with Divi 5
+
+= 3.0.1 =
+* Fix: Compatibility issue with Divi 5
 
 = 3.0.0 =
 * New: Divi 5 compatibility
