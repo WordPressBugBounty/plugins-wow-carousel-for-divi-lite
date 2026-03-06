@@ -4,7 +4,7 @@
  * Plugin Name:       Divi Carousel Free
  * Plugin URI:        https://DiviPeople.com
  * Description:       Divi Carousel plugin to create beautiful carousels with any modules.
- * Version:           3.0.2
+ * Version:           3.0.3
  * Author:            DiviPeople
  * Author URI:        https://DiviPeople.com
  * License:           GPL2
