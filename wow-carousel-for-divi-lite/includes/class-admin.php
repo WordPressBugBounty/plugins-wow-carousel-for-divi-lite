@@ -34,20 +34,27 @@ class Admin
 
         // Get asset file
         $asset_file = DCF_DIST_DIR . 'admin/admin.asset.php';
-        $asset_info = file_exists($asset_file) ? include $asset_file : [
+        $asset_info = [
             'dependencies' => [],
-            'version' => DCF_PLUGIN_VERSION,
+            'version'      => DCF_PLUGIN_VERSION,
         ];
+
+        if (file_exists($asset_file)) {
+            $loaded = include $asset_file;
+            if (is_array($loaded)) {
+                $asset_info = $loaded;
+            }
+        }
 
         // Enqueue admin script
         wp_enqueue_script(
             'divi-carousel-free-admin',
             DCF_DIST_URL . 'admin/admin.js',
             array_merge(
-                $asset_info['dependencies'],
+                $asset_info['dependencies'] ?? [],
                 ['wp-element', 'wp-api-fetch', 'wp-i18n']
             ),
-            $asset_info['version'],
+            $asset_info['version'] ?? DCF_PLUGIN_VERSION,
             true
         );
 

@@ -1,10 +1,10 @@
-=== Divi Carousel Free ===
+=== Divi Carousel Free (Divi5 Support) ===
 
 Contributors: plugpressco, badhonrocks, divipeople
 Tags: divi, carousel, divi carousel, logo carousel, image carousel
 Requires at least: 5.0
 Tested up to: 6.9
-Stable tag: 3.0.3
+Stable tag: 3.0.6
 Requires PHP: 7.4
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -117,6 +117,23 @@ Free support is available through the [WordPress.org support forum](https://word
 5. Admin dashboard settings panel
 
 == Changelog ==
+
+= 3.0.5 =
+* Fix: Minor bug fixes and performance improvements
+
+= 3.0.4 =
+* Fix: Plugin no longer breaks counter modules and background patterns on Divi 5 sites
+* Fix: D4 assets no longer load on Divi 5 sites preventing style conflicts
+* Fix: D5 assets no longer load on Divi 4 sites
+* Fix: Image carousel overlay icon now renders correctly in Divi 5
+* Fix: Image carousel title and subtitle font, color, and size controls now work in Divi 5
+* Fix: Title and subtitle render consistently in both Visual Builder and frontend
+* Fix: Title and subtitle font settings grouped under single "Texts" tab matching Divi 4 behavior
+* Fix: "Array to string conversion" PHP warning with icon picker in Divi 5
+* Fix: Link child elements not working in Divi 5
+
+= 3.0.3 =
+* Fix: Minor bug fixes and performance improvements
 
 = 3.0.2 =
 * Fix: Minor bug fixes and performance improvements

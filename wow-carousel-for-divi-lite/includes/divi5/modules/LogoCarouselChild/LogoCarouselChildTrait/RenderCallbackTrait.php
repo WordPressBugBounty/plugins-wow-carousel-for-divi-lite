@@ -15,6 +15,40 @@ if (!defined('ABSPATH')) {
 trait RenderCallbackTrait
 {
     /**
+     * Process a D5 icon value (object with unicode/type/weight) into a renderable character.
+     */
+    private static function process_icon_value($icon_value)
+    {
+        if (empty($icon_value)) {
+            return '';
+        }
+
+        if (is_string($icon_value)) {
+            if (function_exists('et_pb_process_font_icon')) {
+                return et_pb_process_font_icon($icon_value);
+            }
+            return $icon_value;
+        }
+
+        if (is_array($icon_value) && !empty($icon_value['unicode'])) {
+            return html_entity_decode($icon_value['unicode'], ENT_COMPAT, 'UTF-8');
+        }
+
+        return '';
+    }
+
+    /**
+     * Get the font-family for a D5 icon value.
+     */
+    private static function get_icon_font_family($icon_value)
+    {
+        if (is_array($icon_value) && isset($icon_value['type'])) {
+            return 'fa' === $icon_value['type'] ? 'FontAwesome' : 'ETmodules';
+        }
+        return 'ETmodules';
+    }
+
+    /**
      * Server side render callback for Divi 5.
      *
      * @param array  $attrs    Block attributes saved by VB.
@@ -56,7 +90,9 @@ trait RenderCallbackTrait
         }
 
         $logo_alt = $get_attr('module.advanced.alt', '');
-        $overlay_icon = $get_attr('module.advanced.overlayIcon', 'P');
+        $overlay_icon_raw = $get_attr('module.advanced.overlayIcon', 'P');
+        $overlay_char = self::process_icon_value($overlay_icon_raw);
+        $overlay_font_family = self::get_icon_font_family($overlay_icon_raw);
         $is_link = $get_attr('module.advanced.isLink', 'off');
         $link_url = $get_attr('module.advanced.linkUrl', '#');
         $link_target = $get_attr('module.advanced.linkTarget', 'off') === 'on' ? '_blank' : '_self';
@@ -88,8 +124,9 @@ trait RenderCallbackTrait
 
         // Build the full output matching D4 render structure.
         $children = sprintf(
-            '<div class="dcf-carousel-item dcf-logo-carousel-item dcf-image-swap"><div class="dcf-overlay" data-icon="%s"></div>%s</div>',
-            esc_attr($overlay_icon),
+            '<div class="dcf-carousel-item dcf-logo-carousel-item dcf-image-swap"><div class="dcf-overlay" data-icon="%s" style="--dcf-overlay-font:%s"></div>%s</div>',
+            esc_attr($overlay_char),
+            esc_attr($overlay_font_family),
             $logo_html
         );
 

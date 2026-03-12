@@ -15,14 +15,19 @@ class Plugin
     private function init_hooks()
     {
         add_action('plugins_loaded', array($this, 'load_textdomain'));
-        add_action('et_builder_ready', array($this, 'load_divi_modules'), 11);
         add_action('admin_init', array($this, 'redirect_after_activation'));
 
-        // Assets: D4 + D5 frontend, dynamic assets, VB.
+        // D5 assets (always loaded — Swiper, VB bundle, dynamic assets).
         Assets::init();
 
-        // Divi 5 modules.
+        // D5 modules (always loaded — Divi 5 handles its own detection).
         $this->load_divi5_modules();
+
+        // D4: only load modules + assets when D4 files exist AND D5 is not active.
+        if (self::has_divi4()) {
+            add_action('wp', array($this, 'maybe_load_divi4_assets'), 1);
+            add_action('et_builder_ready', array($this, 'load_divi_modules'), 11);
+        }
     }
 
     private function init_classes()
@@ -34,6 +39,35 @@ class Plugin
             new Admin();
             new Upgrade_Notice();
         }
+    }
+
+    /**
+     * Check if Divi 4 builder is available.
+     *
+     * Returns true when the D4 module files ship with this build
+     * AND the classic ET_Builder_Module class exists (Divi/Extra theme or plugin).
+     */
+    private static function has_divi4(): bool
+    {
+        // If the D4 modules directory was stripped (ET build), skip entirely.
+        if (!is_dir(DCF_PLUGIN_DIR . 'includes/divi4/modules')) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Load D4 frontend assets only on non-D5 sites.
+     */
+    public function maybe_load_divi4_assets(): void
+    {
+        if (function_exists('et_builder_d5_enabled') && et_builder_d5_enabled()) {
+            return;
+        }
+
+        require_once DCF_PLUGIN_DIR . 'includes/divi4/class-assets-d4.php';
+        Assets_D4::init();
     }
 
     public static function activation()
@@ -88,7 +122,6 @@ class Plugin
             dirname(dirname(plugin_basename(__FILE__))) . '/languages/'
         );
     }
-
 
     /**
      * Load Divi 5 modules if Divi 5 is available.

@@ -15,6 +15,42 @@ if (!defined('ABSPATH')) {
 trait RenderCallbackTrait
 {
     /**
+     * Process a D5 icon value (object with unicode/type/weight) into a renderable character.
+     */
+    private static function process_icon_value($icon_value)
+    {
+        if (empty($icon_value)) {
+            return '';
+        }
+
+        // If it's already a string (legacy single character), return as-is.
+        if (is_string($icon_value)) {
+            if (function_exists('et_pb_process_font_icon')) {
+                return et_pb_process_font_icon($icon_value);
+            }
+            return $icon_value;
+        }
+
+        // D5 icon-picker stores: { unicode: "&#x39;", type: "divi", weight: "400" }
+        if (is_array($icon_value) && !empty($icon_value['unicode'])) {
+            return html_entity_decode($icon_value['unicode'], ENT_COMPAT, 'UTF-8');
+        }
+
+        return '';
+    }
+
+    /**
+     * Get the font-family for a D5 icon value.
+     */
+    private static function get_icon_font_family($icon_value)
+    {
+        if (is_array($icon_value) && isset($icon_value['type'])) {
+            return 'fa' === $icon_value['type'] ? 'FontAwesome' : 'ETmodules';
+        }
+        return 'ETmodules';
+    }
+
+    /**
      * Server side render callback for Divi 5.
      *
      * @param array  $attrs    Block attributes saved by VB.
@@ -52,12 +88,18 @@ trait RenderCallbackTrait
         }
 
         $photo_alt = $get_attr('module.advanced.photoAlt', '');
-        $title = $get_attr('module.advanced.title', '');
-        $subtitle = $get_attr('module.advanced.subtitle', '');
         $image_hover_animation = $get_attr('module.advanced.imageHoverAnimation', 'none');
         $content_type = $get_attr('module.advanced.contentType', 'absolute');
         $content_alignment = $get_attr('module.advanced.contentAlignment', 'left');
-        $overlay_icon = $get_attr('module.advanced.overlayIcon', 'P');
+        $overlay_icon_raw = $get_attr('module.advanced.overlayIcon', 'P');
+
+        // Process icon value.
+        $overlay_char = self::process_icon_value($overlay_icon_raw);
+        $overlay_font_family = self::get_icon_font_family($overlay_icon_raw);
+
+        // Link settings (framework-managed "link" group).
+        $link_url    = $get_attr('module.advanced.link.url', '');
+        $link_target = $get_attr('module.advanced.link.target', '_self');
 
         // Placeholder image.
         if (empty($image_src)) {
@@ -67,34 +109,36 @@ trait RenderCallbackTrait
         // Render figure with overlay.
         $figure_html = sprintf(
             '<figure class="dcf-lightbox-ctrl">
-                <div class="dcf-overlay" data-icon="%3$s"></div>
+                <div class="dcf-overlay" data-icon="%3$s" style="--dcf-overlay-font:%4$s"></div>
                 <img class="dcf-main-img" data-mfp-src="%1$s" src="%1$s" alt="%2$s" />
             </figure>',
             esc_url($image_src),
             esc_attr($photo_alt),
-            esc_attr($overlay_icon)
+            esc_attr($overlay_char),
+            esc_attr($overlay_font_family)
         );
 
-        // Render content (title + subtitle).
-        $content_html = '';
-        if (!empty($title) || !empty($subtitle)) {
-            $title_html = '';
-            if (!empty($title)) {
-                $title_html = sprintf('<h3 class="dcf-image-title">%s</h3>', esc_html($title));
-            }
-            $subtitle_html = '';
-            if (!empty($subtitle)) {
-                $subtitle_html = sprintf('<h5 class="dcf-image-subtitle">%s</h5>', esc_html($subtitle));
-            }
-
-            $content_html = sprintf(
-                '<div class="content content--%1$s content--%2$s"><div class="content-inner">%3$s%4$s</div></div>',
-                esc_attr($content_alignment),
-                esc_attr($content_type),
-                $title_html,
-                $subtitle_html
+        // Wrap in link if URL is set.
+        if (!empty($link_url)) {
+            $figure_html = sprintf(
+                '<a href="%s" target="%s" class="dcf-image-link">%s</a>',
+                esc_url($link_url),
+                esc_attr($link_target),
+                $figure_html
             );
         }
+
+        // Render title + subtitle using elements (D5 framework).
+        $title_html = $elements->render(['attrName' => 'title']);
+        $subtitle_html = $elements->render(['attrName' => 'subtitle']);
+
+        $content_html = sprintf(
+            '<div class="content content--%1$s content--%2$s"><div class="content-inner">%3$s%4$s</div></div>',
+            esc_attr($content_alignment),
+            esc_attr($content_type),
+            $title_html,
+            $subtitle_html
+        );
 
         // Build the full output.
         $children = sprintf(

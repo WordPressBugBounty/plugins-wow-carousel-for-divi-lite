@@ -42,6 +42,18 @@ trait ModuleStylesTrait
                             ],
                         ]
                     ),
+                    // Title font styles.
+                    $elements->style(
+                        [
+                            'attrName' => 'title',
+                        ]
+                    ),
+                    // Subtitle font styles.
+                    $elements->style(
+                        [
+                            'attrName' => 'subtitle',
+                        ]
+                    ),
                 ],
             ]
         );

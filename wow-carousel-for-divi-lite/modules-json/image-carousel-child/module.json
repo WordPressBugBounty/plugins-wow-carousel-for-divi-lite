@@ -24,16 +24,6 @@
               "value": ""
             }
           },
-          "title": {
-            "desktop": {
-              "value": ""
-            }
-          },
-          "subtitle": {
-            "desktop": {
-              "value": ""
-            }
-          },
           "imageHeight": {
             "desktop": {
               "value": "auto"
@@ -129,46 +119,6 @@
               }
             }
           },
-          "title": {
-            "groupType": "group-item",
-            "item": {
-              "groupSlug": "itemContent",
-              "attrName": "module.advanced.title",
-              "label": "Title",
-              "priority": 30,
-              "render": true,
-              "features": {
-                "sticky": false,
-                "responsive": false,
-                "hover": false,
-                "dynamicContent": true
-              },
-              "component": {
-                "type": "field",
-                "name": "divi/text"
-              }
-            }
-          },
-          "subtitle": {
-            "groupType": "group-item",
-            "item": {
-              "groupSlug": "itemContent",
-              "attrName": "module.advanced.subtitle",
-              "label": "Subtitle",
-              "priority": 40,
-              "render": true,
-              "features": {
-                "sticky": false,
-                "responsive": false,
-                "hover": false,
-                "dynamicContent": true
-              },
-              "component": {
-                "type": "field",
-                "name": "divi/text"
-              }
-            }
-          },
           "imageHeight": {
             "groupType": "group-item",
             "item": {
@@ -191,7 +141,13 @@
                   "max": 1000,
                   "step": 1,
                   "defaultUnit": "px",
-                  "allowedUnits": ["px", "em", "rem", "%", "vh"]
+                  "allowedUnits": [
+                    "px",
+                    "em",
+                    "rem",
+                    "%",
+                    "vh"
+                  ]
                 }
               }
             }
@@ -215,26 +171,66 @@
                 "name": "divi/select",
                 "props": {
                   "options": {
-                    "none": { "label": "None" },
-                    "zoom-in": { "label": "Zoom In" },
-                    "zoom-out": { "label": "Zoom Out" },
-                    "pulse": { "label": "Pulse" },
-                    "bounce": { "label": "Bounce" },
-                    "flash": { "label": "Flash" },
-                    "rubberBand": { "label": "Rubber Band" },
-                    "shake": { "label": "Shake" },
-                    "swing": { "label": "Swing" },
-                    "tada": { "label": "Tada" },
-                    "wobble": { "label": "Wobble" },
-                    "jello": { "label": "Jello" },
-                    "heartBeat": { "label": "Heart Beat" },
-                    "bounceIn": { "label": "Bounce In" },
-                    "fadeIn": { "label": "Fade In" },
-                    "flip": { "label": "Flip" },
-                    "lightSpeedIn": { "label": "Light Speed In" },
-                    "rotateIn": { "label": "Rotate In" },
-                    "slideInUp": { "label": "Slide In Up" },
-                    "slideInDown": { "label": "Slide In Down" }
+                    "none": {
+                      "label": "None"
+                    },
+                    "zoom-in": {
+                      "label": "Zoom In"
+                    },
+                    "zoom-out": {
+                      "label": "Zoom Out"
+                    },
+                    "pulse": {
+                      "label": "Pulse"
+                    },
+                    "bounce": {
+                      "label": "Bounce"
+                    },
+                    "flash": {
+                      "label": "Flash"
+                    },
+                    "rubberBand": {
+                      "label": "Rubber Band"
+                    },
+                    "shake": {
+                      "label": "Shake"
+                    },
+                    "swing": {
+                      "label": "Swing"
+                    },
+                    "tada": {
+                      "label": "Tada"
+                    },
+                    "wobble": {
+                      "label": "Wobble"
+                    },
+                    "jello": {
+                      "label": "Jello"
+                    },
+                    "heartBeat": {
+                      "label": "Heart Beat"
+                    },
+                    "bounceIn": {
+                      "label": "Bounce In"
+                    },
+                    "fadeIn": {
+                      "label": "Fade In"
+                    },
+                    "flip": {
+                      "label": "Flip"
+                    },
+                    "lightSpeedIn": {
+                      "label": "Light Speed In"
+                    },
+                    "rotateIn": {
+                      "label": "Rotate In"
+                    },
+                    "slideInUp": {
+                      "label": "Slide In Up"
+                    },
+                    "slideInDown": {
+                      "label": "Slide In Down"
+                    }
                   }
                 }
               }
@@ -259,8 +255,12 @@
                 "name": "divi/select",
                 "props": {
                   "options": {
-                    "normal": { "label": "Normal" },
-                    "absolute": { "label": "Absolute" }
+                    "normal": {
+                      "label": "Normal"
+                    },
+                    "absolute": {
+                      "label": "Absolute"
+                    }
                   }
                 }
               }
@@ -285,9 +285,15 @@
                 "name": "divi/select",
                 "props": {
                   "options": {
-                    "left": { "label": "Left" },
-                    "center": { "label": "Center" },
-                    "right": { "label": "Right" }
+                    "left": {
+                      "label": "Left"
+                    },
+                    "center": {
+                      "label": "Center"
+                    },
+                    "right": {
+                      "label": "Right"
+                    }
                   }
                 }
               }
@@ -312,9 +318,15 @@
                 "name": "divi/select",
                 "props": {
                   "options": {
-                    "center": { "label": "Center" },
-                    "flex-start": { "label": "Left" },
-                    "flex-end": { "label": "Right" }
+                    "center": {
+                      "label": "Center"
+                    },
+                    "flex-start": {
+                      "label": "Left"
+                    },
+                    "flex-end": {
+                      "label": "Right"
+                    }
                   }
                 }
               }
@@ -339,9 +351,15 @@
                 "name": "divi/select",
                 "props": {
                   "options": {
-                    "center": { "label": "Center" },
-                    "flex-start": { "label": "Top" },
-                    "flex-end": { "label": "Bottom" }
+                    "center": {
+                      "label": "Center"
+                    },
+                    "flex-start": {
+                      "label": "Top"
+                    },
+                    "flex-end": {
+                      "label": "Bottom"
+                    }
                   }
                 }
               }
@@ -369,7 +387,9 @@
                   "max": 100,
                   "step": 1,
                   "defaultUnit": "%",
-                  "allowedUnits": ["%"]
+                  "allowedUnits": [
+                    "%"
+                  ]
                 }
               }
             }
@@ -396,7 +416,9 @@
                   "max": 100,
                   "step": 1,
                   "defaultUnit": "px",
-                  "allowedUnits": ["px"]
+                  "allowedUnits": [
+                    "px"
+                  ]
                 }
               }
             }
@@ -503,7 +525,9 @@
                   "max": 200,
                   "step": 1,
                   "defaultUnit": "px",
-                  "allowedUnits": ["px"]
+                  "allowedUnits": [
+                    "px"
+                  ]
                 }
               }
             }
@@ -559,6 +583,124 @@
               }
             }
           }
+        }
+      }
+    },
+    "title": {
+      "type": "object",
+      "selector": "{{selector}} .dcf-image-title",
+      "settings": {
+        "innerContent": {
+          "groupType": "group-item",
+          "item": {
+            "groupSlug": "itemContent",
+            "label": "Title",
+            "priority": 30,
+            "render": true,
+            "features": {
+              "sticky": false,
+              "responsive": false,
+              "hover": false,
+              "dynamicContent": {
+                "type": "text"
+              }
+            }
+          }
+        },
+        "decoration": {
+          "font": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "designTexts",
+              "priority": 10,
+              "render": true,
+              "component": {
+                "name": "divi/font",
+                "type": "group",
+                "props": {
+                  "grouped": false,
+                  "fieldLabel": "Title",
+                  "fields": {
+                    "headingLevel": {
+                      "render": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "attributes": {
+        "class": "dcf-image-title"
+      },
+      "tagName": "h3",
+      "inlineEditor": "plainText",
+      "elementType": "heading",
+      "childrenSanitizer": "et_core_esc_previously",
+      "styleProps": {
+        "selector": "{{selector}} .dcf-image-title",
+        "font": {
+          "important": true
+        }
+      }
+    },
+    "subtitle": {
+      "type": "object",
+      "selector": "{{selector}} .dcf-image-subtitle",
+      "settings": {
+        "innerContent": {
+          "groupType": "group-item",
+          "item": {
+            "groupSlug": "itemContent",
+            "label": "Sub title",
+            "priority": 40,
+            "render": true,
+            "features": {
+              "sticky": false,
+              "responsive": false,
+              "hover": false,
+              "dynamicContent": {
+                "type": "text"
+              }
+            }
+          }
+        },
+        "decoration": {
+          "font": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "designTexts",
+              "priority": 20,
+              "render": true,
+              "component": {
+                "name": "divi/font",
+                "type": "group",
+                "props": {
+                  "grouped": false,
+                  "fieldLabel": "Subtitle",
+                  "fields": {
+                    "headingLevel": {
+                      "render": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "attributes": {
+        "class": "dcf-image-subtitle"
+      },
+      "tagName": "h5",
+      "inlineEditor": "plainText",
+      "elementType": "heading",
+      "childrenSanitizer": "et_core_esc_previously",
+      "styleProps": {
+        "selector": "{{selector}} .dcf-image-subtitle",
+        "font": {
+          "important": true
         }
       }
     }
@@ -627,6 +769,20 @@
           "name": "divi/composite",
           "props": {
             "groupLabel": "Overlay"
+          }
+        }
+      },
+      "designTexts": {
+        "panel": "design",
+        "priority": 20,
+        "groupName": "texts",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": {
+            "groupLabel": "Texts",
+            "clipboardCategory": "style",
+            "presetGroup": "divi/font"
           }
         }
       }
