@@ -1,4 +1,6 @@
 <?php
+
+defined('ABSPATH') || exit;
 class DiviCarouselMaker extends Divi_Carousel_Free_Builder_Module
 {
 
@@ -98,7 +100,7 @@ class DiviCarouselMaker extends Divi_Carousel_Free_Builder_Module
 		);
 
 		$advanced_fields['fonts']['subtitle'] = array(
-			'label'           => esc_html__('Title', 'divi-carousel-free'),
+			'label'           => esc_html__('Subtitle', 'divi-carousel-free'),
 			'css'             => array(
 				'main'      => '%%order_class%% .dcf-container-nav .dcf-container-nav-item p',
 				'important' => 'all',
@@ -139,8 +141,8 @@ class DiviCarouselMaker extends Divi_Carousel_Free_Builder_Module
 			</div>',
 			$content,
 			$this->get_carousel_options_data(),
-			join(' ', $classes),
-			$sliding_dir
+			esc_attr(join(' ', $classes)),
+			esc_attr($sliding_dir)
 		);
 
 		return $output;
@@ -148,7 +150,7 @@ class DiviCarouselMaker extends Divi_Carousel_Free_Builder_Module
 
 	public function apply_css($render_slug)
 	{
-		$this->apply_carousel_css($render_slug);
+		$this->get_carousel_css($render_slug);
 	}
 }
 

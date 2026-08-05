@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') || exit;
+
 if (!function_exists('divi_carousel_builder_library')) {
     function divi_carousel_builder_library()
     {

@@ -63,9 +63,12 @@ trait RenderCallbackTrait
         $center_padding  = $get('module.advanced.centerPadding', '70px');
         $pause_on_hover  = $get('module.advanced.pauseOnHover', 'off') === 'on';
 
-        // Responsive slide counts.
-        $col_tablet = (int) ($get('module.advanced.slideCount', '', 'tablet') ?: max(1, $slide_count - 1));
-        $col_phone  = (int) ($get('module.advanced.slideCount', '', 'phone')  ?: max(1, $col_tablet - 1));
+        // Responsive slide counts. Read the device value directly so an unset tablet/phone
+        // value falls back to the auto-decrement instead of cascading the desktop count.
+        $tablet_raw = $attrs['module']['advanced']['slideCount']['tablet']['value'] ?? '';
+        $phone_raw  = $attrs['module']['advanced']['slideCount']['phone']['value'] ?? '';
+        $col_tablet = (int) ('' !== $tablet_raw ? $tablet_raw : max(1, $slide_count - 1));
+        $col_phone  = (int) ('' !== $phone_raw  ? $phone_raw  : max(1, $col_tablet - 1));
 
         // Build classes.
         $classes = [];
@@ -197,10 +200,18 @@ trait RenderCallbackTrait
             $config['direction']     = 'vertical';
             $config['slidesPerView'] = 1;
             $config['spaceBetween']  = $space;
+            // Vertical shows one slide per view at every width; drop the horizontal breakpoints
+            // so they don't override slidesPerView at >=768px.
+            unset($config['breakpoints']);
         }
 
         if ($centered) {
             $config['centeredSlides'] = true;
+            $offset = (int) str_replace('px', '', (string) $center_padding);
+            if ($offset > 0) {
+                $config['slidesOffsetBefore'] = $offset;
+                $config['slidesOffsetAfter']  = $offset;
+            }
         }
 
         if ($auto_height && !$vertical) {

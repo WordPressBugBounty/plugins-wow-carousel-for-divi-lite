@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') || exit;
+
 class DiviCarouselMakerChild extends Divi_Carousel_Free_Builder_Module
 {
 
@@ -18,7 +20,7 @@ class DiviCarouselMakerChild extends Divi_Carousel_Free_Builder_Module
 	 */
 	public function init()
 	{
-		$this->name = esc_html__($this->name, 'divi-carousel-free');
+		$this->name = esc_html__('Carousel Item', 'divi-carousel-free');
 
 		$this->settings_modal_toggles = [
 			'general' => [
@@ -165,7 +167,7 @@ class DiviCarouselMakerChild extends Divi_Carousel_Free_Builder_Module
 		}
 
 		return sprintf(
-			'<div class="dcf-libary-slider dcf-child-content-%2$s">%1$s</div>',
+			'<div class="dcf-library-slider dcf-child-content-%2$s">%1$s</div>',
 			$layout_content,
 			esc_attr($library_id)
 		);

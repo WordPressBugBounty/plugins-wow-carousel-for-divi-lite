@@ -9,11 +9,12 @@ class Rest_API
     const NAMESPACE = 'divi-carousel-free/v1';
     const OPTION_KEY = 'dcf_carousel_modules';
 
-    const VALID_MODULES = ['image_carousel', 'logo_carousel'];
+    const VALID_MODULES = ['image_carousel', 'logo_carousel', 'video_carousel'];
 
     const DEFAULTS = [
         'image_carousel' => true,
         'logo_carousel'  => true,
+        'video_carousel' => true,
     ];
 
     public function __construct()
@@ -55,7 +56,9 @@ class Rest_API
 
     public function get_modules()
     {
-        $modules = get_option(self::OPTION_KEY, self::DEFAULTS);
+        // Merge with DEFAULTS so modules added in later versions still appear
+        // for users who installed before the key existed.
+        $modules = array_merge(self::DEFAULTS, (array) get_option(self::OPTION_KEY, []));
 
         return rest_ensure_response([
             'success' => true,

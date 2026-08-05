@@ -9,7 +9,7 @@
 defined('ABSPATH') || exit;
 
 // Plugin version.
-define('DCF_PLUGIN_VERSION', '3.0.6');
+define('DCF_PLUGIN_VERSION', '3.1.1');
 
 // Plugin paths.
 define('DCF_PLUGIN_DIR', plugin_dir_path(DCF_PLUGIN_FILE));

@@ -4,14 +4,14 @@
  * Plugin Name:       Divi Carousel Free
  * Plugin URI:        https://DiviPeople.com
  * Description:       Divi Carousel plugin to create beautiful carousels with any modules.
- * Version:           3.0.6
+ * Version:           3.1.1
  * Author:            DiviPeople
  * Author URI:        https://DiviPeople.com
- * License:           GPL2
+ * License:           GPLv2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       divi-carousel-free
  * Domain Path:       /languages
- * Requires at least: 6.0
+ * Requires at least: 5.0
  * Requires PHP:      7.4
  *
  * @package Divi_Carousel_Free
@@ -77,6 +77,19 @@ add_action('plugins_loaded', function () use ($dcf_conflicts) {
 
 define('DCF_PLUGIN_FILE', __FILE__);
 require_once __DIR__ . '/config.php';
+
+// ── Pro Active: minimal mode ──────────────────────────────────────
+// When Pro is active, only register D5 modules so pages built with
+// Free's dcf/* modules keep rendering. Skip admin, assets, D4, etc.
+// Note: Free may load before Pro (alphabetical order), so we check
+// the active_plugins option directly instead of a constant.
+$dcf_active_plugins = (array) get_option('active_plugins', []);
+$dcf_pro_active     = in_array('divi-carousel-pro/divi-carousel-pro.php', $dcf_active_plugins, true);
+
+if ($dcf_pro_active) {
+    require_once DCF_PLUGIN_DIR . 'includes/divi5/modules/Modules.php';
+    return;
+}
 
 // ── Load Plugin ────────────────────────────────────────────────────
 

@@ -105,7 +105,7 @@ trait RenderCallbackTrait
 
         $img_html = sprintf(
             '<img class="dcf-swapped-img" data-mfp-src="%1$s" src="%1$s" alt="%2$s" />',
-            esc_url($logo_src),
+            (0 === strpos($logo_src, 'data:')) ? esc_attr($logo_src) : esc_url($logo_src),
             esc_attr($logo_alt)
         );
 

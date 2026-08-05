@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') || exit;
+
 class WDCL_LogoCarousel extends Divi_Carousel_Free_Builder_Module
 {
 
@@ -219,7 +221,7 @@ class WDCL_LogoCarousel extends Divi_Carousel_Free_Builder_Module
                     $render_slug,
                     [
                         'selector'    => '%%order_class%% .dcf-logo-carousel-item',
-                        'declaration' => sprintf('height: %1$s; display: flex; justify-content: center; align-items: center;`', $logo_height_phone),
+                        'declaration' => sprintf('height: %1$s; display: flex; justify-content: center; align-items: center;', $logo_height_phone),
                         'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
                     ]
                 );
@@ -252,7 +254,7 @@ class WDCL_LogoCarousel extends Divi_Carousel_Free_Builder_Module
                     $render_slug,
                     [
                         'selector'    => '%%order_class%% .dcf-logo-carousel-item img',
-                        'declaration' => sprintf('width: %1$s;`', $logo_width_phone),
+                        'declaration' => sprintf('width: %1$s;', $logo_width_phone),
                         'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
                     ]
                 );

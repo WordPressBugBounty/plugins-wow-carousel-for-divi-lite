@@ -17,19 +17,6 @@ class Assets
      */
     public static function init(): void
     {
-        // D5: Dynamic Assets (Divi's optimized asset loading).
-        add_filter(
-            'divi_frontend_assets_dynamic_assets_global_assets_list',
-            [self::class, 'register_dynamic_assets'],
-            10,
-            3
-        );
-        add_filter(
-            'divi_frontend_assets_dynamic_assets_late_global_assets_list',
-            [self::class, 'register_dynamic_assets'],
-            10,
-            3
-        );
 
         // D5: Standard enqueue as fallback.
         add_action('wp_enqueue_scripts', [self::class, 'enqueue_d5_frontend']);
@@ -58,6 +45,24 @@ class Assets
         );
     }
 
+    private static function enqueue_magnific(): void
+    {
+        wp_enqueue_style(
+            'dcf-magnific',
+            DCF_PLUGIN_ASSETS . 'libs/magnific/magnific-popup.min.css',
+            [],
+            DCF_PLUGIN_VERSION
+        );
+
+        wp_enqueue_script(
+            'dcf-magnific',
+            DCF_PLUGIN_ASSETS . 'libs/magnific/magnific-popup.min.js',
+            ['jquery'],
+            DCF_PLUGIN_VERSION,
+            true
+        );
+    }
+
     public static function enqueue_d5_frontend(): void
     {
         if (is_admin()) {
@@ -74,7 +79,7 @@ class Assets
             wp_enqueue_script(
                 'dcf-divi5-frontend',
                 DCF_DIST_URL . 'divi5/frontend.js',
-                ['dcf-swiper'],
+                ['jquery', 'dcf-swiper'],
                 DCF_PLUGIN_VERSION,
                 true
             );
@@ -90,22 +95,6 @@ class Assets
         }
     }
 
-    public static function register_dynamic_assets(array $global_asset_list, $assets_args = [], $dynamic_assets = null): array
-    {
-        // Swiper (D5).
-        $global_asset_list['dcf_swiper']    = ['css' => DCF_PLUGIN_ASSETS . 'libs/swiper/swiper-bundle.min.css'];
-        $global_asset_list['dcf_swiper_js'] = ['js'  => DCF_PLUGIN_ASSETS . 'libs/swiper/swiper-bundle.min.js'];
-
-        // Magnific Popup.
-        $global_asset_list['dcf_magnific']    = ['css' => DCF_PLUGIN_ASSETS . 'libs/magnific/magnific-popup.min.css'];
-        $global_asset_list['dcf_magnific_js'] = ['js'  => DCF_PLUGIN_ASSETS . 'libs/magnific/magnific-popup.min.js'];
-
-        // D5 frontend.
-        $global_asset_list['dcf_frontend_js'] = ['js'  => DCF_DIST_URL . 'divi5/frontend.js'];
-        $global_asset_list['dcf_frontend']    = ['css' => DCF_DIST_URL . 'divi5/bundle.css'];
-
-        return $global_asset_list;
-    }
 
     // ── D5: Visual Builder Assets ─────────────────────────────────
 
@@ -116,6 +105,16 @@ class Assets
         }
 
         $divi5_url = DCF_DIST_URL . 'divi5/';
+        $divi5_dir = DCF_DIST_DIR . 'divi5/';
+
+        // Cache-bust the module bundle by file mtime so a rebuilt bundle is always
+        // re-fetched (the plugin version alone does not change between dev builds).
+        $bundle_js_ver  = file_exists("{$divi5_dir}bundle.js")
+            ? DCF_PLUGIN_VERSION . '.' . filemtime("{$divi5_dir}bundle.js")
+            : DCF_PLUGIN_VERSION;
+        $bundle_css_ver = file_exists("{$divi5_dir}bundle.css")
+            ? DCF_PLUGIN_VERSION . '.' . filemtime("{$divi5_dir}bundle.css")
+            : DCF_PLUGIN_VERSION;
 
         // Swiper JS/CSS for VB iframe (needed for styles).
         \ET\Builder\VisualBuilder\Assets\PackageBuildManager::register_package_build([
@@ -143,7 +142,7 @@ class Assets
         // Module bundle JS.
         \ET\Builder\VisualBuilder\Assets\PackageBuildManager::register_package_build([
             'name'    => 'dcf-divi5-builder-bundle-script',
-            'version' => DCF_PLUGIN_VERSION,
+            'version' => $bundle_js_ver,
             'script'  => [
                 'src'                => "{$divi5_url}bundle.js",
                 'deps'               => ['divi-module-library', 'divi-vendor-wp-hooks', 'dcf-swiper-script'],
@@ -155,7 +154,7 @@ class Assets
         // Module bundle CSS.
         \ET\Builder\VisualBuilder\Assets\PackageBuildManager::register_package_build([
             'name'    => 'dcf-divi5-builder-bundle-style',
-            'version' => DCF_PLUGIN_VERSION,
+            'version' => $bundle_css_ver,
             'style'   => [
                 'src'                => "{$divi5_url}bundle.css",
                 'deps'               => [],
@@ -163,5 +162,6 @@ class Assets
                 'enqueue_app_window' => true,
             ],
         ]);
+
     }
 }

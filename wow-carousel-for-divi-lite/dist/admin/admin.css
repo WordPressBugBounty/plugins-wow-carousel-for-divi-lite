@@ -562,6 +562,9 @@
 .p-0 {
 		padding: 0px;
 }
+.p-3\.5 {
+		padding: 0.875rem;
+}
 .p-4 {
 		padding: 1rem;
 }
@@ -897,6 +900,10 @@ body.divipeople_page_divi-carousel-free #wpcontent {
 		border-color: hsl(var(--foreground) / 0.15);
 }
 
+.hover\:border-foreground\/20:hover {
+		border-color: hsl(var(--foreground) / 0.2);
+}
+
 .hover\:bg-muted:hover {
 		--tw-bg-opacity: 1;
 		background-color: hsl(var(--muted) / var(--tw-bg-opacity, 1));
@@ -973,6 +980,10 @@ body.divipeople_page_divi-carousel-free #wpcontent {
 
 .disabled\:opacity-50:disabled {
 		opacity: 0.5;
+}
+
+.group:hover .group-hover\:underline {
+		text-decoration-line: underline;
 }
 
 .group:hover .group-hover\:opacity-100 {

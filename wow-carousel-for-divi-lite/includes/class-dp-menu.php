@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') || exit;
+
 if ( ! class_exists( 'DiviPeople_Admin_Menu' ) ) {
 
     class DiviPeople_Admin_Menu {

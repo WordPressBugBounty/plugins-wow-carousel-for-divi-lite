@@ -38,6 +38,9 @@ class Plugin
         if (is_admin()) {
             new Admin();
             new Upgrade_Notice();
+
+            // Legacy module detection runs in admin only — never on the frontend.
+            add_action('admin_init', array(__CLASS__, 'scan_for_legacy_modules'));
         }
     }
 
@@ -86,9 +89,17 @@ class Plugin
         if (!get_option('dcf_carousel_modules')) {
             update_option('dcf_carousel_modules', [
                 'image_carousel' => true,
-                'logo_carousel' => true,
+                'logo_carousel'  => true,
+                'video_carousel' => true,
             ]);
         }
+
+        // One-time scan for legacy Carousel Maker usage so the frontend
+        // never has to run a LIKE query on wp_posts.
+        self::scan_for_legacy_modules(true);
+
+        // Drop the old daily transient from earlier versions.
+        delete_transient('dcf_has_carousel_maker');
 
         // Set redirect flag for first-time activation
         set_transient('dcf_activation_redirect', true, 30);
@@ -159,33 +170,46 @@ class Plugin
             require_once $modules_dir . 'LogoCarouselChild.php';
         }
 
-        // Load deprecated Carousel Maker only if existing content uses it.
-        if (self::has_carousel_maker_usage()) {
+        // Load deprecated Carousel Maker only if a previous admin-side scan
+        // flagged it. The scan never runs on the frontend.
+        if ('1' === get_option('dcf_has_carousel_maker', '0')) {
             require_once $modules_dir . 'CarouselMaker.php';
             require_once $modules_dir . 'CarouselMakerChild.php';
         }
     }
 
-    private static function has_carousel_maker_usage()
+    /**
+     * Detect legacy Carousel Maker usage and store the result as an option.
+     *
+     * Runs in admin context only (admin_init + activation). The frontend reads
+     * the stored option, so the LIKE scan on wp_posts never executes during
+     * page rendering. Throttled to once per day to keep admin pages fast.
+     *
+     * @param bool $force Bypass the daily throttle (used on activation).
+     */
+    public static function scan_for_legacy_modules($force = false): void
     {
-        $cache_key = 'dcf_has_carousel_maker';
-        $cached    = get_transient($cache_key);
-
-        if (false !== $cached) {
-            return '1' === $cached;
+        if (!$force) {
+            $last = (int) get_option('dcf_legacy_scan_last', 0);
+            if ($last && (time() - $last) < DAY_IN_SECONDS) {
+                return;
+            }
         }
 
         global $wpdb;
 
+        $like  = '%' . $wpdb->esc_like('divi_carousel_maker') . '%';
         $found = $wpdb->get_var(
-            "SELECT 1 FROM {$wpdb->posts}
-             WHERE post_status = 'publish'
-               AND post_content LIKE '%divi_carousel_maker%'
-             LIMIT 1"
+            $wpdb->prepare(
+                "SELECT 1 FROM {$wpdb->posts}
+                 WHERE post_status = 'publish'
+                   AND post_content LIKE %s
+                 LIMIT 1",
+                $like
+            )
         );
 
-        set_transient($cache_key, $found ? '1' : '0', DAY_IN_SECONDS);
-
-        return (bool) $found;
+        update_option('dcf_has_carousel_maker', $found ? '1' : '0', false);
+        update_option('dcf_legacy_scan_last', time(), false);
     }
 }

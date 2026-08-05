@@ -21,6 +21,6 @@ trait CustomCssTrait
         $module_metadata = \WP_Block_Type_Registry::get_instance()
             ->get_registered('dcf/logo-carousel-child');
 
-        return $module_metadata->customCssFields ?? [];
+        return $module_metadata ? ($module_metadata->customCssFields ?? []) : [];
     }
 }

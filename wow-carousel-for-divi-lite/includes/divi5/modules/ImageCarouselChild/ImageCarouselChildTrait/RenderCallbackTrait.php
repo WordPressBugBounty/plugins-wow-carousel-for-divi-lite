@@ -112,7 +112,7 @@ trait RenderCallbackTrait
                 <div class="dcf-overlay" data-icon="%3$s" style="--dcf-overlay-font:%4$s"></div>
                 <img class="dcf-main-img" data-mfp-src="%1$s" src="%1$s" alt="%2$s" />
             </figure>',
-            esc_url($image_src),
+            (0 === strpos($image_src, 'data:')) ? esc_attr($image_src) : esc_url($image_src),
             esc_attr($photo_alt),
             esc_attr($overlay_char),
             esc_attr($overlay_font_family)
@@ -120,10 +120,12 @@ trait RenderCallbackTrait
 
         // Wrap in link if URL is set.
         if (!empty($link_url)) {
+            $rel_attr = ('_blank' === $link_target) ? ' rel="noopener noreferrer"' : '';
             $figure_html = sprintf(
-                '<a href="%s" target="%s" class="dcf-image-link">%s</a>',
+                '<a href="%s" target="%s"%s class="dcf-image-link">%s</a>',
                 esc_url($link_url),
                 esc_attr($link_target),
+                $rel_attr,
                 $figure_html
             );
         }

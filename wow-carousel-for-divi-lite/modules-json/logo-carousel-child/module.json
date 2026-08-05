@@ -3,7 +3,7 @@
   "d4Shortcode": "wdcl_logo_carousel_child",
   "title": "Logo",
   "titles": "Logos",
-  "moduleIcon": "dcf-logo-carousel-icon",
+  "moduleIcon": "divi/module-image",
   "category": "child-module",
   "childrenName": [],
   "attributes": {

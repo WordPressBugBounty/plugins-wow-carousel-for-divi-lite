@@ -969,7 +969,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
                 'label'           => esc_html__('Use Equal Height', 'divi-carousel-free'),
                 'type'            => 'yes_no_button',
                 'option_category' => 'configuration',
-                'description'     => esc_html__('Enable this to display all items with same height.'),
+                'description'     => esc_html__('Enable this to display all items with same height.', 'divi-carousel-free'),
                 'options'         => [
                     'on'  => esc_html__('Yes', 'divi-carousel-free'),
                     'off' => esc_html__('No', 'divi-carousel-free'),
@@ -1877,34 +1877,34 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
 			data-items-scroll="%24$s|%25$s|%26$s"
 			data-fade="%27$s"
 			data-dir="%28$s"',
-            $is_pagi_active, // 1
-            $is_pagi_active_tablet, // 2
-            $is_pagi_active_phone, // 3
-            $is_arrow_active, // 4
-            $is_arrow_active_tablet, // 5
-            $is_arrow_active_phone, // 6
-            $is_autoplay, // 7
-            $autoplay_speed, // 8
-            $animation_speed, // 9
-            $slide_count, // 10
-            $slide_count_tablet, // 11
-            $slide_count_phone, // 12
-            $is_center, // 13
-            $center_mode_type, // 14
-            $center_padding, // 15
-            $center_padding_tablet, // 16
-            $center_padding_phone, // 17
-            $is_vertical, // 18
-            $icon_left ? $icon_left : '4', // 19
-            $icon_right ? $icon_right : '5', // 20
-            $slide_infinite, // 21
-            $is_variable_width, // 22
-            $is_auto_height, // 23
-            $slide_to_scroll, // 24
-            $slide_to_scroll_tablet, // 25
-            $slide_to_scroll_phone, // 26
-            $fade, // 27
-            $sliding_dir // 28
+            esc_attr($is_pagi_active), // 1
+            esc_attr($is_pagi_active_tablet), // 2
+            esc_attr($is_pagi_active_phone), // 3
+            esc_attr($is_arrow_active), // 4
+            esc_attr($is_arrow_active_tablet), // 5
+            esc_attr($is_arrow_active_phone), // 6
+            esc_attr($is_autoplay), // 7
+            esc_attr($autoplay_speed), // 8
+            esc_attr($animation_speed), // 9
+            esc_attr($slide_count), // 10
+            esc_attr($slide_count_tablet), // 11
+            esc_attr($slide_count_phone), // 12
+            esc_attr($is_center), // 13
+            esc_attr($center_mode_type), // 14
+            esc_attr($center_padding), // 15
+            esc_attr($center_padding_tablet), // 16
+            esc_attr($center_padding_phone), // 17
+            esc_attr($is_vertical), // 18
+            esc_attr($icon_left ? $icon_left : '4'), // 19
+            esc_attr($icon_right ? $icon_right : '5'), // 20
+            esc_attr($slide_infinite), // 21
+            esc_attr($is_variable_width), // 22
+            esc_attr($is_auto_height), // 23
+            esc_attr($slide_to_scroll), // 24
+            esc_attr($slide_to_scroll_tablet), // 25
+            esc_attr($slide_to_scroll_phone), // 26
+            esc_attr($fade), // 27
+            esc_attr($sliding_dir) // 28
         );
 
         return $carousel_options;

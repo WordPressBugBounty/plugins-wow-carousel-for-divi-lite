@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Render Callback Trait for Logo Carousel module.
+ * Render Callback Trait for Video Carousel module.
  */
 
-namespace DiviCarouselFree\Modules\LogoCarousel\LogoCarouselTrait;
+namespace DiviCarouselFree\Modules\VideoCarousel\VideoCarouselTrait;
 
 use ET\Builder\Packages\Module\Module;
 
@@ -32,18 +32,6 @@ trait RenderCallbackTrait
             return is_array($value) ? ($value['desktop']['value'] ?? $default) : ($value ?: $default);
         };
 
-        // Carousel type.
-        $carousel_type = $get('module.advanced.carouselType', 'carousel');
-        $is_ticker     = $carousel_type === 'ticker';
-
-        // Ticker settings.
-        $ticker_speed          = $get('module.advanced.tickerSpeed', '30s');
-        $ticker_direction      = $get('module.advanced.tickerDirection', 'left');
-        $ticker_pause_on_hover = $get('module.advanced.tickerPauseOnHover', 'on');
-        $ticker_item_width     = $get('module.advanced.tickerItemWidth', '250px');
-
-        // Carousel settings.
-        $logo_hover       = $get('module.advanced.logoHover', 'zoom_in');
         $is_center        = $get('module.advanced.isCenter', 'off');
         $center_mode_type = $get('module.advanced.centerModeType', 'classic');
         $custom_cursor    = $get('module.advanced.customCursor', 'off');
@@ -63,22 +51,14 @@ trait RenderCallbackTrait
         $center_padding  = $get('module.advanced.centerPadding', '70px');
         $pause_on_hover  = $get('module.advanced.pauseOnHover', 'off') === 'on';
 
-        // Responsive slide counts. Read the device value directly so an unset tablet/phone
-        // value falls back to the auto-decrement instead of cascading the desktop count.
+        // Read the device value directly so an unset tablet/phone value falls back to the
+        // auto-decrement instead of cascading the desktop count.
         $tablet_raw = $attrs['module']['advanced']['slideCount']['tablet']['value'] ?? '';
         $phone_raw  = $attrs['module']['advanced']['slideCount']['phone']['value'] ?? '';
         $col_tablet = (int) ('' !== $tablet_raw ? $tablet_raw : max(1, $slide_count - 1));
         $col_phone  = (int) ('' !== $phone_raw  ? $phone_raw  : max(1, $col_tablet - 1));
 
-        // Build classes.
-        $classes = [$logo_hover];
-
-        if ($is_ticker) {
-            $classes[] = 'dcf-ticker';
-            if ($ticker_pause_on_hover === 'on') {
-                $classes[] = 'dcf-ticker-paused';
-            }
-        }
+        $classes = [];
 
         if ($is_center === 'on') {
             $classes[] = 'dcf-centered';
@@ -93,29 +73,7 @@ trait RenderCallbackTrait
             $classes[] = 'dcf-vertical';
         }
 
-        // Arrow SVGs.
-        $prev_svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>';
-        $next_svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>';
-
-        // Build children HTML.
-        if ($is_ticker) {
-            $ticker_style = sprintf(
-                '--dcf-ticker-speed:%s;--dcf-ticker-direction:%s;--dcf-ticker-item-width:%s;',
-                esc_attr($ticker_speed),
-                $ticker_direction === 'right' ? 'reverse' : 'normal',
-                esc_attr($ticker_item_width)
-            );
-
-            $children = sprintf(
-                '<div dir="%s" class="dcf-container dcf-logo-carousel %s" data-carousel-type="ticker" style="%s"><div class="dcf-ticker-marquee">%s</div><div class="dcf-ticker-marquee" aria-hidden="true">%s</div></div>',
-                esc_attr($sliding_dir),
-                esc_attr(implode(' ', $classes)),
-                esc_attr($ticker_style),
-                $content,
-                $content
-            );
-        } else {
-            $swiper_config = self::build_swiper_config(
+        $swiper_config = self::build_swiper_config(
                 $slide_count, $col_tablet, $col_phone,
                 (int) str_replace('px', '', $slide_spacing),
                 $is_infinite, $nav_pagi, $is_autoplay, $autoplay_speed,
@@ -126,11 +84,11 @@ trait RenderCallbackTrait
             $show_nav  = in_array($nav_pagi, ['nav', 'nav_pagi'], true);
             $show_pagi = in_array($nav_pagi, ['pagi', 'nav_pagi'], true);
 
-            $nav_html  = $show_nav  ? '<div class="swiper-button-prev">' . $prev_svg . '</div><div class="swiper-button-next">' . $next_svg . '</div>' : '';
+            $nav_html  = $show_nav  ? '<div class="swiper-button-prev"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></div><div class="swiper-button-next"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg></div>' : '';
             $pagi_html = $show_pagi ? '<div class="swiper-pagination"></div>' : '';
 
             $children = sprintf(
-                '<div dir="%s" class="dcf-container dcf-logo-carousel %s"><div class="swiper" data-swiper-config=\'%s\'><div class="swiper-wrapper">%s</div></div>%s%s</div>',
+                '<div dir="%s" class="dcf-container dcf-video-carousel %s"><div class="swiper" data-swiper-config=\'%s\'><div class="swiper-wrapper">%s</div></div>%s%s</div>',
                 esc_attr($sliding_dir),
                 esc_attr(implode(' ', $classes)),
                 esc_attr(wp_json_encode($swiper_config)),
@@ -138,7 +96,6 @@ trait RenderCallbackTrait
                 $nav_html,
                 $pagi_html
             );
-        }
 
         $style_components = method_exists($elements, 'style_components')
             ? $elements->style_components(['attrName' => 'module'])
@@ -150,7 +107,7 @@ trait RenderCallbackTrait
             'attrs'               => $attrs,
             'elements'            => $elements,
             'id'                  => $block->parsed_block['id'] ?? '',
-            'moduleClassName'     => 'wdcl_logo_carousel',
+            'moduleClassName'     => 'wdcl_video_carousel',
             'name'                => $block->block_type->name ?? '',
             'moduleCategory'      => $block->block_type->category ?? 'module',
             'classnamesFunction'  => [self::class, 'module_classnames'],
@@ -191,21 +148,29 @@ trait RenderCallbackTrait
             ];
         }
 
-        if ($slides_per_group > 1) {
-            $config['slidesPerGroup'] = $slides_per_group;
-        }
-
         if ($vertical) {
             $config['direction']     = 'vertical';
             $config['slidesPerView'] = 1;
             $config['spaceBetween']  = $space;
+            // Vertical shows one slide per view at every width; drop the horizontal breakpoints
+            // so they don't override slidesPerView at >=768px.
+            unset($config['breakpoints']);
+        }
+
+        if ($slides_per_group > 1) {
+            $config['slidesPerGroup'] = $slides_per_group;
         }
 
         if ($centered) {
             $config['centeredSlides'] = true;
+            $offset = (int) str_replace('px', '', (string) $center_padding);
+            if ($offset > 0) {
+                $config['slidesOffsetBefore'] = $offset;
+                $config['slidesOffsetAfter']  = $offset;
+            }
         }
 
-        if ($auto_height && !$vertical) {
+        if ($auto_height) {
             $config['autoHeight'] = true;
         }
 

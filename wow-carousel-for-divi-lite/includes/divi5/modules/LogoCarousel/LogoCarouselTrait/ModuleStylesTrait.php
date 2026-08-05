@@ -135,6 +135,24 @@ trait ModuleStylesTrait
             ];
         }
 
+        // Logo size — mirror the Divi 4 behavior (height on the item, width on its image).
+        $logo_height = $attrs['module']['advanced']['logoHeight']['desktop']['value'] ?? 'auto';
+        $logo_width  = $attrs['module']['advanced']['logoWidth']['desktop']['value'] ?? 'auto';
+        if ('auto' !== $logo_height) {
+            $custom_styles[] = [
+                'atRules'     => false,
+                'selector'    => "{$order_class} .dcf-logo-carousel-item",
+                'declaration' => "height:{$logo_height};display:flex;justify-content:center;align-items:center;",
+            ];
+        }
+        if ('auto' !== $logo_width) {
+            $custom_styles[] = [
+                'atRules'     => false,
+                'selector'    => "{$order_class} .dcf-logo-carousel-item img",
+                'declaration' => "width:{$logo_width};",
+            ];
+        }
+
         $all_styles = [
             $elements->style(
                 [

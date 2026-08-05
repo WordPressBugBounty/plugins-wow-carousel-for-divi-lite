@@ -1,4 +1,6 @@
 <?php
+
+defined('ABSPATH') || exit;
 class WDCL_ImageCarousel extends Divi_Carousel_Free_Builder_Module
 {
 
@@ -109,7 +111,7 @@ class WDCL_ImageCarousel extends Divi_Carousel_Free_Builder_Module
             $content,
             $this->get_carousel_options_data(),
             join(' ', $classes),
-            $sliding_dir
+            esc_attr($sliding_dir)
         );
 
         return $output;

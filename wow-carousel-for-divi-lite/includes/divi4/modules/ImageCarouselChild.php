@@ -1,4 +1,6 @@
 <?php
+
+defined('ABSPATH') || exit;
 class WDCL_ImageCarouselChild extends Divi_Carousel_Free_Builder_Module
 {
 
@@ -341,7 +343,7 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Free_Builder_Module
         $processed_title_level = esc_html($processed_title_level);
 
         if (!empty($title_text)) {
-            return sprintf('<%2$s class="dcf-image-title">%1$s</%2$s>', $title_text, $processed_title_level);
+            return sprintf('<%2$s class="dcf-image-title">%1$s</%2$s>', esc_html($title_text), $processed_title_level);
         }
     }
 
@@ -354,7 +356,7 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Free_Builder_Module
         $processed_subtitle_level = esc_html($processed_subtitle_level);
 
         if (!empty($sub_title)) {
-            return sprintf('<%2$s class="dcf-image-subtitle">%1$s</%2$s>', $sub_title, $processed_subtitle_level);
+            return sprintf('<%2$s class="dcf-image-subtitle">%1$s</%2$s>', esc_html($sub_title), $processed_subtitle_level);
         }
     }
 
@@ -367,16 +369,12 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Free_Builder_Module
 
         $content_type = $this->props['content_type'];
 
-        if (empty($absolute)) {
-            $content_type === 'absolute';
-        }
-
         return sprintf(
             '<div class="content content--%3$s content--%4$s"><div class="content-inner"> %1$s %2$s </div></div>',
             $this->_render_title(),
             $this->_render_subTitle(),
-            $this->props['content_alignment'],
-            $content_type
+            esc_attr($this->props['content_alignment']),
+            esc_attr($content_type)
         );
     }
 
@@ -503,7 +501,7 @@ class WDCL_ImageCarouselChild extends Divi_Carousel_Free_Builder_Module
 			</div>',
             $this->_render_figure(),
             $this->_render_content(),
-            $image_hover_animation
+            esc_attr($image_hover_animation)
         );
     }
 }

@@ -1,15 +1,15 @@
 {
-  "name": "dcf/image-carousel",
-  "d4Shortcode": "wdcl_image_carousel",
-  "title": "Image Carousel",
-  "titles": "Image Carousels",
-  "moduleIcon": "divi/module-gallery",
+  "name": "dcf/video-carousel",
+  "d4Shortcode": "",
+  "title": "Video Carousel",
+  "titles": "Video Carousels",
+  "moduleIcon": "divi/module-video-slider",
   "category": "module",
   "folder": "dcf-carousel-free",
-  "childModuleName": "dcf/image-carousel-child",
-  "childModuleTitle": "Image",
+  "childModuleName": "dcf/video-carousel-child",
+  "childModuleTitle": "Video",
   "childrenName": [
-    "dcf/image-carousel-child"
+    "dcf/video-carousel-child"
   ],
   "attributes": {
     "module": {
@@ -19,7 +19,7 @@
         "meta": {
           "adminLabel": {
             "desktop": {
-              "value": "Image Carousel"
+              "value": "Video Carousel"
             }
           }
         },
@@ -238,35 +238,12 @@
             "desktop": {
               "value": "10px"
             }
-          },
-          "useLightbox": {
-            "desktop": {
-              "value": "off"
-            }
-          },
-          "titleColor": {
-            "desktop": {
-              "value": ""
-            }
-          },
-          "subtitleColor": {
-            "desktop": {
-              "value": ""
-            }
-          },
-          "titleFontSize": {
-            "desktop": {
-              "value": ""
-            }
-          },
-          "subtitleFontSize": {
-            "desktop": {
-              "value": ""
-            }
           }
         }
       },
       "settings": {
+        "content": "auto",
+        "design": "auto",
         "meta": {
           "adminLabel": {}
         },
@@ -1474,128 +1451,6 @@
                 }
               }
             }
-          },
-          "useLightbox": {
-            "groupType": "group-item",
-            "item": {
-              "groupSlug": "imageSettings",
-              "attrName": "module.advanced.useLightbox",
-              "label": "Use Lightbox",
-              "priority": 10,
-              "render": true,
-              "features": {
-                "sticky": false,
-                "responsive": false,
-                "hover": false,
-                "dynamicContent": false
-              },
-              "component": {
-                "type": "field",
-                "name": "divi/toggle"
-              }
-            }
-          },
-          "titleColor": {
-            "groupType": "group-item",
-            "item": {
-              "groupSlug": "textSettings",
-              "attrName": "module.advanced.titleColor",
-              "label": "Title Color",
-              "priority": 10,
-              "render": true,
-              "features": {
-                "sticky": false,
-                "responsive": false,
-                "hover": true,
-                "dynamicContent": false
-              },
-              "component": {
-                "type": "field",
-                "name": "divi/color-picker"
-              }
-            }
-          },
-          "subtitleColor": {
-            "groupType": "group-item",
-            "item": {
-              "groupSlug": "textSettings",
-              "attrName": "module.advanced.subtitleColor",
-              "label": "Subtitle Color",
-              "priority": 20,
-              "render": true,
-              "features": {
-                "sticky": false,
-                "responsive": false,
-                "hover": true,
-                "dynamicContent": false
-              },
-              "component": {
-                "type": "field",
-                "name": "divi/color-picker"
-              }
-            }
-          },
-          "titleFontSize": {
-            "groupType": "group-item",
-            "item": {
-              "groupSlug": "textSettings",
-              "attrName": "module.advanced.titleFontSize",
-              "label": "Title Font Size",
-              "priority": 30,
-              "render": true,
-              "features": {
-                "sticky": false,
-                "responsive": true,
-                "hover": false,
-                "dynamicContent": false
-              },
-              "component": {
-                "type": "field",
-                "name": "divi/range",
-                "props": {
-                  "min": 0,
-                  "max": 100,
-                  "step": 1,
-                  "defaultUnit": "px",
-                  "allowedUnits": [
-                    "px",
-                    "em",
-                    "rem"
-                  ]
-                }
-              }
-            }
-          },
-          "subtitleFontSize": {
-            "groupType": "group-item",
-            "item": {
-              "groupSlug": "textSettings",
-              "attrName": "module.advanced.subtitleFontSize",
-              "label": "Subtitle Font Size",
-              "priority": 40,
-              "render": true,
-              "features": {
-                "sticky": false,
-                "responsive": true,
-                "hover": false,
-                "dynamicContent": false
-              },
-              "component": {
-                "type": "field",
-                "name": "divi/range",
-                "props": {
-                  "min": 0,
-                  "max": 100,
-                  "step": 1,
-                  "defaultUnit": "px",
-                  "allowedUnits": [
-                    "px",
-                    "em",
-                    "rem"
-                  ]
-                }
-              }
-            }
           }
         },
         "decoration": {
@@ -1635,25 +1490,17 @@
       "subName": "slickDots",
       "selectorSuffix": " .swiper-pagination"
     },
-    "carouselItem": {
-      "subName": "carouselItem",
-      "selectorSuffix": " .dcf-image-carousel-item"
+    "videoItem": {
+      "subName": "videoItem",
+      "selectorSuffix": " .dcf-video-item"
     },
-    "itemImage": {
-      "subName": "itemImage",
-      "selectorSuffix": " .dcf-image-carousel-item img"
+    "videoImage": {
+      "subName": "videoImage",
+      "selectorSuffix": " .dcf-video-item img"
     },
-    "itemContent": {
-      "subName": "itemContent",
-      "selectorSuffix": " .dcf-image-carousel-item .content"
-    },
-    "itemTitle": {
-      "subName": "itemTitle",
-      "selectorSuffix": " .dcf-image-title"
-    },
-    "itemSubtitle": {
-      "subName": "itemSubtitle",
-      "selectorSuffix": " .dcf-image-subtitle"
+    "videoPopup": {
+      "subName": "videoPopup",
+      "selectorSuffix": " .dcf-video-popup"
     }
   },
   "settings": {
@@ -1702,28 +1549,6 @@
           "name": "divi/composite",
           "props": {
             "groupLabel": "Pagination"
-          }
-        }
-      },
-      "imageSettings": {
-        "panel": "content",
-        "priority": 50,
-        "groupName": "imageSettings",
-        "component": {
-          "name": "divi/composite",
-          "props": {
-            "groupLabel": "Image Settings"
-          }
-        }
-      },
-      "textSettings": {
-        "panel": "design",
-        "priority": 15,
-        "groupName": "textSettings",
-        "component": {
-          "name": "divi/composite",
-          "props": {
-            "groupLabel": "Text"
           }
         }
       }

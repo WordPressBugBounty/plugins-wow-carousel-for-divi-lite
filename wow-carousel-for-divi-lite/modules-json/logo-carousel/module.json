@@ -3,8 +3,9 @@
   "d4Shortcode": "wdcl_logo_carousel",
   "title": "Logo Carousel",
   "titles": "Logo Carousels",
-  "moduleIcon": "dcf-logo-carousel-icon",
+  "moduleIcon": "divi/module-image",
   "category": "module",
+  "folder": "dcf-carousel-free",
   "childModuleName": "dcf/logo-carousel-child",
   "childModuleTitle": "Logo",
   "childrenName": [
@@ -1652,11 +1653,11 @@
     },
     "slickArrow": {
       "subName": "slickArrow",
-      "selectorSuffix": " .slick-arrow"
+      "selectorSuffix": " [class*=swiper-button-]"
     },
     "slickDots": {
       "subName": "slickDots",
-      "selectorSuffix": " .slick-dots"
+      "selectorSuffix": " .swiper-pagination"
     },
     "logoItem": {
       "subName": "logoItem",
