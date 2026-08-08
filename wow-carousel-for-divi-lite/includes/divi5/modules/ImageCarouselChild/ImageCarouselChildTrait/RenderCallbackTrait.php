@@ -63,20 +63,7 @@ trait RenderCallbackTrait
     public static function render_callback($attrs, $content, $block, $elements)
     {
         // Helper to safely get attribute values.
-        $get_attr = function ($path, $default = '') use ($attrs) {
-            $keys = explode('.', $path);
-            $value = $attrs;
-            foreach ($keys as $key) {
-                if (!isset($value[$key])) {
-                    return $default;
-                }
-                $value = $value[$key];
-            }
-            if (is_array($value) && isset($value['desktop']['value'])) {
-                return $value['desktop']['value'];
-            }
-            return $value ?: $default;
-        };
+        $get_attr = \DiviCarouselShared\V1\Attrs::reader($attrs);
 
         // Get image source.
         $image_value = $get_attr('image.innerContent');
@@ -110,7 +97,7 @@ trait RenderCallbackTrait
         $figure_html = sprintf(
             '<figure class="dcf-lightbox-ctrl">
                 <div class="dcf-overlay" data-icon="%3$s" style="--dcf-overlay-font:%4$s"></div>
-                <img class="dcf-main-img" data-mfp-src="%1$s" src="%1$s" alt="%2$s" />
+                %4$s
             </figure>',
             (0 === strpos($image_src, 'data:')) ? esc_attr($image_src) : esc_url($image_src),
             esc_attr($photo_alt),

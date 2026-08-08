@@ -61,20 +61,7 @@ trait RenderCallbackTrait
     public static function render_callback($attrs, $content, $block, $elements)
     {
         // Helper to safely get attribute values.
-        $get_attr = function ($path, $default = '') use ($attrs) {
-            $keys = explode('.', $path);
-            $value = $attrs;
-            foreach ($keys as $key) {
-                if (!isset($value[$key])) {
-                    return $default;
-                }
-                $value = $value[$key];
-            }
-            if (is_array($value) && isset($value['desktop']['value'])) {
-                return $value['desktop']['value'];
-            }
-            return $value ?: $default;
-        };
+        $get_attr = \DiviCarouselShared\V1\Attrs::reader($attrs);
 
         // Get logo image source.
         // $get_attr already extracts desktop.value, so the result is either:
@@ -103,10 +90,11 @@ trait RenderCallbackTrait
             $logo_src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5Mb2dvPC90ZXh0Pjwvc3ZnPg==';
         }
 
-        $img_html = sprintf(
-            '<img class="dcf-swapped-img" data-mfp-src="%1$s" src="%1$s" alt="%2$s" />',
-            (0 === strpos($logo_src, 'data:')) ? esc_attr($logo_src) : esc_url($logo_src),
-            esc_attr($logo_alt)
+        $img_html = \DiviCarouselShared\V1\ImageMarkup::render(
+            $logo_src,
+            $logo_alt,
+            'dcf-swapped-img',
+            ['data-mfp-src' => (0 === strpos($logo_src, 'data:')) ? esc_attr($logo_src) : esc_url($logo_src)]
         );
 
         if ($is_link === 'on' && !empty($link_url)) {

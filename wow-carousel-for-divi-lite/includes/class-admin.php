@@ -78,6 +78,9 @@ class Admin
 
         // Localize script
         wp_localize_script('divi-carousel-free-admin', 'dcfAdmin', [
+            'mailConfigured' => self::is_mail_configured(),
+            'wooActive' => class_exists('WooCommerce'),
+            'installMailyardUrl' => admin_url('plugin-install.php?s=mailyard&tab=search&type=term'),
             'apiUrl' => rest_url('divi-carousel-free/v1'),
             'nonce' => wp_create_nonce('wp_rest'),
             'pluginUrl' => DCF_PLUGIN_URL,
@@ -90,4 +93,39 @@ class Admin
     {
         echo '<div id="divi-carousel-free-admin-root"></div>';
     }
+
+    /**
+     * Whether a mail/SMTP solution appears to be configured. WordPress's
+     * default PHP mail() is unreliable on most hosts, so if none of the
+     * known mailer plugins is active we nudge toward Mailyard.
+     */
+    private static function is_mail_configured(): bool
+    {
+        $known = [
+            'mailyard/mailyard.php',
+            'wp-mail-smtp/wp_mail_smtp.php',
+            'easy-wp-smtp/easy-wp-smtp.php',
+            'post-smtp/postman-smtp.php',
+            'fluent-smtp/fluent-smtp.php',
+            'smtp-mailer/main.php',
+            'wp-smtp/wp-smtp.php',
+            'sendgrid-email-delivery-simplified/wpsendgrid.php',
+            'mailgun/mailgun.php',
+            'wp-ses/wp-ses.php',
+            'branda-white-labeling/ultimate-branding.php',
+        ];
+        $active = (array) get_option('active_plugins', []);
+        if (is_multisite()) {
+            $active = array_merge($active, array_keys((array) get_site_option('active_sitewide_plugins', [])));
+        }
+        foreach ($known as $slug) {
+            if (in_array($slug, $active, true)) {
+                return true;
+            }
+        }
+        // Anything hooking phpmailer_init is (re)configuring the mailer.
+        return (bool) has_action('phpmailer_init');
+    }
+
+
 }

@@ -63,6 +63,47 @@ class Assets
         );
     }
 
+    /**
+     * Does this request actually render one of our carousels?
+     *
+     * Markers cover Divi 5 blocks (dcf/...), Divi 4 shortcodes (wdcl_...) and
+     * the deprecated Carousel Maker. Detection errs toward loading; see
+     * AssetPresence. Override with the `dcf_load_assets` filter.
+     */
+    private static function needs_assets(): bool
+    {
+        if (!class_exists('\DiviCarouselShared\V1\AssetPresence')) {
+            return true;
+        }
+
+        return \DiviCarouselShared\V1\AssetPresence::should_load(
+            ['dcf/', 'wdcl_', 'divi_carousel_maker'],
+            'dcf_load_assets'
+        );
+    }
+
+
+    /**
+     * Version a built asset by its file modification time.
+     *
+     * The plugin version alone is not enough: dist/ is rebuilt far more often
+     * than the version is bumped, so a browser that cached frontend.js keeps
+     * running the old build until the next release. The Visual Builder bundle
+     * has always been stamped this way; the frontend was not, which is why a
+     * rebuilt frontend script could appear to have no effect at all.
+     *
+     * @param string $relative Path under dist/, e.g. 'divi5/frontend.js'.
+     * @return string
+     */
+    private static function dist_version(string $relative): string
+    {
+        $path = DCF_DIST_DIR . $relative;
+
+        return file_exists($path)
+            ? DCF_PLUGIN_VERSION . '.' . filemtime($path)
+            : DCF_PLUGIN_VERSION;
+    }
+
     public static function enqueue_d5_frontend(): void
     {
         if (is_admin()) {
@@ -73,14 +114,26 @@ class Assets
             return;
         }
 
+        // Previously loaded ~198 KB on every Divi 5 page regardless of whether
+        // a carousel existed.
+        if (!self::needs_assets()) {
+            return;
+        }
+
         self::enqueue_swiper();
+
+        // Magnific drives both the video popup and the image lightbox. This was
+        // defined but never called, so those features only worked when Divi (or
+        // another plugin) happened to load Magnific first — an undeclared
+        // dependency that broke silently depending on what else was active.
+        self::enqueue_magnific();
 
         if (file_exists(DCF_DIST_DIR . 'divi5/frontend.js')) {
             wp_enqueue_script(
                 'dcf-divi5-frontend',
                 DCF_DIST_URL . 'divi5/frontend.js',
-                ['jquery', 'dcf-swiper'],
-                DCF_PLUGIN_VERSION,
+                ['jquery', 'dcf-swiper', 'dcf-magnific'],
+                self::dist_version('divi5/frontend.js'),
                 true
             );
         }
@@ -90,7 +143,7 @@ class Assets
                 'dcf-divi5-frontend-styles',
                 DCF_DIST_URL . 'divi5/bundle.css',
                 [],
-                DCF_PLUGIN_VERSION
+                self::dist_version('divi5/bundle.css')
             );
         }
     }

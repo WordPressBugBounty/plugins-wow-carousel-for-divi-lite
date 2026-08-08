@@ -16,20 +16,7 @@ trait RenderCallbackTrait
 {
     public static function render_callback($attrs, $content, $block, $elements)
     {
-        $get_attr = function ($path, $default = '') use ($attrs) {
-            $keys = explode('.', $path);
-            $value = $attrs;
-            foreach ($keys as $key) {
-                if (!isset($value[$key])) {
-                    return $default;
-                }
-                $value = $value[$key];
-            }
-            if (is_array($value) && isset($value['desktop']['value'])) {
-                return $value['desktop']['value'];
-            }
-            return $value ?: $default;
-        };
+        $get_attr = \DiviCarouselShared\V1\Attrs::reader($attrs);
 
         // Get image source.
         $image_value = $get_attr('image.innerContent');

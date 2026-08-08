@@ -4,7 +4,7 @@
  * Plugin Name:       Divi Carousel Free
  * Plugin URI:        https://DiviPeople.com
  * Description:       Divi Carousel plugin to create beautiful carousels with any modules.
- * Version:           3.1.1
+ * Version:           3.2.0
  * Author:            DiviPeople
  * Author URI:        https://DiviPeople.com
  * License:           GPLv2 or later
@@ -77,6 +77,24 @@ add_action('plugins_loaded', function () use ($dcf_conflicts) {
 
 define('DCF_PLUGIN_FILE', __FILE__);
 require_once __DIR__ . '/config.php';
+
+// ── Shared carousel core ───────────────────────────────────────────
+// Vendored from divi-carousel-pro; see scripts/sync-shared.js there.
+// Loaded before the Pro-active early return below, because the D5 render
+// callbacks need it in that mode too. The file guards its own class
+// declaration, so it is safe for both plugins to require it.
+require_once DCF_PLUGIN_DIR . 'includes/shared/v1/Attrs.php';
+require_once DCF_PLUGIN_DIR . 'includes/shared/v1/SwiperConfig.php';
+require_once DCF_PLUGIN_DIR . 'includes/shared/v1/CarouselMarkup.php';
+require_once DCF_PLUGIN_DIR . 'includes/shared/v1/AssetPresence.php';
+require_once DCF_PLUGIN_DIR . 'includes/shared/v1/ImageMarkup.php';
+require_once DCF_PLUGIN_DIR . 'includes/shared/v1/SourceAdapter.php';
+require_once DCF_PLUGIN_DIR . 'includes/shared/v1/Adapters.php';
+require_once DCF_PLUGIN_DIR . 'includes/shared/v1/LoopTemplate.php';
+require_once DCF_PLUGIN_DIR . 'includes/shared/v1/QueryEndpoint.php';
+require_once DCF_PLUGIN_DIR . 'includes/shared/v1/WooQuickView.php';
+require_once DCF_PLUGIN_DIR . 'includes/shared/v1/Presets.php';
+require_once DCF_PLUGIN_DIR . 'includes/shared/v1/DemandSignals.php';
 
 // ── Pro Active: minimal mode ──────────────────────────────────────
 // When Pro is active, only register D5 modules so pages built with

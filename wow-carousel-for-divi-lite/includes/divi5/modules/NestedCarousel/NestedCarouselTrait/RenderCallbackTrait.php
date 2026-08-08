@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Render Callback Trait for Video Carousel module.
+ * Render Callback Trait for Nested Carousel module.
  */
 
-namespace DiviCarouselFree\Modules\VideoCarousel\VideoCarouselTrait;
+namespace DiviCarouselFree\Modules\NestedCarousel\NestedCarouselTrait;
 
 use ET\Builder\Packages\Module\Module;
 
@@ -102,7 +102,7 @@ $nav_html  = $show_nav  ? \DiviCarouselShared\V1\CarouselMarkup::navigation('dcf
                 : '';
 
             $children = sprintf(
-                '<div dir="%s" class="dcf-container dcf-video-carousel %s" ' . \DiviCarouselShared\V1\CarouselMarkup::region_attributes($dc_labels) . '><div class="swiper" data-swiper-config=\'%s\'><div class="swiper-wrapper">%s</div></div>%s%s%s</div>',
+                '<div dir="%s" class="dcf-container dcf-nested-carousel %s" ' . \DiviCarouselShared\V1\CarouselMarkup::region_attributes($dc_labels) . '><div class="swiper" data-swiper-config=\'%s\'><div class="swiper-wrapper">%s</div></div>%s%s%s</div>',
                 esc_attr($sliding_dir),
                 esc_attr(implode(' ', $classes)),
                 esc_attr(wp_json_encode($swiper_config)),
@@ -122,7 +122,7 @@ $nav_html  = $show_nav  ? \DiviCarouselShared\V1\CarouselMarkup::navigation('dcf
             'attrs'               => $attrs,
             'elements'            => $elements,
             'id'                  => $block->parsed_block['id'] ?? '',
-            'moduleClassName'     => 'wdcl_video_carousel',
+            'moduleClassName'     => 'wdcl_nested_carousel',
             'name'                => $block->block_type->name ?? '',
             'moduleCategory'      => $block->block_type->category ?? 'module',
             'classnamesFunction'  => [self::class, 'module_classnames'],

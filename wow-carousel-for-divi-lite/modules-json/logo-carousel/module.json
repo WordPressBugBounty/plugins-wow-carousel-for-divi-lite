@@ -24,6 +24,21 @@
           }
         },
         "advanced": {
+          "carouselPreset": {
+            "desktop": {
+              "value": ""
+            }
+          },
+          "syncGroup": {
+            "desktop": {
+              "value": ""
+            }
+          },
+          "carouselRole": {
+            "desktop": {
+              "value": "main"
+            }
+          },
           "carouselType": {
             "desktop": {
               "value": "carousel"
@@ -47,6 +62,21 @@
           "slidingDir": {
             "desktop": {
               "value": "ltr"
+            }
+          },
+          "slideWidthMode": {
+            "desktop": {
+              "value": "fixed"
+            }
+          },
+          "slideRatio": {
+            "desktop": {
+              "value": "natural"
+            }
+          },
+          "transitionEasing": {
+            "desktop": {
+              "value": "ease"
             }
           },
           "isFade": {
@@ -199,6 +229,11 @@
               "value": "40px"
             }
           },
+          "pagiAlign": {
+            "desktop": {
+              "value": "center"
+            }
+          },
           "pagiColor": {
             "desktop": {
               "value": "#dddddd"
@@ -264,6 +299,77 @@
           "link": {},
           "text": {},
           "htmlAttributes": {},
+          "carouselPreset": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "quickStart",
+              "attrName": "module.advanced.carouselPreset",
+              "label": "Preset",
+              "priority": 10,
+              "render": true,
+              "features": {
+                "sticky": false,
+                "responsive": false,
+                "hover": false,
+                "dynamicContent": false,
+                "preset": "meta"
+              },
+              "component": {
+                "type": "field",
+                "name": "dcf/carousel-presets"
+              }
+            }
+          },
+          "syncGroup": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "linkedCarousels",
+              "attrName": "module.advanced.syncGroup",
+              "label": "Link Group",
+              "priority": 10,
+              "render": true,
+              "features": {
+                "sticky": false,
+                "responsive": false,
+                "hover": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "type": "field",
+                "name": "divi/text"
+              }
+            }
+          },
+          "carouselRole": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "linkedCarousels",
+              "attrName": "module.advanced.carouselRole",
+              "label": "Role In Group",
+              "priority": 20,
+              "render": true,
+              "features": {
+                "sticky": false,
+                "responsive": false,
+                "hover": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "type": "field",
+                "name": "divi/select",
+                "props": {
+                  "options": {
+                    "main": {
+                      "label": "Main Carousel"
+                    },
+                    "thumbnail": {
+                      "label": "Thumbnail Navigation"
+                    }
+                  }
+                }
+              }
+            }
+          },
           "carouselType": {
             "groupType": "group-item",
             "item": {
@@ -451,6 +557,78 @@
               }
             }
           },
+          "slideWidthMode": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "carouselSettings",
+              "attrName": "module.advanced.slideWidthMode",
+              "label": "Slide Width",
+              "priority": 26,
+              "render": true,
+              "features": {
+                "sticky": false,
+                "responsive": false,
+                "hover": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "type": "field",
+                "name": "divi/select",
+                "props": {
+                  "options": {
+                    "fixed": {
+                      "label": "Equal Widths"
+                    },
+                    "auto": {
+                      "label": "Fit Content"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "slideRatio": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "carouselSettings",
+              "attrName": "module.advanced.slideRatio",
+              "label": "Slide Ratio",
+              "priority": 27,
+              "render": true,
+              "features": {
+                "sticky": false,
+                "responsive": false,
+                "hover": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "type": "field",
+                "name": "divi/select",
+                "props": {
+                  "options": {
+                    "natural": {
+                      "label": "Natural (image size)"
+                    },
+                    "1-1": {
+                      "label": "Square 1:1"
+                    },
+                    "4-3": {
+                      "label": "Landscape 4:3"
+                    },
+                    "3-2": {
+                      "label": "Landscape 3:2"
+                    },
+                    "16-9": {
+                      "label": "Widescreen 16:9"
+                    },
+                    "3-4": {
+                      "label": "Portrait 3:4"
+                    }
+                  }
+                }
+              }
+            }
+          },
           "isFade": {
             "groupType": "group-item",
             "item": {
@@ -548,6 +726,48 @@
                   "allowedUnits": [
                     "ms"
                   ]
+                }
+              }
+            }
+          },
+          "transitionEasing": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "carouselSettings",
+              "attrName": "module.advanced.transitionEasing",
+              "label": "Transition Easing",
+              "priority": 41,
+              "render": true,
+              "features": {
+                "sticky": false,
+                "responsive": false,
+                "hover": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "type": "field",
+                "name": "divi/select",
+                "props": {
+                  "options": {
+                    "ease": {
+                      "label": "Ease"
+                    },
+                    "linear": {
+                      "label": "Linear"
+                    },
+                    "ease-in": {
+                      "label": "Ease In"
+                    },
+                    "ease-out": {
+                      "label": "Ease Out"
+                    },
+                    "ease-in-out": {
+                      "label": "Ease In Out"
+                    },
+                    "cubic-bezier(0.34, 1.56, 0.64, 1)": {
+                      "label": "Overshoot"
+                    }
+                  }
                 }
               }
             }
@@ -730,7 +950,7 @@
               "render": true,
               "features": {
                 "sticky": false,
-                "responsive": false,
+                "responsive": true,
                 "hover": false,
                 "dynamicContent": false
               },
@@ -1250,6 +1470,39 @@
               }
             }
           },
+          "pagiAlign": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "paginationSettings",
+              "attrName": "module.advanced.pagiAlign",
+              "label": "Alignment",
+              "priority": 5,
+              "render": true,
+              "features": {
+                "sticky": false,
+                "responsive": false,
+                "hover": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "type": "field",
+                "name": "divi/select",
+                "props": {
+                  "options": {
+                    "left": {
+                      "label": "Left"
+                    },
+                    "center": {
+                      "label": "Center"
+                    },
+                    "right": {
+                      "label": "Right"
+                    }
+                  }
+                }
+              }
+            }
+          },
           "pagiColor": {
             "groupType": "group-item",
             "item": {
@@ -1673,6 +1926,17 @@
     "design": "auto",
     "advanced": "auto",
     "groups": {
+      "quickStart": {
+        "panel": "content",
+        "priority": 5,
+        "groupName": "quickStart",
+        "component": {
+          "name": "divi/composite",
+          "props": {
+            "groupLabel": "Quick Start"
+          }
+        }
+      },
       "carouselSettings": {
         "panel": "content",
         "priority": 10,
@@ -1681,6 +1945,17 @@
           "name": "divi/composite",
           "props": {
             "groupLabel": "Carousel Settings"
+          }
+        }
+      },
+      "linkedCarousels": {
+        "panel": "content",
+        "priority": 30,
+        "groupName": "linkedCarousels",
+        "component": {
+          "name": "divi/composite",
+          "props": {
+            "groupLabel": "Linked Carousels"
           }
         }
       },
@@ -1702,7 +1977,8 @@
         "component": {
           "name": "divi/composite",
           "props": {
-            "groupLabel": "Navigation"
+            "groupLabel": "Navigation",
+            "presetGroup": "divi/button"
           }
         }
       },
@@ -1713,7 +1989,8 @@
         "component": {
           "name": "divi/composite",
           "props": {
-            "groupLabel": "Pagination"
+            "groupLabel": "Pagination",
+            "presetGroup": "divi/border"
           }
         }
       },

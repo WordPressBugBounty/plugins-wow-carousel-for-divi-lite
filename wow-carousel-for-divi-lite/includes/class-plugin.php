@@ -91,6 +91,7 @@ class Plugin
                 'image_carousel' => true,
                 'logo_carousel'  => true,
                 'video_carousel' => true,
+        'nested_carousel'  => true,
             ]);
         }
 

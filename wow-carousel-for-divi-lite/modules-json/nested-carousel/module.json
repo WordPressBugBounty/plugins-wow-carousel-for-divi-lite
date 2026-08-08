@@ -1,15 +1,15 @@
 {
-  "name": "dcf/video-carousel",
-  "d4Shortcode": "",
-  "title": "Video Carousel",
-  "titles": "Video Carousels",
-  "moduleIcon": "divi/module-video-slider",
+  "name": "dcf/nested-carousel",
+  "d4Shortcode": "divi_carousel_maker",
+  "title": "Nested Carousel",
+  "titles": "Nested Carousels",
+  "moduleIcon": "divi/module-group-carousel",
   "category": "module",
   "folder": "dcf-carousel-free",
-  "childModuleName": "dcf/video-carousel-child",
-  "childModuleTitle": "Video",
+  "childModuleName": "dcf/nested-carousel-child",
+  "childModuleTitle": "Slide",
   "childrenName": [
-    "dcf/video-carousel-child"
+    "dcf/nested-carousel-child"
   ],
   "attributes": {
     "module": {
@@ -19,7 +19,7 @@
         "meta": {
           "adminLabel": {
             "desktop": {
-              "value": "Video Carousel"
+              "value": "Nested Carousel"
             }
           }
         },
@@ -1577,17 +1577,13 @@
       "subName": "slickDots",
       "selectorSuffix": " .swiper-pagination"
     },
-    "videoItem": {
-      "subName": "videoItem",
-      "selectorSuffix": " .dcf-video-item"
+    "nestedItem": {
+      "subName": "nestedItem",
+      "selectorSuffix": " .dcf-nested-item"
     },
-    "videoImage": {
-      "subName": "videoImage",
-      "selectorSuffix": " .dcf-video-item img"
-    },
-    "videoPopup": {
-      "subName": "videoPopup",
-      "selectorSuffix": " .dcf-video-popup"
+    "slideContent": {
+      "subName": "slideContent",
+      "selectorSuffix": " .dcf-nested-item > *"
     }
   },
   "settings": {

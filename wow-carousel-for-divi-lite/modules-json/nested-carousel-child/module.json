@@ -1,0 +1,67 @@
+{
+  "name": "dcf/nested-carousel-child",
+  "d4Shortcode": "divi_carousel_maker_child",
+  "title": "Slide",
+  "titles": "Slides",
+  "moduleIcon": "divi/module-group",
+  "category": "child-module",
+  "childrenName": [],
+  "attributes": {
+    "module": {
+      "type": "object",
+      "selector": "{{selector}}",
+      "default": {
+        "meta": {
+          "adminLabel": {
+            "desktop": {
+              "value": ""
+            }
+          }
+        },
+        "advanced": {}
+      },
+      "settings": {
+        "meta": {
+          "adminLabel": {}
+        },
+        "advanced": {
+          "link": {},
+          "text": {},
+          "htmlAttributes": {}
+        },
+        "decoration": {
+          "background": {},
+          "spacing": {},
+          "border": {},
+          "boxShadow": {},
+          "filters": {},
+          "transform": {},
+          "animation": {},
+          "overflow": {},
+          "disabledOn": {},
+          "transition": {},
+          "position": {},
+          "zIndex": {},
+          "scroll": {},
+          "sticky": {}
+        }
+      }
+    }
+  },
+  "customCssFields": {
+    "mainElement": {
+      "subName": "mainElement",
+      "selectorSuffix": ""
+    },
+    "slideInner": {
+      "subName": "slideInner",
+      "selectorSuffix": " .dcf-nested-item"
+    }
+  },
+  "settings": {
+    "content": "auto",
+    "design": "auto",
+    "advanced": "auto",
+    "groups": {}
+  }
+}

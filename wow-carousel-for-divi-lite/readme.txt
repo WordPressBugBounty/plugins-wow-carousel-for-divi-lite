@@ -1,206 +1,182 @@
-=== Divi Carousel Free – Image Carousel & Logo Carousel for Divi Builder ===
+=== Divi Carousel – Image, Logo & Video Carousel for Divi Theme ===
 
 Contributors: plugpressco, badhonrocks, divipeople
-Tags: divi carousel, divi slider, divi module, image carousel, logo carousel
+Tags: divi, divi theme, carousel, image carousel, logo carousel
 Requires at least: 5.0
 Tested up to: 7.0
-Stable tag: 3.1.1
+Stable tag: 3.2.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-The best free Divi Carousel plugin. Build a Divi Image Carousel, Divi Logo Carousel, and responsive Divi sliders inside the Divi Builder.
+Free carousel modules for the Divi Theme and Divi Builder. Build a Divi image carousel, logo carousel, video carousel or slider in minutes.
 
 == Description ==
 
-**Divi Carousel Free** is a powerful, lightweight carousel plugin built exclusively for the **Divi Theme** and **Divi Builder**. With native modules including the **Divi Image Carousel** and **Divi Logo Carousel**, you can break past the default Divi slider limitations and present your content in a more beautiful, responsive, and engaging way — without writing a single line of code.
+The Divi Theme ships with one slider. This plugin adds four carousel modules to the Divi Builder, so you can build sliders Divi cannot make on its own — without touching code.
 
-Fully compatible with both **Divi 4** and **Divi 5**, every module integrates seamlessly into the Divi Builder UI and uses the same Content / Design / Advanced tab structure you already know.
+Works on **Divi 4 and Divi 5**, in the Divi Theme, Extra Theme, or the Divi Builder plugin.
 
-[**View Live Demo →**](https://divipeople.com/free-plugins/divi-carousel-free/demo/) | [**Get Divi Carousel Pro →**](https://divipeople.com/divi-carousel-pro/)
+[**View the live demo**](https://divipeople.com/free-plugins/divi-carousel-free/demo/) | [**Divi Carousel Pro**](https://divipeople.com/divi-carousel-pro/)
 
-= The Ultimate Free Divi Carousel Plugin =
+= Four free Divi carousel modules =
 
-Divi Carousel Free brings you premium-grade carousel modules to supercharge your Divi Builder design. Whether you want to display a portfolio with a **Divi Image Carousel**, a row of trusted clients with a **Divi Logo Carousel**, or a smooth touch-enabled slider on your homepage, this plugin gives you the tools — for free.
+**Divi Image Carousel**
+Turn any set of images into a swipeable slider. Captions, custom links, hover effects and a built-in lightbox. Good for portfolios, galleries and product shots.
 
-Every module in Divi Carousel Free ships with the same core features you'd expect from a paid carousel plugin: autoplay, infinite loop, smooth slide transitions, navigation arrows, pagination dots, swipe gestures, and full responsive control. Built on top of [Swiper.js](https://swiperjs.com/) for buttery-smooth performance and powered by clean, modern code that follows official Divi development guidelines.
+**Divi Logo Carousel**
+A client wall that scrolls. Each logo keeps its own width, links where you want, and can fade from grayscale to colour on hover.
 
-= Free Divi Carousel Modules =
+**Divi Video Carousel**
+YouTube, Vimeo and self-hosted video in a slider, with lightbox playback and your own poster images.
 
-* **[Divi Image Carousel](https://divipeople.com/free-plugins/divi-carousel-free/)** — Build an interactive image carousel slider in minutes. Add titles, captions, custom links, hover effects, and a built-in lightbox. Perfect for portfolios, photo galleries, product showcases, and visual storytelling.
-* **[Divi Logo Carousel](https://divipeople.com/free-plugins/divi-carousel-free/)** — Showcase client logos, partner brands, or sponsor marks in a continuous, professional-looking slider. Custom links per logo, grayscale-to-color hover, and flexible spacing controls.
+**Divi Nested Carousel**
+Put any Divi module inside a slide. Build the slide you actually want instead of filling in a fixed layout.
 
-[**See the Live Demo →**](https://divipeople.com/free-plugins/divi-carousel-free/demo/)
+= What you get =
 
-= Key Feature Highlights =
+* **Quick Start presets** — pick a starting point, then adjust anything you like.
+* **Linked carousels** — connect two carousels so one drives the other. That is how you build a thumbnail gallery.
+* **Slide Ratio** — crop every slide to the same shape so mixed portrait and landscape images stop stretching the row.
+* **Responsive by slide** — different slide counts, spacing and controls for desktop, tablet and phone.
+* **Real accessibility** — keyboard-operable arrows, screen-reader labels in your language, a pause control for autoplay, and reduced-motion support.
+* **Right to Left** — genuine RTL, including drag direction and keyboard order.
+* **Loads nothing on pages without a carousel** — no weight added to the rest of your site.
 
-**Powerful Carousel Settings**
-Total control over your Divi slider behavior — autoplay, animation speed, infinite loop, center mode, transition effects, navigation arrows, pagination dots, and more.
+= Built for the Divi Builder =
 
-**Mobile Responsive Out of the Box**
-Every Divi Carousel module is 100% responsive with independent settings for desktop, tablet, and phone. Touch swipe gestures are enabled by default for a flawless mobile experience.
+Every module uses the same Content / Design / Advanced tabs you already know. No new interface to learn, and no shortcodes to remember.
 
-**Divi 5 Ready (and Divi 4 Compatible)**
-Same module, two builders. Divi Carousel Free works on legacy Divi 4 sites and the new Divi 5 visual builder, with the right assets loaded automatically for each version.
-
-**Lightning-Fast Performance**
-Carousel CSS and JavaScript are only loaded on pages that actually use a carousel module. The plugin runs cleanly under the official Divi developer guidelines and adds zero overhead to unrelated pages.
-
-**Robust Spacing & Design Controls**
-Apply precise padding and margin to every element inside the carousel. Tweak typography, colors, borders, shadows, and pagination styling from the standard Divi Design tab.
-
-**Native Divi Builder Experience**
-Module dashboards mirror the default Divi Builder UI, so there's no learning curve. Drag, drop, and customize like any other Divi module.
-
-**Built-in Module Manager**
-Toggle individual carousel modules on or off from the admin dashboard to keep your Divi Builder module list clean.
-
-**RTL Language Support**
-Full Right-to-Left support for Arabic, Hebrew, Persian, and other RTL languages — out of the box.
-
-**Regular Updates**
-We ship regular updates for both the free and pro versions, with same-day fixes for new Divi releases.
+A built-in Module Manager lets you switch off any module you are not using, so the Divi Builder list stays short.
 
 = Upgrade to Divi Carousel Pro =
 
-Need more carousel modules and advanced effects? **[Divi Carousel Pro](https://divipeople.com/divi-carousel-pro/)** unlocks the full library of premium Divi slider modules:
+[**Divi Carousel Pro**](https://divipeople.com/divi-carousel-pro/) adds eight more modules — Content, Card, Post, Product, Team, Testimonial, Google Reviews and Instagram Feed — plus a Dynamic Loop carousel that builds slides from any WordPress query, filtering, and WooCommerce quick view.
 
-* **[Divi Content Carousel](https://divipeople.com/divi-carousel-pro/)** — Custom content slides with icons, headings, and CTA buttons.
-* **[Divi Post Carousel](https://divipeople.com/divi-carousel-pro/)** — Showcase recent, popular, or category-filtered blog posts in a beautiful slider with featured image, meta, and excerpts.
-* **[Divi Testimonial Carousel](https://divipeople.com/divi-carousel-pro/)** — Display client reviews and testimonials with star ratings, avatars, and company info.
-* **[Divi Team Carousel](https://divipeople.com/divi-carousel-pro/)** — Highlight team members with bios, role labels, and social links.
-* **[Divi WooCommerce Carousel](https://divipeople.com/divi-carousel-pro/)** — Feature WooCommerce products with prices, ratings, and add-to-cart buttons.
-* **Coverflow & 3D Effects** — Cinematic, depth-based slide transitions.
-* **Advanced Navigation Styles** — Custom arrow shapes, pagination styles, and progress bars.
-* **Lazy Loading** — Defer offscreen slides for faster page load times.
-* **Priority Email Support** — Direct help from the team that builds the plugin.
-
-[**Compare Divi Carousel Free vs Pro →**](https://divipeople.com/divi-carousel-pro/)
-
-= Why Choose Divi Carousel Free? =
-
-* **Built only for Divi** — Not a generic carousel plugin retrofitted for Divi. Every module is hand-built for the Divi Builder.
-* **Full Divi 5 Support** — Stay future-proof with one of the first carousel plugins fully compatible with Divi 5.
-* **No Bloat** — Two focused modules, zero unnecessary scripts, and assets that only load where needed.
-* **Free Forever** — Core image and logo carousel functionality stays free. No trial limits, no nag screens.
-* **Trusted by the DiviPeople Team** — Maintained by the same team behind several Divi Marketplace plugins.
-
-= Backed by DiviPeople =
-
-Divi Carousel Free is built and maintained by the **[DiviPeople](https://divipeople.com)** team — a focused WordPress product studio building handcrafted plugins for the Divi community. Every release is tested against the latest version of Divi 4 and Divi 5 before it ships.
-
-[**Visit DiviPeople**](https://divipeople.com) | [**All Free Divi Plugins**](https://divipeople.com/free-plugins/) | [**Divi Carousel Pro**](https://divipeople.com/divi-carousel-pro/)
-
-= Rate Us on WordPress =
-
-We are thankful you chose Divi Carousel Free. If the plugin has helped your project, please consider [leaving a 5-star review on WordPress.org](https://wordpress.org/support/plugin/wow-carousel-for-divi-lite/reviews/?filter=5#new-post) — it takes less than a minute and means the world to a small team. ⭐️ ⭐️ ⭐️ ⭐️ ⭐️
+Your free carousels keep working exactly as they are when you upgrade.
 
 == Installation ==
 
-= Minimum Requirements =
+= Requirements =
 
-* WordPress 5.0 or higher
-* PHP 7.4 or higher
-* Divi Theme, Extra Theme, or Divi Builder plugin by Elegant Themes
+* WordPress 5.0 or higher (6.0+ recommended)
+* PHP 7.4 or higher (8.0+ recommended)
+* Divi Theme, Extra Theme, or the Divi Builder plugin by Elegant Themes
 
-= Recommended =
+This plugin extends the Divi Builder. It will not do anything on other WordPress themes.
 
-* WordPress 6.0 or higher
-* PHP 8.0 or higher
-* WordPress memory limit of 128 MB or higher
+= Install from WordPress =
 
-= Automatic Installation (Recommended) =
+1. Go to **Plugins → Add New**.
+2. Search for **Divi Carousel**.
+3. Click **Install Now**, then **Activate**.
+4. Edit a page with the Divi Builder and search the module list for "Carousel".
 
-1. Log in to your WordPress dashboard.
-2. Go to **Plugins → Add New**.
-3. Search for **Divi Carousel Free**.
-4. Click **Install Now**, then **Activate**.
-5. Open any page with the Divi Builder and search for "Carousel" in the module list — both **Divi Image Carousel** and **Divi Logo Carousel** modules will appear.
+= Install manually =
 
-= Manual Installation =
-
-1. Download the plugin zip file from WordPress.org.
+1. Download the zip from WordPress.org.
 2. Go to **Plugins → Add New → Upload Plugin**.
-3. Choose the downloaded zip and click **Install Now**, then **Activate**.
-4. Use the new carousel modules inside the Divi Builder.
-
-> **Note:** Divi Carousel Free requires the Divi Theme, Extra Theme, or Divi Builder plugin by Elegant Themes. It will not function on other WordPress themes.
+3. Choose the zip, click **Install Now**, then **Activate**.
 
 == Frequently Asked Questions ==
 
-= Do I need the Divi Theme to use Divi Carousel Free? =
+= Do I need the Divi Theme? =
 
-You don't need the Divi Theme specifically — the Divi Builder plugin or Extra Theme will work too. The plugin is dependent on the Divi Builder, not the Divi Theme alone.
+You need the Divi Builder, which comes with the Divi Theme, the Extra Theme, or the standalone Divi Builder plugin. Any of the three works.
 
-= Is Divi Carousel Free really free? =
+= Does it work with Divi 5? =
 
-Yes — Divi Carousel Free is 100% free with no trial limits, no feature gating, and no nag screens. The pro version, [Divi Carousel Pro](https://divipeople.com/divi-carousel-pro/), adds more modules and advanced effects but is completely optional.
+Yes. The same modules work on Divi 4 and Divi 5, and the right assets load automatically depending on which one you are running.
 
-= Does Divi Carousel Free support Divi 5? =
+= Which modules are free? =
 
-Yes. The plugin is fully compatible with Divi 5 and the new Divi visual builder. The same module also works on legacy Divi 4 sites — the correct assets are loaded automatically based on which Divi version is active.
+Four: Divi Image Carousel, Divi Logo Carousel, Divi Video Carousel and Divi Nested Carousel. All of them include autoplay, looping, arrows, dots, swipe and full responsive control.
 
-= What modules are included in the free version? =
+= Is it really free? =
 
-Divi Carousel Free includes two modules: the **Divi Image Carousel** and the **Divi Logo Carousel**. Both come with premium features like autoplay, infinite loop, navigation arrows, pagination dots, swipe gestures, and full responsive control.
+Yes. No trial, no locked features, no nag screens. Divi Carousel Pro is optional.
 
-= What's the difference between Divi Carousel Free and Divi Carousel Pro? =
+= What does Divi Carousel Pro add? =
 
-The free version includes the **Divi Image Carousel** and **Divi Logo Carousel** modules. [Divi Carousel Pro](https://divipeople.com/divi-carousel-pro/) adds Content, Post, Testimonial, Team, and WooCommerce carousels, plus 3D/coverflow effects, advanced navigation styles, lazy loading, and priority email support.
+Eight more modules — Content, Card, Post, Product, Team, Testimonial, Google Reviews and Instagram Feed — plus a Dynamic Loop carousel driven by a WordPress query, front-end filtering, and WooCommerce quick view.
 
-= If I upgrade to Pro, will my existing carousels break? =
+= Will my carousels break if I upgrade to Pro? =
 
-No. All free modules are also available in Divi Carousel Pro, so your existing designs and settings will remain fully intact after upgrading.
+No. Every free module exists in Pro too, with the same settings.
 
-= Can I add multiple sliders inside one carousel? =
+= How do I build a thumbnail gallery? =
 
-Yes. You can add as many slides as you need inside a single Divi Carousel module. Combine animation effects, autoplay, navigation, and pagination to suit your design.
+Add two carousels. Give both the same name under **Linked Carousels**, set one to Main Carousel and the other to Thumbnail Navigation. Clicking a thumbnail moves the main carousel, and the thumbnails work from the keyboard too.
 
-= Does the Divi Carousel have an autoplay option? =
+= Can I change how many slides show at once? =
 
-Yes. Enable autoplay under **Module Settings → Content → Carousel Settings → Autoplay**. You can also set autoplay speed, pause-on-hover, and loop behavior.
+Yes, per device. Set **Slides To Show** separately for desktop, tablet and phone.
 
-= Does the Divi Carousel have an infinite scroll / loop option? =
+= Can I turn off the arrows or dots? =
 
-Yes. Toggle **Slider Loop** under **Module Settings → Content → Carousel Settings** to enable infinite, seamless scrolling.
+Yes, and per device. **Navigation & Pagination** can show arrows and dots on desktop, dots only on tablet, and nothing on phone.
 
-= Can I hide the navigation arrows and dots? =
+= Does autoplay pause? =
 
-Yes. Show or hide arrows and pagination dots from **Module Settings → Content → Navigation Settings** and **Pagination Settings**.
+Yes. Autoplay stops when a visitor interacts with the carousel, and a pause button appears whenever autoplay is on. Autoplay is off by default, because motion nobody asked for is an accessibility problem.
 
-= Can I change the number of slides shown per view? =
+= Will it slow my site down? =
 
-Yes. Set the number of visible slides per breakpoint under **Module Settings → Content → Carousel Settings → Show Items Desktop / Tablet / Phone**.
-
-= Is the carousel mobile responsive? =
-
-Yes. Every Divi Carousel module is fully responsive with independent settings for desktop, tablet, and phone, plus native swipe gestures on touch devices.
-
-= Will the plugin slow down my website? =
-
-No. Carousel CSS and JS are only enqueued on pages that actually use a carousel module — pages without carousels stay completely lean.
+No. Carousel CSS and JavaScript only load on pages that actually contain a carousel.
 
 = Does it support RTL languages? =
 
-Yes. Full Right-to-Left support is included for Arabic, Hebrew, Persian, and other RTL languages.
+Yes, properly. Arabic, Hebrew, Persian and other RTL languages get the correct drag direction, arrow order and keyboard order — not just mirrored text.
 
-= Can I try it before installing? =
+= Where do I get help? =
 
-Yes — see the [live demo](https://divipeople.com/free-plugins/divi-carousel-free/demo/) for working examples of every module.
-
-= Where can I get support? =
-
-Free support is available on the [WordPress.org support forum](https://wordpress.org/support/plugin/wow-carousel-for-divi-lite/). Pro customers get priority email support.
+Free support is on the [WordPress.org support forum](https://wordpress.org/support/plugin/wow-carousel-for-divi-lite/). Pro customers get priority email support.
 
 == Screenshots ==
 
 1. Divi Image Carousel with navigation controls and lightbox
-2. Divi Logo Carousel showcasing client brands in a continuous slider
+2. Divi Logo Carousel showing client brands in a continuous slider
 3. Module settings inside the Divi Builder
-4. Responsive carousel layout on mobile devices
-5. Plugin admin dashboard and module manager
+4. Responsive carousel layout on mobile
+5. Plugin dashboard and module manager
 
 == Changelog ==
+
+= 3.2.0 =
+
+**Please read the behaviour changes before updating.**
+
+Behaviour changes
+* Vertical, centred and auto-height carousels may render slightly differently. The modules each carried their own copy of the Swiper configuration builder and those copies had drifted apart; they now share one implementation, so Logo and Video Carousels pick up fixes Image Carousel already had.
+* Navigation arrows and pagination dots are now real buttons instead of divs, so they are focusable and announced correctly. If you styled them with CSS targeting `div.swiper-button-next`, update the selector.
+* Autoplay is now off by default, and stops when a visitor interacts with a carousel. Where autoplay is on, a pause/play control appears with it.
+* The Video Carousel no longer shows Ticker settings. It never had a ticker renderer — selecting Ticker did nothing. Image and Logo Carousels are unaffected.
+
+Added
+* **Nested Carousel** — place any Divi module inside a carousel slide, so you can build the slide you actually want instead of being limited to a fixed layout.
+* **Quick Start presets** — a preset picker in the module settings that applies a ready-made configuration (layout, motion, navigation, density and RTL variants). Every setting it applies stays editable afterwards.
+* **Linked Carousels** — give two carousels the same link group to connect them. A carousel set to Thumbnail Navigation drives the main one and highlights the current slide; two main carousels move together. This brings back the Divi 4 thumbnail gallery, and unlike the Divi 4 version the thumbnails are operable from the keyboard.
+* **Slide Ratio** — crop slide images to one shape (square, 4:3, 3:2, 16:9 or portrait) so every slide is the same height. Mixed portrait and landscape images otherwise stretch the carousel to the tallest one.
+* **Slide Width: Fit Content** — let each slide size itself instead of dividing the track evenly. Useful for logo walls.
+* **Transition Easing** and **Dot Alignment**, two Divi 4 controls the Divi 5 port had dropped.
+* **Navigation & Pagination is now per-device** — show arrows and dots on desktop, dots only on tablet, and nothing on phone where swiping is the obvious gesture.
+* Accessibility: reduced-motion support, translated screen-reader announcements, and a labelled carousel region.
+* Carousel Maker layouts can now be converted to Divi 5 — see the upgrade note below.
+* A Roadmap screen in the plugin dashboard, where you can tell us which carousel to build next.
+
+Fixed
+* Image Lightbox did nothing in Divi 5. Magnific Popup was never loaded, so the video popup and lightbox only worked when another plugin happened to load it first — and even once loaded, the click never reached it. Both halves are fixed.
+* Right to Left was cosmetic. The wrapper flipped but the carousel itself did not, so drag direction, arrow order and keyboard order all still ran left to right. RTL is now functional.
+* Carousels inside tabs, toggles and modals initialise correctly instead of collapsing.
+* Editing a module source and regenerating did not update what the plugin actually served, because generated files were only copied during a full webpack build.
+* A duplicated 3.2.0 heading in this changelog; the second block was 3.1.1's.
+
+Improved
+* Carousel assets no longer load on pages without a carousel — previously around 198 KB on every Divi 5 page.
+* Images use responsive srcset, lazy loading and intrinsic dimensions.
+* Frontend scripts and styles are versioned by file, so an updated build reaches visitors immediately instead of waiting for a browser cache to expire.
+* Continuous integration now runs PHP linting, PHP coding standards, JavaScript linting, generated-file and production-build checks on every change.
+* Documentation corrected: this plugin ships four modules (Image, Logo, Video and Nested Carousel), not two.
 
 = 3.1.1 =
 * Fix: Critical Divi 5 conflict — plugin assets registered into Divi's Dynamic Assets pipeline could break the site-wide generated stylesheet (counters, background patterns, module stacking). Assets now enqueue normally.
@@ -303,6 +279,9 @@ Free support is available on the [WordPress.org support forum](https://wordpress
 * Initial release
 
 == Upgrade Notice ==
+
+= 3.2.0 =
+Adds the Nested Carousel, Quick Start presets, Linked Carousels (thumbnail navigation) and Slide Ratio. Fixes an Image Lightbox that never opened in Divi 5. Right to Left now flips drag and keyboard order, not just text, and arrows and dots are real buttons — update any CSS targeting `div.swiper-button-next`. If you converted a Carousel Maker layout, check slides that used a Divi Library item — the reference is kept in the slide's admin label and needs re-adding by hand.
 
 = 3.1.0 =
 Adds a brand-new Video Carousel module for Divi 5 (YouTube, Vimeo, self-hosted with lightbox), wires up the Module Manager to actually gate Divi 5 modules, and ships a proper uninstall cleanup. Recommended for all users.

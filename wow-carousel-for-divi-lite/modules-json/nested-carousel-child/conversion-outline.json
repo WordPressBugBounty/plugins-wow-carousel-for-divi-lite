@@ -1,0 +1,14 @@
+{
+  "advanced": {
+    "admin_label": "module.meta.adminLabel"
+  },
+  "css": {
+    "before": "css.*.before",
+    "after": "css.*.after",
+    "main_element": "css.*.mainElement"
+  },
+  "module": {
+    "title": "module.meta.adminLabel.*",
+    "library_id": "module.meta.adminLabel.*"
+  }
+}

@@ -24,6 +24,8 @@ require_once __DIR__ . '/ImageCarousel/ImageCarousel.php';
 require_once __DIR__ . '/ImageCarouselChild/ImageCarouselChild.php';
 require_once __DIR__ . '/VideoCarousel/VideoCarousel.php';
 require_once __DIR__ . '/VideoCarouselChild/VideoCarouselChild.php';
+require_once __DIR__ . '/NestedCarousel/NestedCarousel.php';
+require_once __DIR__ . '/NestedCarouselChild/NestedCarouselChild.php';
 
 use DiviCarouselFree\Modules\LogoCarousel\LogoCarousel;
 use DiviCarouselFree\Modules\LogoCarouselChild\LogoCarouselChild;
@@ -31,6 +33,8 @@ use DiviCarouselFree\Modules\ImageCarousel\ImageCarousel;
 use DiviCarouselFree\Modules\ImageCarouselChild\ImageCarouselChild;
 use DiviCarouselFree\Modules\VideoCarousel\VideoCarousel;
 use DiviCarouselFree\Modules\VideoCarouselChild\VideoCarouselChild;
+use DiviCarouselFree\Modules\NestedCarousel\NestedCarousel;
+use DiviCarouselFree\Modules\NestedCarouselChild\NestedCarouselChild;
 
 // When Pro is active, skip dependency tree (hides from builder picker)
 // but still register modules so existing dcf/* content renders.
@@ -42,9 +46,10 @@ $dcf_pro_is_active = defined('DCP_PRO_ACTIVE')
 // remain enabled for users who installed before the key existed.
 $dcf_modules_enabled = array_merge(
     [
-        'image_carousel' => true,
-        'logo_carousel'  => true,
-        'video_carousel' => true,
+        'image_carousel'  => true,
+        'logo_carousel'   => true,
+        'video_carousel'  => true,
+        'nested_carousel' => true,
     ],
     (array) get_option('dcf_carousel_modules', [])
 );
@@ -62,6 +67,10 @@ if ($dcf_pro_is_active) {
         (new VideoCarousel())->load();
         (new VideoCarouselChild())->load();
     }
+    if (! empty($dcf_modules_enabled['nested_carousel'])) {
+        (new NestedCarousel())->load();
+        (new NestedCarouselChild())->load();
+    }
 } else {
     add_action(
         'divi_module_library_modules_dependency_tree',
@@ -77,6 +86,10 @@ if ($dcf_pro_is_active) {
             if (! empty($dcf_modules_enabled['video_carousel'])) {
                 $dependency_tree->add_dependency(new VideoCarousel());
                 $dependency_tree->add_dependency(new VideoCarouselChild());
+            }
+            if (! empty($dcf_modules_enabled['nested_carousel'])) {
+                $dependency_tree->add_dependency(new NestedCarousel());
+                $dependency_tree->add_dependency(new NestedCarouselChild());
             }
         }
     );

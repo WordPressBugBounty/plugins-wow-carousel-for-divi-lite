@@ -16,21 +16,7 @@ trait RenderCallbackTrait
 {
     public static function render_callback($attrs, $content, $block, $elements)
     {
-        $get = function ($path, $default = '', $device = 'desktop') use ($attrs) {
-            $keys  = explode('.', $path);
-            $value = $attrs;
-            foreach ($keys as $key) {
-                if (!isset($value[$key])) return $default;
-                $value = $value[$key];
-            }
-            if (is_array($value) && isset($value[$device]['value']) && $value[$device]['value'] !== '') {
-                return $value[$device]['value'];
-            }
-            if ($device !== 'desktop' && is_array($value) && isset($value['desktop']['value'])) {
-                return $value['desktop']['value'];
-            }
-            return is_array($value) ? ($value['desktop']['value'] ?? $default) : ($value ?: $default);
-        };
+        $get = \DiviCarouselShared\V1\Attrs::reader($attrs);
 
         // Carousel type.
         $carousel_type = $get('module.advanced.carouselType', 'carousel');
@@ -115,28 +101,57 @@ trait RenderCallbackTrait
                 $content
             );
         } else {
-            $swiper_config = self::build_swiper_config(
-                $slide_count, $col_tablet, $col_phone,
-                (int) str_replace('px', '', $slide_spacing),
-                $is_infinite, $nav_pagi, $is_autoplay, $autoplay_speed,
-                $animation_speed, $pause_on_hover, $is_fade, $is_auto_height,
-                $slide_to_scroll, $is_vertical, $is_center === 'on', $center_padding
-            );
+            $dc_labels = [
+                'prev'   => __('Previous slide', 'divi-carousel-free'),
+                'next'   => __('Next slide', 'divi-carousel-free'),
+                'pause'  => __('Pause carousel', 'divi-carousel-free'),
+                'play'   => __('Play carousel', 'divi-carousel-free'),
+                'region' => __('Carousel', 'divi-carousel-free'),
+                'first'  => __('This is the first slide', 'divi-carousel-free'),
+                'last'   => __('This is the last slide', 'divi-carousel-free'),
+                'bullet' => __('Go to slide {{index}}', 'divi-carousel-free'),
+            ];
+            $swiper_config = \DiviCarouselShared\V1\SwiperConfig::build([
+                'cols'             => $slide_count,
+                'cols_tablet'      => $col_tablet,
+                'cols_phone'       => $col_phone,
+                'space'            => (int) str_replace('px', '', $slide_spacing),
+                'loop'             => $is_infinite,
+                'navigation'       => $nav_pagi,
+                'autoplay'         => $is_autoplay,
+                'delay'            => $autoplay_speed,
+                'speed'            => $animation_speed,
+                'pause_on_hover'   => $pause_on_hover,
+                'fade'             => $is_fade,
+                'auto_height'      => $is_auto_height,
+                'slides_per_group' => $slide_to_scroll,
+                'vertical'         => $is_vertical,
+                'centered'         => $is_center === 'on',
+                'center_padding'   => $center_padding,
+                'grab_cursor'      => $custom_cursor === 'on',
+                'a11y'             => \DiviCarouselShared\V1\CarouselMarkup::a11y_config($dc_labels),
+            'get'              => $get,
+            ]);
 
             $show_nav  = in_array($nav_pagi, ['nav', 'nav_pagi'], true);
             $show_pagi = in_array($nav_pagi, ['pagi', 'nav_pagi'], true);
 
-            $nav_html  = $show_nav  ? '<div class="swiper-button-prev">' . $prev_svg . '</div><div class="swiper-button-next">' . $next_svg . '</div>' : '';
-            $pagi_html = $show_pagi ? '<div class="swiper-pagination"></div>' : '';
+$nav_html  = $show_nav  ? \DiviCarouselShared\V1\CarouselMarkup::navigation('dcf', $dc_labels) : '';
+            $pagi_html = $show_pagi ? \DiviCarouselShared\V1\CarouselMarkup::pagination() : '';
+            // WCAG 2.2.2: autoplay needs an operable pause control.
+            $autoplay_html = $is_autoplay
+                ? \DiviCarouselShared\V1\CarouselMarkup::autoplay_toggle('dcf', $dc_labels)
+                : '';
 
             $children = sprintf(
-                '<div dir="%s" class="dcf-container dcf-logo-carousel %s"><div class="swiper" data-swiper-config=\'%s\'><div class="swiper-wrapper">%s</div></div>%s%s</div>',
+                '<div dir="%s" class="dcf-container dcf-logo-carousel %s" ' . \DiviCarouselShared\V1\CarouselMarkup::region_attributes($dc_labels) . '><div class="swiper" data-swiper-config=\'%s\'><div class="swiper-wrapper">%s</div></div>%s%s%s</div>',
                 esc_attr($sliding_dir),
                 esc_attr(implode(' ', $classes)),
                 esc_attr(wp_json_encode($swiper_config)),
                 $content,
                 $nav_html,
-                $pagi_html
+                $pagi_html,
+                $autoplay_html
             );
         }
 
@@ -163,67 +178,4 @@ trait RenderCallbackTrait
         ]);
     }
 
-    private static function build_swiper_config(
-        $cols, $cols_tablet, $cols_phone, $space, $loop, $navigation,
-        $autoplay, $delay, $speed, $pause_on_hover, $fade, $auto_height,
-        $slides_per_group, $vertical, $centered, $center_padding
-    ) {
-        $slides_per_view = $fade ? 1 : $cols;
-        $tablet_view     = $fade ? 1 : $cols_tablet;
-        $phone_view      = $fade ? 1 : $cols_phone;
-
-        $config = [
-            'speed'         => $speed,
-            'loop'          => $loop,
-            'grabCursor'    => true,
-            'allowTouchMove'=> true,
-        ];
-
-        if ($fade) {
-            $config['effect'] = 'fade';
-            $config['slidesPerView'] = 1;
-        } else {
-            $config['slidesPerView'] = $phone_view;
-            $config['spaceBetween']  = $space;
-            $config['breakpoints']   = [
-                768  => ['slidesPerView' => $tablet_view, 'spaceBetween' => $space],
-                1024 => ['slidesPerView' => $slides_per_view, 'spaceBetween' => $space],
-            ];
-        }
-
-        if ($slides_per_group > 1) {
-            $config['slidesPerGroup'] = $slides_per_group;
-        }
-
-        if ($vertical) {
-            $config['direction']     = 'vertical';
-            $config['slidesPerView'] = 1;
-            $config['spaceBetween']  = $space;
-        }
-
-        if ($centered) {
-            $config['centeredSlides'] = true;
-        }
-
-        if ($auto_height && !$vertical) {
-            $config['autoHeight'] = true;
-        }
-
-        $show_nav  = in_array($navigation, ['nav', 'nav_pagi'], true);
-        $show_pagi = in_array($navigation, ['pagi', 'nav_pagi'], true);
-
-        if ($show_nav) {
-            $config['navigation'] = ['nextEl' => '.swiper-button-next', 'prevEl' => '.swiper-button-prev'];
-        }
-
-        if ($show_pagi) {
-            $config['pagination'] = ['el' => '.swiper-pagination', 'clickable' => true];
-        }
-
-        if ($autoplay) {
-            $config['autoplay'] = ['delay' => $delay, 'disableOnInteraction' => false, 'pauseOnMouseEnter' => $pause_on_hover];
-        }
-
-        return $config;
-    }
 }
