@@ -4,7 +4,7 @@ Contributors: plugpressco, badhonrocks, divipeople
 Tags: divi, divi theme, carousel, image carousel, logo carousel
 Requires at least: 5.0
 Tested up to: 7.0
-Stable tag: 3.2.0
+Stable tag: 3.2.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -141,6 +141,15 @@ Free support is on the [WordPress.org support forum](https://wordpress.org/suppo
 5. Plugin dashboard and module manager
 
 == Changelog ==
+
+= 3.2.1 =
+
+Fixed
+* Image Carousel slides showed the text "ETmodules" instead of the image on Divi 5. The 3.2.0 responsive-image work rewired the slide markup and the `<img>` tag was dropped from it, so every published slide printed the icon font name where the picture should have been. Divi 4 sites and the Visual Builder preview were unaffected, which is why it was not caught before release.
+* Image Carousel lightbox did nothing on Divi 5. It opens from the image's `data-mfp-src`, and that attribute went missing with the tag above.
+* Image Carousel image design options — border, border radius, box shadow, filters and spacing — had no effect on the published page on Divi 5. They target the slide image's class, and no element carried it.
+
+Image Carousel slides on Divi 5 now also get the responsive `srcset`, lazy loading and intrinsic width and height that 3.2.0 introduced for the other modules.
 
 = 3.2.0 =
 
@@ -279,6 +288,9 @@ Improved
 * Initial release
 
 == Upgrade Notice ==
+
+= 3.2.1 =
+Fixes Image Carousel slides rendering the text "ETmodules" instead of the image on Divi 5, along with the lightbox and the image design options that broke with it. Divi 4 sites are unaffected. Recommended for everyone on 3.2.0.
 
 = 3.2.0 =
 Adds the Nested Carousel, Quick Start presets, Linked Carousels (thumbnail navigation) and Slide Ratio. Fixes an Image Lightbox that never opened in Divi 5. Right to Left now flips drag and keyboard order, not just text, and arrows and dots are real buttons — update any CSS targeting `div.swiper-button-next`. If you converted a Carousel Maker layout, check slides that used a Divi Library item — the reference is kept in the slide's admin label and needs re-adding by hand.

@@ -96,13 +96,17 @@ trait RenderCallbackTrait
         // Render figure with overlay.
         $figure_html = sprintf(
             '<figure class="dcf-lightbox-ctrl">
-                <div class="dcf-overlay" data-icon="%3$s" style="--dcf-overlay-font:%4$s"></div>
-                %4$s
+                <div class="dcf-overlay" data-icon="%1$s" style="--dcf-overlay-font:%2$s"></div>
+                %3$s
             </figure>',
-            (0 === strpos($image_src, 'data:')) ? esc_attr($image_src) : esc_url($image_src),
-            esc_attr($photo_alt),
             esc_attr($overlay_char),
-            esc_attr($overlay_font_family)
+            esc_attr($overlay_font_family),
+            \DiviCarouselShared\V1\ImageMarkup::render(
+                $image_src,
+                $photo_alt,
+                'dcf-main-img',
+                ['data-mfp-src' => (0 === strpos($image_src, 'data:')) ? esc_attr($image_src) : esc_url($image_src)]
+            )
         );
 
         // Wrap in link if URL is set.
