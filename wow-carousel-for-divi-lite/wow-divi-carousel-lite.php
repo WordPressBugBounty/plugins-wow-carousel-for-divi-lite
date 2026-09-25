@@ -4,12 +4,12 @@
  * Plugin Name:       Divi Carousel Free
  * Plugin URI:        https://DiviPeople.com
  * Description:       Divi Carousel plugin to create beautiful carousels with any modules.
- * Version:           3.2.1
+ * Version:           3.3.1
  * Author:            DiviPeople
  * Author URI:        https://DiviPeople.com
  * License:           GPLv2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       divi-carousel-free
+ * Text Domain:       wow-carousel-for-divi-lite
  * Domain Path:       /languages
  * Requires at least: 5.0
  * Requires PHP:      7.4
@@ -27,7 +27,7 @@ if (!defined('ABSPATH')) {
 if (defined('DCF_PLUGIN_FILE')) {
     add_action('admin_notices', function () {
         echo '<div class="notice notice-error is-dismissible"><p>'
-            . esc_html__('Divi Carousel Free could not load because another version of Divi Carousel is already active. Please deactivate one of them.', 'divi-carousel-free')
+            . esc_html__('Divi Carousel Free could not load because another version of Divi Carousel is already active. Please deactivate one of them.', 'wow-carousel-for-divi-lite')
             . '</p></div>';
     });
     return;
@@ -45,8 +45,8 @@ register_activation_hook(__FILE__, function () use ($dcf_conflicts) {
         if ($plugin !== $current && is_plugin_active($plugin)) {
             deactivate_plugins($current);
             wp_die(
-                esc_html__('Another version of Divi Carousel is already active. Please deactivate it first.', 'divi-carousel-free'),
-                esc_html__('Plugin Conflict', 'divi-carousel-free'),
+                esc_html__('Another version of Divi Carousel is already active. Please deactivate it first.', 'wow-carousel-for-divi-lite'),
+                esc_html__('Plugin Conflict', 'wow-carousel-for-divi-lite'),
                 ['back_link' => true]
             );
         }
@@ -65,7 +65,7 @@ add_action('plugins_loaded', function () use ($dcf_conflicts) {
             deactivate_plugins($current, true);
             add_action('admin_notices', function () {
                 echo '<div class="notice notice-error is-dismissible"><p>'
-                    . esc_html__('Divi Carousel has been deactivated due to a conflict with another version.', 'divi-carousel-free')
+                    . esc_html__('Divi Carousel has been deactivated due to a conflict with another version.', 'wow-carousel-for-divi-lite')
                     . '</p></div>';
             });
             return;

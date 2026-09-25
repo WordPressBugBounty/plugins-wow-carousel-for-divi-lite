@@ -9,23 +9,29 @@ if (! defined('ABSPATH')) {
     die('Direct access forbidden.');
 }
 
-// Check for Divi 5 DependencyInterface.
-$dcf_dependency_interface = ABSPATH . 'wp-content/themes/Divi/includes/builder-5/server/Framework/DependencyManagement/Interfaces/DependencyInterface.php';
-if (! file_exists($dcf_dependency_interface)) {
-    return;
-}
+// Module classes implement Divi's DependencyInterface, so they can only be
+// required once Divi 5's autoloader is up. This used to be probed with a
+// hardcoded ABSPATH . 'wp-content/themes/Divi/...' path, which silently
+// dropped every D5 module on sites running the Divi Builder plugin, a renamed
+// theme folder, or a relocated wp-content directory — pages then rendered
+// the raw dcf/* blocks as nothing. Resolving through the autoloader works
+// wherever Divi is installed.
+$dcf_require_modules = static function () {
+    if (! interface_exists('ET\Builder\Framework\DependencyManagement\Interfaces\DependencyInterface')) {
+        return false;
+    }
 
-require_once $dcf_dependency_interface;
+    require_once __DIR__ . '/LogoCarousel/LogoCarousel.php';
+    require_once __DIR__ . '/LogoCarouselChild/LogoCarouselChild.php';
+    require_once __DIR__ . '/ImageCarousel/ImageCarousel.php';
+    require_once __DIR__ . '/ImageCarouselChild/ImageCarouselChild.php';
+    require_once __DIR__ . '/VideoCarousel/VideoCarousel.php';
+    require_once __DIR__ . '/VideoCarouselChild/VideoCarouselChild.php';
+    require_once __DIR__ . '/NestedCarousel/NestedCarousel.php';
+    require_once __DIR__ . '/NestedCarouselChild/NestedCarouselChild.php';
 
-// Load module classes directly.
-require_once __DIR__ . '/LogoCarousel/LogoCarousel.php';
-require_once __DIR__ . '/LogoCarouselChild/LogoCarouselChild.php';
-require_once __DIR__ . '/ImageCarousel/ImageCarousel.php';
-require_once __DIR__ . '/ImageCarouselChild/ImageCarouselChild.php';
-require_once __DIR__ . '/VideoCarousel/VideoCarousel.php';
-require_once __DIR__ . '/VideoCarouselChild/VideoCarouselChild.php';
-require_once __DIR__ . '/NestedCarousel/NestedCarousel.php';
-require_once __DIR__ . '/NestedCarouselChild/NestedCarouselChild.php';
+    return true;
+};
 
 use DiviCarouselFree\Modules\LogoCarousel\LogoCarousel;
 use DiviCarouselFree\Modules\LogoCarouselChild\LogoCarouselChild;
@@ -55,26 +61,45 @@ $dcf_modules_enabled = array_merge(
 );
 
 if ($dcf_pro_is_active) {
-    if (! empty($dcf_modules_enabled['logo_carousel'])) {
-        (new LogoCarousel())->load();
-        (new LogoCarouselChild())->load();
-    }
-    if (! empty($dcf_modules_enabled['image_carousel'])) {
-        (new ImageCarousel())->load();
-        (new ImageCarouselChild())->load();
-    }
-    if (! empty($dcf_modules_enabled['video_carousel'])) {
-        (new VideoCarousel())->load();
-        (new VideoCarouselChild())->load();
-    }
-    if (! empty($dcf_modules_enabled['nested_carousel'])) {
-        (new NestedCarousel())->load();
-        (new NestedCarouselChild())->load();
-    }
+    // This file is required while plugins load, before the theme (and so
+    // Divi) exists. Wait for init; each load() then hooks its own
+    // registration onto init at the default priority, which still runs.
+    add_action(
+        'init',
+        function () use ($dcf_require_modules, $dcf_modules_enabled) {
+            if (! $dcf_require_modules()) {
+                return;
+            }
+
+            if (! empty($dcf_modules_enabled['logo_carousel'])) {
+                (new LogoCarousel())->load();
+                (new LogoCarouselChild())->load();
+            }
+            if (! empty($dcf_modules_enabled['image_carousel'])) {
+                (new ImageCarousel())->load();
+                (new ImageCarouselChild())->load();
+            }
+            if (! empty($dcf_modules_enabled['video_carousel'])) {
+                (new VideoCarousel())->load();
+                (new VideoCarouselChild())->load();
+            }
+            if (! empty($dcf_modules_enabled['nested_carousel'])) {
+                (new NestedCarousel())->load();
+                (new NestedCarouselChild())->load();
+            }
+        },
+        5
+    );
 } else {
     add_action(
         'divi_module_library_modules_dependency_tree',
-        function ($dependency_tree) use ($dcf_modules_enabled) {
+        function ($dependency_tree) use ($dcf_require_modules, $dcf_modules_enabled) {
+            // Divi fires this hook after requiring its autoloader, so the
+            // interface always resolves here.
+            if (! $dcf_require_modules()) {
+                return;
+            }
+
             if (! empty($dcf_modules_enabled['logo_carousel'])) {
                 $dependency_tree->add_dependency(new LogoCarousel());
                 $dependency_tree->add_dependency(new LogoCarouselChild());

@@ -27,7 +27,7 @@ trait RenderCallbackTrait
         if ('' === trim($inner)) {
             $inner = sprintf(
                 '<div class="dcf-nested-empty">%s</div>',
-                esc_html__('Drop any Divi module here.', 'divi-carousel-free')
+                esc_html__('Drop any Divi module here.', 'wow-carousel-for-divi-lite')
             );
         }
 

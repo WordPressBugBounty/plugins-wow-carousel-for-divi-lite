@@ -6,7 +6,7 @@ if (!function_exists('divi_carousel_builder_library')) {
     function divi_carousel_builder_library()
     {
         $layouts = array(
-            '-1' => esc_html__(' -- Select a Layout -- ', 'divi-carousel-free'),
+            '-1' => esc_html__(' -- Select a Layout -- ', 'wow-carousel-for-divi-lite'),
         );
 
         $saved_layouts = get_posts(
@@ -18,9 +18,12 @@ if (!function_exists('divi_carousel_builder_library')) {
             )
         );
 
-        if (!empty($saved_layouts)) {
-            $layout_options = wp_list_pluck($saved_layouts, 'post_title', 'ID');
-            $layouts        = array_merge($layouts, $layout_options);
+        // Option values must stay the library post IDs. array_merge() renumbers
+        // numeric keys, which saved list positions (0, 1, 2…) instead of IDs —
+        // so a slide rendered whatever post had that ID, and the placeholder
+        // became 0, which get_post() resolves to the current page.
+        foreach ($saved_layouts as $layout) {
+            $layouts[(string) $layout->ID] = $layout->post_title;
         }
 
         return $layouts;

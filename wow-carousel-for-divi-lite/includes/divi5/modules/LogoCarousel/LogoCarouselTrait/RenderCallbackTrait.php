@@ -102,14 +102,14 @@ trait RenderCallbackTrait
             );
         } else {
             $dc_labels = [
-                'prev'   => __('Previous slide', 'divi-carousel-free'),
-                'next'   => __('Next slide', 'divi-carousel-free'),
-                'pause'  => __('Pause carousel', 'divi-carousel-free'),
-                'play'   => __('Play carousel', 'divi-carousel-free'),
-                'region' => __('Carousel', 'divi-carousel-free'),
-                'first'  => __('This is the first slide', 'divi-carousel-free'),
-                'last'   => __('This is the last slide', 'divi-carousel-free'),
-                'bullet' => __('Go to slide {{index}}', 'divi-carousel-free'),
+                'prev'   => __('Previous slide', 'wow-carousel-for-divi-lite'),
+                'next'   => __('Next slide', 'wow-carousel-for-divi-lite'),
+                'pause'  => __('Pause carousel', 'wow-carousel-for-divi-lite'),
+                'play'   => __('Play carousel', 'wow-carousel-for-divi-lite'),
+                'region' => __('Carousel', 'wow-carousel-for-divi-lite'),
+                'first'  => __('This is the first slide', 'wow-carousel-for-divi-lite'),
+                'last'   => __('This is the last slide', 'wow-carousel-for-divi-lite'),
+                'bullet' => __('Go to slide {{index}}', 'wow-carousel-for-divi-lite'),
             ];
             $swiper_config = \DiviCarouselShared\V1\SwiperConfig::build([
                 'cols'             => $slide_count,

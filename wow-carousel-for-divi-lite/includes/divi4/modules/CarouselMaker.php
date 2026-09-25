@@ -16,20 +16,20 @@ class DiviCarouselMaker extends Divi_Carousel_Free_Builder_Module
 		$this->vb_support = 'on';
 		$this->slug       = 'divi_carousel_maker';
 		$this->child_slug = 'divi_carousel_maker_child';
-		$this->name       = esc_html__('Carousel Maker', 'divi-carousel-free');
+		$this->name       = esc_html__('Carousel Maker', 'wow-carousel-for-divi-lite');
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
 					'settings' => array(
-						'title'             => esc_html__('Carousel Settings', 'divi-carousel-free'),
+						'title'             => esc_html__('Carousel Settings', 'wow-carousel-for-divi-lite'),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'general'  => array(
-								'name' => esc_html__('General', 'divi-carousel-free'),
+								'name' => esc_html__('General', 'wow-carousel-for-divi-lite'),
 							),
 							'advanced' => array(
-								'name' => esc_html__('Advanced', 'divi-carousel-free'),
+								'name' => esc_html__('Advanced', 'wow-carousel-for-divi-lite'),
 							),
 						),
 					),
@@ -39,30 +39,30 @@ class DiviCarouselMaker extends Divi_Carousel_Free_Builder_Module
 			'advanced' => array(
 				'toggles' => array(
 					'arrow'      => array(
-						'title'             => esc_html__('Navigation', 'divi-carousel-free'),
+						'title'             => esc_html__('Navigation', 'wow-carousel-for-divi-lite'),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'arrow_common' => array(
-								'name' => esc_html__('Common', 'divi-carousel-free'),
+								'name' => esc_html__('Common', 'wow-carousel-for-divi-lite'),
 							),
 							'arrow_left'   => array(
-								'name' => esc_html__('Prev', 'divi-carousel-free'),
+								'name' => esc_html__('Prev', 'wow-carousel-for-divi-lite'),
 							),
 							'arrow_right'  => array(
-								'name' => esc_html__('Next', 'divi-carousel-free'),
+								'name' => esc_html__('Next', 'wow-carousel-for-divi-lite'),
 							),
 						),
 					),
 
 					'pagination' => array(
-						'title'             => esc_html__('Pagination', 'divi-carousel-free'),
+						'title'             => esc_html__('Pagination', 'wow-carousel-for-divi-lite'),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'pagi_common' => array(
-								'name' => esc_html__('Common', 'divi-carousel-free'),
+								'name' => esc_html__('Common', 'wow-carousel-for-divi-lite'),
 							),
 							'pagi_active' => array(
-								'name' => esc_html__('Active', 'divi-carousel-free'),
+								'name' => esc_html__('Active', 'wow-carousel-for-divi-lite'),
 							),
 						),
 					),
@@ -88,7 +88,7 @@ class DiviCarouselMaker extends Divi_Carousel_Free_Builder_Module
 		$advanced_fields['fonts']        = array();
 
 		$advanced_fields['fonts']['title'] = array(
-			'label'           => esc_html__('Title', 'divi-carousel-free'),
+			'label'           => esc_html__('Title', 'wow-carousel-for-divi-lite'),
 			'css'             => array(
 				'main'      => '%%order_class%% .dcf-container-nav .dcf-container-nav-item h2',
 				'important' => 'all',
@@ -100,7 +100,7 @@ class DiviCarouselMaker extends Divi_Carousel_Free_Builder_Module
 		);
 
 		$advanced_fields['fonts']['subtitle'] = array(
-			'label'           => esc_html__('Subtitle', 'divi-carousel-free'),
+			'label'           => esc_html__('Subtitle', 'wow-carousel-for-divi-lite'),
 			'css'             => array(
 				'main'      => '%%order_class%% .dcf-container-nav .dcf-container-nav-item p',
 				'important' => 'all',

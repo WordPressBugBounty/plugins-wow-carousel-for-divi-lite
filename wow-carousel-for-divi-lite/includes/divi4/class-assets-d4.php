@@ -83,7 +83,10 @@ class Assets_D4
             wp_enqueue_script(
                 "dcf-{$prefix}",
                 DCF_DIST_URL . "divi4/{$prefix}.js",
-                array_merge($asset_info['dependencies'] ?? [], $deps),
+                // Never depend on core wp-element here: the builder bundle
+                // renders with Divi's own React (see webpack.config.js), and
+                // Rank Math keeps wp-* scripts out of the Divi iframe.
+                array_values(array_diff(array_merge($asset_info['dependencies'] ?? [], $deps), ['wp-element'])),
                 $asset_info['version'] ?? DCF_PLUGIN_VERSION,
                 true
             );

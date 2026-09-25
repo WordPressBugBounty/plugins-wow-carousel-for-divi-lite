@@ -71,13 +71,13 @@ class Upgrade_Notice
             </div>
             <div style="flex: 1; min-width: 0;">
                 <p style="margin: 0 0 4px; font-size: 14px; font-weight: 600; color: #1e1e1e;">
-                    <?php esc_html_e('Do More with Divi Carousel Pro', 'divi-carousel-free'); ?>
+                    <?php esc_html_e('Do More with Divi Carousel Pro', 'wow-carousel-for-divi-lite'); ?>
                 </p>
                 <p style="margin: 0 0 10px; font-size: 13px; color: #646970;">
-                    <?php esc_html_e('Get advanced carousels, more modules, premium support, and much more. Upgrade to Pro today!', 'divi-carousel-free'); ?>
+                    <?php esc_html_e('Get advanced carousels, more modules, premium support, and much more. Upgrade to Pro today!', 'wow-carousel-for-divi-lite'); ?>
                 </p>
                 <a href="<?php echo esc_url($upgrade_url); ?>" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 6px 16px; background: #6333ff; color: #fff; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 500;">
-                    <?php esc_html_e('Upgrade to Pro', 'divi-carousel-free'); ?> &rarr;
+                    <?php esc_html_e('Upgrade to Pro', 'wow-carousel-for-divi-lite'); ?> &rarr;
                 </a>
             </div>
         </div>

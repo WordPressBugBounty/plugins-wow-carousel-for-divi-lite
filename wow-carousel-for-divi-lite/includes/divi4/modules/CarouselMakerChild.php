@@ -20,12 +20,12 @@ class DiviCarouselMakerChild extends Divi_Carousel_Free_Builder_Module
 	 */
 	public function init()
 	{
-		$this->name = esc_html__('Carousel Item', 'divi-carousel-free');
+		$this->name = esc_html__('Carousel Item', 'wow-carousel-for-divi-lite');
 
 		$this->settings_modal_toggles = [
 			'general' => [
 				'toggles' => [
-					'content' => esc_attr__('Divi Library', 'divi-carousel-free'),
+					'content' => esc_attr__('Divi Library', 'wow-carousel-for-divi-lite'),
 				],
 			],
 		];
@@ -44,12 +44,12 @@ class DiviCarouselMakerChild extends Divi_Carousel_Free_Builder_Module
 	{
 		return [
 			'title' => [
-				'label' => esc_html__('Admin Label', 'divi-carousel-free'),
+				'label' => esc_html__('Admin Label', 'wow-carousel-for-divi-lite'),
 				'type' => 'text',
 				'toggle_slug' => 'content',
 			],
 			'library_id' => [
-				'label' => esc_html__('Divi Library', 'divi-carousel-free'),
+				'label' => esc_html__('Divi Library', 'wow-carousel-for-divi-lite'),
 				'type' => 'select',
 				'default' => '-1',
 				'options' => divi_carousel_builder_library(),
@@ -80,7 +80,7 @@ class DiviCarouselMakerChild extends Divi_Carousel_Free_Builder_Module
 
 		ob_start();
 
-		if (!empty($args['library_id']) && '-1' !== $args['library_id']) {
+		if (absint($args['library_id'] ?? 0) > 0) {
 			// Clean any existing module styles
 			if (method_exists('ET_Builder_Element', 'clean_internal_modules_styles')) {
 				ET_Builder_Element::clean_internal_modules_styles();
@@ -107,7 +107,7 @@ class DiviCarouselMakerChild extends Divi_Carousel_Free_Builder_Module
 				}
 			}
 		} else {
-			echo '<p>' . esc_html__('No Content available', 'divi-carousel-free') . '</p>';
+			echo '<p>' . esc_html__('No Content available', 'wow-carousel-for-divi-lite') . '</p>';
 		}
 
 		return ob_get_clean();
@@ -136,10 +136,14 @@ class DiviCarouselMakerChild extends Divi_Carousel_Free_Builder_Module
 
 		$layout_content = '';
 
-		if (!empty($library_id) && '-1' !== $library_id) {
+		if (absint($library_id) > 0) {
 			$layout_post = get_post(absint($library_id));
 
-			if ($layout_post && 'publish' === $layout_post->post_status) {
+			// Only Divi Library layouts. Slides saved before the ID fix hold a
+			// list position, not an ID; without this check they rendered an
+			// unrelated post. They now show the empty state until reselected.
+			if ($layout_post && 'et_pb_layout' === $layout_post->post_type
+				&& 'publish' === $layout_post->post_status) {
 				// Clean internal styles before each child render to avoid style bleed.
 				if (method_exists('ET_Builder_Element', 'clean_internal_modules_styles')) {
 					ET_Builder_Element::clean_internal_modules_styles();
@@ -163,7 +167,7 @@ class DiviCarouselMakerChild extends Divi_Carousel_Free_Builder_Module
 		}
 
 		if (empty($layout_content)) {
-			$layout_content = '<p>' . esc_html__('No Content available', 'divi-carousel-free') . '</p>';
+			$layout_content = '<p>' . esc_html__('No Content available', 'wow-carousel-for-divi-lite') . '</p>';
 		}
 
 		return sprintf(

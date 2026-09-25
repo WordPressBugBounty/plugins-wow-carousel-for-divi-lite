@@ -30,7 +30,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
 
         /* translators: %s: Label for the background option */
         $advanced_fields["{$option_name}_bg_color"] = [
-            'label'             => sprintf(__('%s Background', 'divi-carousel-free'), $option_label),
+            'label'             => sprintf(__('%s Background', 'wow-carousel-for-divi-lite'), $option_label),
             'type'              => 'background-field',
             'base_name'         => "{$option_name}_bg",
             'context'           => "{$option_name}_bg_color",
@@ -202,7 +202,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
         $fields = [
 
             'animation_speed'         => [
-                'label'           => esc_html__('Animation Speed', 'divi-carousel-free'),
+                'label'           => esc_html__('Animation Speed', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => '700ms',
@@ -217,20 +217,20 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'is_autoplay'             => [
-                'label'           => esc_html__('Autoplay', 'divi-carousel-free'),
+                'label'           => esc_html__('Autoplay', 'wow-carousel-for-divi-lite'),
                 'type'            => 'yes_no_button',
                 'option_category' => 'configuration',
                 'default'         => 'on',
                 'toggle_slug'     => 'settings',
                 'sub_toggle'      => 'general',
                 'options'         => [
-                    'on'  => esc_html__('Yes', 'divi-carousel-free'),
-                    'off' => esc_html__('No', 'divi-carousel-free'),
+                    'on'  => esc_html__('Yes', 'wow-carousel-for-divi-lite'),
+                    'off' => esc_html__('No', 'wow-carousel-for-divi-lite'),
                 ],
             ],
 
             'autoplay_speed'          => [
-                'label'           => esc_html__('Autoplay Speed', 'divi-carousel-free'),
+                'label'           => esc_html__('Autoplay Speed', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => '2000ms',
@@ -248,35 +248,35 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'nav_pagi'                => [
-                'label'          => esc_html__('Navigation & Pagination', 'divi-carousel-free'),
+                'label'          => esc_html__('Navigation & Pagination', 'wow-carousel-for-divi-lite'),
                 'type'           => 'select',
                 'default'        => 'nav',
                 'toggle_slug'    => 'settings',
                 'sub_toggle'     => 'general',
                 'mobile_options' => true,
                 'options'        => [
-                    'none'     => esc_html__('None', 'divi-carousel-free'),
-                    'nav'      => esc_html__('Navigation', 'divi-carousel-free'),
-                    'pagi'     => esc_html__('Pagination', 'divi-carousel-free'),
-                    'nav_pagi' => esc_html__('Navigation & Pagination', 'divi-carousel-free'),
+                    'none'     => esc_html__('None', 'wow-carousel-for-divi-lite'),
+                    'nav'      => esc_html__('Navigation', 'wow-carousel-for-divi-lite'),
+                    'pagi'     => esc_html__('Pagination', 'wow-carousel-for-divi-lite'),
+                    'nav_pagi' => esc_html__('Navigation & Pagination', 'wow-carousel-for-divi-lite'),
                 ],
             ],
 
             'is_variable_width'       => [
-                'label'           => esc_html__('Use Fixed Width Slide', 'divi-carousel-free'),
+                'label'           => esc_html__('Use Fixed Width Slide', 'wow-carousel-for-divi-lite'),
                 'type'            => 'yes_no_button',
                 'option_category' => 'configuration',
                 'default'         => 'off',
                 'toggle_slug'     => 'settings',
                 'sub_toggle'      => 'general',
                 'options'         => [
-                    'on'  => esc_html__('Yes', 'divi-carousel-free'),
-                    'off' => esc_html__('No', 'divi-carousel-free'),
+                    'on'  => esc_html__('Yes', 'wow-carousel-for-divi-lite'),
+                    'off' => esc_html__('No', 'wow-carousel-for-divi-lite'),
                 ],
             ],
 
             'slide_width'             => [
-                'label'           => esc_html__('Slide Width', 'divi-carousel-free'),
+                'label'           => esc_html__('Slide Width', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'default'         => '360px',
                 'option_category' => 'basic_option',
@@ -295,21 +295,21 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'slide_count'             => [
-                'label'          => esc_html__('Slides To Show', 'divi-carousel-free'),
+                'label'          => esc_html__('Slides To Show', 'wow-carousel-for-divi-lite'),
                 'type'           => 'select',
                 'default'        => '3',
                 'toggle_slug'    => 'settings',
                 'sub_toggle'     => 'general',
                 'mobile_options' => true,
                 'options'        => [
-                    '1' => esc_html__('1', 'divi-carousel-free'),
-                    '2' => esc_html__('2', 'divi-carousel-free'),
-                    '3' => esc_html__('3', 'divi-carousel-free'),
-                    '4' => esc_html__('4', 'divi-carousel-free'),
-                    '5' => esc_html__('5', 'divi-carousel-free'),
-                    '6' => esc_html__('6', 'divi-carousel-free'),
-                    '7' => esc_html__('7', 'divi-carousel-free'),
-                    '8' => esc_html__('8', 'divi-carousel-free'),
+                    '1' => esc_html__('1', 'wow-carousel-for-divi-lite'),
+                    '2' => esc_html__('2', 'wow-carousel-for-divi-lite'),
+                    '3' => esc_html__('3', 'wow-carousel-for-divi-lite'),
+                    '4' => esc_html__('4', 'wow-carousel-for-divi-lite'),
+                    '5' => esc_html__('5', 'wow-carousel-for-divi-lite'),
+                    '6' => esc_html__('6', 'wow-carousel-for-divi-lite'),
+                    '7' => esc_html__('7', 'wow-carousel-for-divi-lite'),
+                    '8' => esc_html__('8', 'wow-carousel-for-divi-lite'),
                 ],
                 'show_if'        => [
                     'is_variable_width' => 'off',
@@ -317,7 +317,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'slide_spacing'           => [
-                'label'           => esc_html__('Slide Spacing', 'divi-carousel-free'),
+                'label'           => esc_html__('Slide Spacing', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => '10px',
@@ -332,41 +332,41 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'is_infinite'             => [
-                'label'           => esc_html__('Infinite looping', 'divi-carousel-free'),
+                'label'           => esc_html__('Infinite looping', 'wow-carousel-for-divi-lite'),
                 'type'            => 'yes_no_button',
                 'option_category' => 'configuration',
                 'default'         => 'on',
                 'toggle_slug'     => 'settings',
                 'sub_toggle'      => 'general',
                 'options'         => [
-                    'on'  => esc_html__('Yes', 'divi-carousel-free'),
-                    'off' => esc_html__('No', 'divi-carousel-free'),
+                    'on'  => esc_html__('Yes', 'wow-carousel-for-divi-lite'),
+                    'off' => esc_html__('No', 'wow-carousel-for-divi-lite'),
                 ],
             ],
 
             'sliding_dir'             => [
-                'label'       => esc_html__('Sliding Direction', 'divi-carousel-free'),
-                'description' => esc_html__('Define sliding direction. RTL sliding will only work on frontend. ', 'divi-carousel-free'),
+                'label'       => esc_html__('Sliding Direction', 'wow-carousel-for-divi-lite'),
+                'description' => esc_html__('Define sliding direction. RTL sliding will only work on frontend. ', 'wow-carousel-for-divi-lite'),
                 'type'        => 'select',
                 'toggle_slug' => 'settings',
                 'sub_toggle'  => 'advanced',
                 'default'     => 'ltr',
                 'options'     => [
-                    'ltr' => esc_html__('Left to Right', 'divi-carousel-free'),
-                    'rtl' => esc_html__('Right to Left', 'divi-carousel-free'),
+                    'ltr' => esc_html__('Left to Right', 'wow-carousel-for-divi-lite'),
+                    'rtl' => esc_html__('Right to Left', 'wow-carousel-for-divi-lite'),
                 ],
             ],
 
             'is_fade'                 => [
-                'label'           => esc_html__('Fade Effect', 'divi-carousel-free'),
+                'label'           => esc_html__('Fade Effect', 'wow-carousel-for-divi-lite'),
                 'type'            => 'yes_no_button',
                 'option_category' => 'configuration',
                 'default'         => 'off',
                 'toggle_slug'     => 'settings',
                 'sub_toggle'      => 'general',
                 'options'         => [
-                    'on'  => esc_html__('Yes', 'divi-carousel-free'),
-                    'off' => esc_html__('No', 'divi-carousel-free'),
+                    'on'  => esc_html__('Yes', 'wow-carousel-for-divi-lite'),
+                    'off' => esc_html__('No', 'wow-carousel-for-divi-lite'),
                 ],
                 'show_if'         => [
                     'is_variable_width' => 'off',
@@ -375,20 +375,20 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'is_auto_height'          => [
-                'label'           => esc_html__('Auto Height', 'divi-carousel-free'),
+                'label'           => esc_html__('Auto Height', 'wow-carousel-for-divi-lite'),
                 'type'            => 'yes_no_button',
                 'option_category' => 'configuration',
                 'default'         => 'off',
                 'toggle_slug'     => 'settings',
                 'sub_toggle'      => 'advanced',
                 'options'         => [
-                    'on'  => esc_html__('Yes', 'divi-carousel-free'),
-                    'off' => esc_html__('No', 'divi-carousel-free'),
+                    'on'  => esc_html__('Yes', 'wow-carousel-for-divi-lite'),
+                    'off' => esc_html__('No', 'wow-carousel-for-divi-lite'),
                 ],
             ],
 
             'slide_to_scroll'         => [
-                'label'           => esc_html__('Items to Scroll', 'divi-carousel-free'),
+                'label'           => esc_html__('Items to Scroll', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'default'         => '1',
                 'option_category' => 'basic_option',
@@ -404,40 +404,40 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'is_vertical'             => [
-                'label'           => esc_html__('Vertical Mode', 'divi-carousel-free'),
+                'label'           => esc_html__('Vertical Mode', 'wow-carousel-for-divi-lite'),
                 'type'            => 'yes_no_button',
                 'option_category' => 'configuration',
                 'default'         => 'off',
                 'toggle_slug'     => 'settings',
                 'sub_toggle'      => 'advanced',
                 'options'         => [
-                    'on'  => esc_html__('Yes', 'divi-carousel-free'),
-                    'off' => esc_html__('No', 'divi-carousel-free'),
+                    'on'  => esc_html__('Yes', 'wow-carousel-for-divi-lite'),
+                    'off' => esc_html__('No', 'wow-carousel-for-divi-lite'),
                 ],
             ],
 
             'is_center'               => [
-                'label'           => esc_html__('Center Mode', 'divi-carousel-free'),
+                'label'           => esc_html__('Center Mode', 'wow-carousel-for-divi-lite'),
                 'type'            => 'yes_no_button',
                 'option_category' => 'configuration',
                 'default'         => 'off',
                 'toggle_slug'     => 'settings',
                 'sub_toggle'      => 'advanced',
                 'options'         => [
-                    'on'  => esc_html__('Yes', 'divi-carousel-free'),
-                    'off' => esc_html__('No', 'divi-carousel-free'),
+                    'on'  => esc_html__('Yes', 'wow-carousel-for-divi-lite'),
+                    'off' => esc_html__('No', 'wow-carousel-for-divi-lite'),
                 ],
             ],
 
             'center_mode_type'        => [
-                'label'       => esc_html__('Center Mode Type', 'divi-carousel-free'),
+                'label'       => esc_html__('Center Mode Type', 'wow-carousel-for-divi-lite'),
                 'type'        => 'select',
                 'default'     => 'classic',
                 'toggle_slug' => 'settings',
                 'sub_toggle'  => 'advanced',
                 'options'     => [
-                    'classic'     => esc_html__('Classic', 'divi-carousel-free'),
-                    'highlighted' => esc_html__('Highlighted', 'divi-carousel-free'),
+                    'classic'     => esc_html__('Classic', 'wow-carousel-for-divi-lite'),
+                    'highlighted' => esc_html__('Highlighted', 'wow-carousel-for-divi-lite'),
                 ],
                 'show_if'     => [
                     'is_center' => 'on',
@@ -445,7 +445,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'center_padding'          => [
-                'label'           => esc_html__('Center Padding', 'divi-carousel-free'),
+                'label'           => esc_html__('Center Padding', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'default'         => '70px',
                 'option_category' => 'basic_option',
@@ -466,32 +466,32 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'custom_cursor'           => [
-                'label'           => esc_html__('Use Custom Cursor', 'divi-carousel-free'),
+                'label'           => esc_html__('Use Custom Cursor', 'wow-carousel-for-divi-lite'),
                 'type'            => 'yes_no_button',
                 'option_category' => 'configuration',
                 'default'         => 'off',
                 'toggle_slug'     => 'settings',
                 'sub_toggle'      => 'advanced',
                 'options'         => [
-                    'on'  => esc_html__('Yes', 'divi-carousel-free'),
-                    'off' => esc_html__('No', 'divi-carousel-free'),
+                    'on'  => esc_html__('Yes', 'wow-carousel-for-divi-lite'),
+                    'off' => esc_html__('No', 'wow-carousel-for-divi-lite'),
                 ],
             ],
 
             'cursor_name'             => [
-                'label'       => esc_html__('Cursor Name', 'divi-carousel-free'),
+                'label'       => esc_html__('Cursor Name', 'wow-carousel-for-divi-lite'),
                 'type'        => 'select',
                 'default'     => 'css_default',
                 'toggle_slug' => 'settings',
                 'sub_toggle'  => 'advanced',
                 'options'     => [
-                    'css_default'   => esc_html__('Default', 'divi-carousel-free'),
-                    'css_none'      => esc_html__('None', 'divi-carousel-free'),
-                    'css_grab'      => esc_html__('Grab', 'divi-carousel-free'),
-                    'css_pointer'   => esc_html__('Pointer', 'divi-carousel-free'),
-                    'css_move'      => esc_html__('Move', 'divi-carousel-free'),
-                    'custom_pizza'  => esc_html__('Pizza', 'divi-carousel-free'),
-                    'custom_burger' => esc_html__('Burger', 'divi-carousel-free'),
+                    'css_default'   => esc_html__('Default', 'wow-carousel-for-divi-lite'),
+                    'css_none'      => esc_html__('None', 'wow-carousel-for-divi-lite'),
+                    'css_grab'      => esc_html__('Grab', 'wow-carousel-for-divi-lite'),
+                    'css_pointer'   => esc_html__('Pointer', 'wow-carousel-for-divi-lite'),
+                    'css_move'      => esc_html__('Move', 'wow-carousel-for-divi-lite'),
+                    'custom_pizza'  => esc_html__('Pizza', 'wow-carousel-for-divi-lite'),
+                    'custom_burger' => esc_html__('Burger', 'wow-carousel-for-divi-lite'),
                 ],
                 'show_if'     => [
                     'custom_cursor' => 'on',
@@ -500,7 +500,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
 
             // carousel style
             'carousel_spacing_top'    => [
-                'label'           => esc_html__('Carousel Spacing Top', 'divi-carousel-free'),
+                'label'           => esc_html__('Carousel Spacing Top', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => '0px',
@@ -516,7 +516,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'carousel_spacing_bottom' => [
-                'label'           => esc_html__('Carousel Spacing Bottom', 'divi-carousel-free'),
+                'label'           => esc_html__('Carousel Spacing Bottom', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => '0px',
@@ -533,29 +533,29 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
 
             // Arrow
             'arrow_type'              => [
-                'label'       => esc_html__('Type', 'divi-carousel-free'),
+                'label'       => esc_html__('Type', 'wow-carousel-for-divi-lite'),
                 'type'        => 'select',
                 'default'     => 'default',
                 'toggle_slug' => 'arrow',
                 'tab_slug'    => 'advanced',
                 'sub_toggle'  => 'arrow_common',
                 'options'     => [
-                    'default'   => esc_html__('Default', 'divi-carousel-free'),
-                    'alongside' => esc_html__('Alongside', 'divi-carousel-free'),
+                    'default'   => esc_html__('Default', 'wow-carousel-for-divi-lite'),
+                    'alongside' => esc_html__('Alongside', 'wow-carousel-for-divi-lite'),
                 ],
                 'show_if'     => ['sliding_dir' => 'ltr'],
             ],
 
             'arrow_pos'               => [
-                'label'       => esc_html__('Vertical Placement', 'divi-carousel-free'),
+                'label'       => esc_html__('Vertical Placement', 'wow-carousel-for-divi-lite'),
                 'type'        => 'select',
                 'default'     => 'top',
                 'toggle_slug' => 'arrow',
                 'tab_slug'    => 'advanced',
                 'sub_toggle'  => 'arrow_common',
                 'options'     => [
-                    'top'    => esc_html__('Top', 'divi-carousel-free'),
-                    'bottom' => esc_html__('Bottom', 'divi-carousel-free'),
+                    'top'    => esc_html__('Top', 'wow-carousel-for-divi-lite'),
+                    'bottom' => esc_html__('Bottom', 'wow-carousel-for-divi-lite'),
                 ],
                 'show_if'     => [
                     'arrow_type'  => 'alongside',
@@ -564,15 +564,15 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'arrow_pos_hz'            => [
-                'label'       => esc_html__('Horizontal Placement', 'divi-carousel-free'),
+                'label'       => esc_html__('Horizontal Placement', 'wow-carousel-for-divi-lite'),
                 'type'        => 'select',
                 'default'     => 'left',
                 'toggle_slug' => 'arrow',
                 'tab_slug'    => 'advanced',
                 'sub_toggle'  => 'arrow_common',
                 'options'     => [
-                    'left'  => esc_html__('Left', 'divi-carousel-free'),
-                    'right' => esc_html__('Right', 'divi-carousel-free'),
+                    'left'  => esc_html__('Left', 'wow-carousel-for-divi-lite'),
+                    'right' => esc_html__('Right', 'wow-carousel-for-divi-lite'),
                 ],
                 'show_if'     => [
                     'arrow_type'  => 'alongside',
@@ -581,7 +581,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'arrow_height'            => [
-                'label'           => esc_html__('Height', 'divi-carousel-free'),
+                'label'           => esc_html__('Height', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => '40px',
@@ -598,7 +598,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'arrow_width'             => [
-                'label'           => esc_html__('Width', 'divi-carousel-free'),
+                'label'           => esc_html__('Width', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => '40px',
@@ -615,7 +615,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'arrow_icon_size'         => [
-                'label'           => esc_html__('Icon Size', 'divi-carousel-free'),
+                'label'           => esc_html__('Icon Size', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => '30px',
@@ -631,7 +631,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'arrow_color'             => [
-                'label'       => esc_html__('Icon Color', 'divi-carousel-free'),
+                'label'       => esc_html__('Icon Color', 'wow-carousel-for-divi-lite'),
                 'type'        => 'color-alpha',
                 'tab_slug'    => 'advanced',
                 'toggle_slug' => 'arrow',
@@ -641,7 +641,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'arrow_bg'                => [
-                'label'       => esc_html__('Background', 'divi-carousel-free'),
+                'label'       => esc_html__('Background', 'wow-carousel-for-divi-lite'),
                 'type'        => 'color-alpha',
                 'tab_slug'    => 'advanced',
                 'toggle_slug' => 'arrow',
@@ -651,7 +651,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'arrow_skew'              => [
-                'label'           => esc_html__('Skew', 'divi-carousel-free'),
+                'label'           => esc_html__('Skew', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => '0deg',
@@ -668,7 +668,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'arrow_gap'               => [
-                'label'           => esc_html__('Spacing Between', 'divi-carousel-free'),
+                'label'           => esc_html__('Spacing Between', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => '10px',
@@ -689,7 +689,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'arrow_pos_y'             => [
-                'label'           => esc_html__('Vertical Position', 'divi-carousel-free'),
+                'label'           => esc_html__('Vertical Position', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => '50%',
@@ -705,15 +705,15 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'arrow_x_center'          => [
-                'label'       => esc_html__('Use Horizontal Position Center', 'divi-carousel-free'),
+                'label'       => esc_html__('Use Horizontal Position Center', 'wow-carousel-for-divi-lite'),
                 'type'        => 'yes_no_button',
                 'default'     => 'off',
                 'toggle_slug' => 'arrow',
                 'tab_slug'    => 'advanced',
                 'sub_toggle'  => 'arrow_common',
                 'options'     => [
-                    'on'  => esc_html__('Yes', 'divi-carousel-free'),
-                    'off' => esc_html__('No', 'divi-carousel-free'),
+                    'on'  => esc_html__('Yes', 'wow-carousel-for-divi-lite'),
+                    'off' => esc_html__('No', 'wow-carousel-for-divi-lite'),
                 ],
                 'show_if'     => [
                     'arrow_type'  => 'alongside',
@@ -722,7 +722,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'arrow_pos_x'             => [
-                'label'           => esc_html__('Horizontal Position', 'divi-carousel-free'),
+                'label'           => esc_html__('Horizontal Position', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'mobile_options'  => true,
@@ -741,7 +741,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'arrow_border_width'      => [
-                'label'           => esc_html__('Border Width', 'divi-carousel-free'),
+                'label'           => esc_html__('Border Width', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => '0px',
@@ -757,7 +757,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'arrow_border_color'      => [
-                'label'       => esc_html__('Border Color', 'divi-carousel-free'),
+                'label'       => esc_html__('Border Color', 'wow-carousel-for-divi-lite'),
                 'type'        => 'color-alpha',
                 'default'     => '#333',
                 'toggle_slug' => 'arrow',
@@ -767,28 +767,28 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'arrow_border_style'      => [
-                'label'       => esc_html__('Border Type', 'divi-carousel-free'),
+                'label'       => esc_html__('Border Type', 'wow-carousel-for-divi-lite'),
                 'type'        => 'select',
                 'default'     => 'solid',
                 'toggle_slug' => 'arrow',
                 'tab_slug'    => 'advanced',
                 'sub_toggle'  => 'arrow_common',
                 'options'     => [
-                    'solid'  => esc_html__('Solid', 'divi-carousel-free'),
-                    'dashed' => esc_html__('Dashed', 'divi-carousel-free'),
-                    'dotted' => esc_html__('Dotted', 'divi-carousel-free'),
-                    'double' => esc_html__('Double', 'divi-carousel-free'),
-                    'groove' => esc_html__('Groove', 'divi-carousel-free'),
-                    'ridge'  => esc_html__('Ridge', 'divi-carousel-free'),
-                    'inset'  => esc_html__('Inset', 'divi-carousel-free'),
-                    'outset' => esc_html__('Outset', 'divi-carousel-free'),
-                    'none'   => esc_html__('None', 'divi-carousel-free'),
+                    'solid'  => esc_html__('Solid', 'wow-carousel-for-divi-lite'),
+                    'dashed' => esc_html__('Dashed', 'wow-carousel-for-divi-lite'),
+                    'dotted' => esc_html__('Dotted', 'wow-carousel-for-divi-lite'),
+                    'double' => esc_html__('Double', 'wow-carousel-for-divi-lite'),
+                    'groove' => esc_html__('Groove', 'wow-carousel-for-divi-lite'),
+                    'ridge'  => esc_html__('Ridge', 'wow-carousel-for-divi-lite'),
+                    'inset'  => esc_html__('Inset', 'wow-carousel-for-divi-lite'),
+                    'outset' => esc_html__('Outset', 'wow-carousel-for-divi-lite'),
+                    'none'   => esc_html__('None', 'wow-carousel-for-divi-lite'),
                 ],
             ],
 
             // Left Arrow
             'icon_left'               => [
-                'label'           => esc_html__('Left Icon', 'divi-carousel-free'),
+                'label'           => esc_html__('Left Icon', 'wow-carousel-for-divi-lite'),
                 'type'            => 'select_icon',
                 'option_category' => 'basic_option',
                 'toggle_slug'     => 'arrow',
@@ -797,7 +797,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'left_border_radius'      => [
-                'label'       => esc_html__('Border Radius', 'divi-carousel-free'),
+                'label'       => esc_html__('Border Radius', 'wow-carousel-for-divi-lite'),
                 'type'        => 'border-radius',
                 'default'     => 'on|40px|40px|40px|40px',
                 'toggle_slug' => 'arrow',
@@ -807,7 +807,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
 
             // Right Arrow
             'icon_right'              => [
-                'label'           => esc_html__('Right Icon', 'divi-carousel-free'),
+                'label'           => esc_html__('Right Icon', 'wow-carousel-for-divi-lite'),
                 'type'            => 'select_icon',
                 'option_category' => 'basic_option',
                 'toggle_slug'     => 'arrow',
@@ -816,7 +816,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'right_border_radius'     => [
-                'label'       => esc_html__('Border Radius', 'divi-carousel-free'),
+                'label'       => esc_html__('Border Radius', 'wow-carousel-for-divi-lite'),
                 'type'        => 'border-radius',
                 'default'     => 'on|40px|40px|40px|40px',
                 'toggle_slug' => 'arrow',
@@ -826,7 +826,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
 
             // pagination
             'pagi_alignment'          => [
-                'label'            => esc_html__('Alignment', 'divi-carousel-free'),
+                'label'            => esc_html__('Alignment', 'wow-carousel-for-divi-lite'),
                 'type'             => 'text_align',
                 'option_category'  => 'layout',
                 'options'          => et_builder_get_text_orientation_options(['justified']),
@@ -839,7 +839,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'pagi_color'              => [
-                'label'       => esc_html__('Color', 'divi-carousel-free'),
+                'label'       => esc_html__('Color', 'wow-carousel-for-divi-lite'),
                 'type'        => 'color-alpha',
                 'tab_slug'    => 'advanced',
                 'toggle_slug' => 'pagination',
@@ -849,7 +849,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'pagi_height'             => [
-                'label'           => esc_html__('Height', 'divi-carousel-free'),
+                'label'           => esc_html__('Height', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => '10px',
@@ -864,7 +864,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'pagi_width'              => [
-                'label'           => esc_html__('Width', 'divi-carousel-free'),
+                'label'           => esc_html__('Width', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => '10px',
@@ -879,7 +879,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'pagi_radius'             => [
-                'label'       => esc_html__('Border Radius', 'divi-carousel-free'),
+                'label'       => esc_html__('Border Radius', 'wow-carousel-for-divi-lite'),
                 'type'        => 'border-radius',
                 'default'     => 'on|10px|10px|10px|10px',
                 'toggle_slug' => 'pagination',
@@ -888,7 +888,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'pagi_pos_y'              => [
-                'label'           => esc_html__('Vertical Position', 'divi-carousel-free'),
+                'label'           => esc_html__('Vertical Position', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => '10px',
@@ -903,7 +903,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'pagi_spacing'            => [
-                'label'           => esc_html__('Spacing', 'divi-carousel-free'),
+                'label'           => esc_html__('Spacing', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => '10px',
@@ -919,7 +919,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'pagi_color_active'       => [
-                'label'       => esc_html__('Color', 'divi-carousel-free'),
+                'label'       => esc_html__('Color', 'wow-carousel-for-divi-lite'),
                 'type'        => 'color-alpha',
                 'tab_slug'    => 'advanced',
                 'toggle_slug' => 'pagination',
@@ -928,7 +928,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'pagi_width_active'       => [
-                'label'           => esc_html__('Width', 'divi-carousel-free'),
+                'label'           => esc_html__('Width', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => '10px',
@@ -950,15 +950,15 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
         if (in_array('lightbox', $supports, true)) {
 
             $additional['use_lightbox'] = [
-                'label'           => esc_html__('Open Image in Lightbox', 'divi-carousel-free'),
+                'label'           => esc_html__('Open Image in Lightbox', 'wow-carousel-for-divi-lite'),
                 'type'            => 'yes_no_button',
                 'option_category' => 'configuration',
                 'default'         => 'off',
                 'toggle_slug'     => 'settings',
                 'sub_toggle'      => 'advanced',
                 'options'         => [
-                    'on'  => esc_html__('Yes', 'divi-carousel-free'),
-                    'off' => esc_html__('No', 'divi-carousel-free'),
+                    'on'  => esc_html__('Yes', 'wow-carousel-for-divi-lite'),
+                    'off' => esc_html__('No', 'wow-carousel-for-divi-lite'),
                 ],
             ];
         }
@@ -966,13 +966,13 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
         if (in_array('equal_height', $supports)) {
 
             $additional['is_equal_height'] = [
-                'label'           => esc_html__('Use Equal Height', 'divi-carousel-free'),
+                'label'           => esc_html__('Use Equal Height', 'wow-carousel-for-divi-lite'),
                 'type'            => 'yes_no_button',
                 'option_category' => 'configuration',
-                'description'     => esc_html__('Enable this to display all items with same height.', 'divi-carousel-free'),
+                'description'     => esc_html__('Enable this to display all items with same height.', 'wow-carousel-for-divi-lite'),
                 'options'         => [
-                    'on'  => esc_html__('Yes', 'divi-carousel-free'),
-                    'off' => esc_html__('No', 'divi-carousel-free'),
+                    'on'  => esc_html__('Yes', 'wow-carousel-for-divi-lite'),
+                    'off' => esc_html__('No', 'wow-carousel-for-divi-lite'),
                 ],
                 'default'         => 'on',
                 'toggle_slug'     => $design_slug,
@@ -1941,7 +1941,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
         $fields = [
 
             'overlay_icon'         => [
-                'label'           => esc_html__('Overlay Icon', 'divi-carousel-free'),
+                'label'           => esc_html__('Overlay Icon', 'wow-carousel-for-divi-lite'),
                 'type'            => 'select_icon',
                 'option_category' => 'basic_option',
                 'toggle_slug'     => $opt_slug,
@@ -1951,7 +1951,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'overlay_icon_color'   => [
-                'label'       => esc_html__('Overlay Icon Color', 'divi-carousel-free'),
+                'label'       => esc_html__('Overlay Icon Color', 'wow-carousel-for-divi-lite'),
                 'type'        => 'color-alpha',
                 'tab_slug'    => 'advanced',
                 'default'     => '#2EA3F2',
@@ -1961,7 +1961,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'overlay_icon_size'    => [
-                'label'           => esc_html__('Overlay Icon Size', 'divi-carousel-free'),
+                'label'           => esc_html__('Overlay Icon Size', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => '32px',
@@ -1976,7 +1976,7 @@ class Divi_Carousel_Free_Builder_Module extends ET_Builder_Module
             ],
 
             'overlay_icon_opacity' => [
-                'label'           => esc_html__('Overlay Icon Opacity', 'divi-carousel-free'),
+                'label'           => esc_html__('Overlay Icon Opacity', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => '1',

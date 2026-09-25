@@ -25,6 +25,15 @@ trait ModuleStylesTrait
         $elements = $args['elements'];
         $default_printed_style_attrs = $args['defaultPrintedStyleAttrs'] ?? [];
 
+        // Overlay styles.
+        $order_class = $args['orderClass'] ?? '';
+        $overlay_color = $attrs['module']['advanced']['overlayColor']['desktop']['value'] ?? 'rgba(0,0,0,0.6)';
+        $overlay_icon_color = $attrs['module']['advanced']['overlayIconColor']['desktop']['value'] ?? '#ffffff';
+        $overlay_icon_size = $attrs['module']['advanced']['overlayIconSize']['desktop']['value'] ?? '32px';
+
+        // Must out-rank the static `.dcf-container.dcf-logo-carousel .dcf-overlay` (0,3,0).
+        $item = "{$order_class} .dcf-carousel-item.dcf-logo-carousel-item.dcf-image-swap";
+
         Style::add(
             [
                 'id'            => $args['id'],
@@ -41,43 +50,28 @@ trait ModuleStylesTrait
                             ],
                         ]
                     ),
-                ],
-            ]
-        );
-
-        // Overlay styles.
-        $order_class = $args['orderClass'] ?? '';
-        $overlay_color = $attrs['module']['advanced']['overlayColor']['desktop']['value'] ?? 'rgba(0,0,0,0.6)';
-        $overlay_icon_color = $attrs['module']['advanced']['overlayIconColor']['desktop']['value'] ?? '#ffffff';
-        $overlay_icon_size = $attrs['module']['advanced']['overlayIconSize']['desktop']['value'] ?? '32px';
-
-        Style::add(
-            [
-                'id'            => $args['id'],
-                'name'          => $args['name'],
-                'orderIndex'    => $args['orderIndex'],
-                'storeInstance' => $args['storeInstance'],
-                'styles'        => [
+                    // Overlay — one style group (list of items), atRules false = no media query.
                     [
-                        'atRules'     => 'desktop',
-                        'selector'    => "{$order_class} .dcf-overlay",
-                        'declaration' => "background:{$overlay_color};color:{$overlay_icon_color};",
+                        [
+                            'atRules'     => false,
+                            'selector'    => "{$item} .dcf-overlay",
+                            'declaration' => "background:{$overlay_color};color:{$overlay_icon_color};",
+                        ],
+                        [
+                            'atRules'     => false,
+                            'selector'    => "{$item} .dcf-overlay::after",
+                            'declaration' => "font-size:{$overlay_icon_size};color:{$overlay_icon_color};",
+                        ],
                     ],
-                    [
-                        'atRules'     => 'desktop',
-                        'selector'    => "{$order_class} .dcf-overlay::after",
-                        'declaration' => "font-size:{$overlay_icon_size};color:{$overlay_icon_color};",
-                    ],
+                    // Custom CSS fields.
+                    CssStyle::style(
+                        [
+                            'selector'  => $order_class,
+                            'attr'      => $attrs['css'] ?? [],
+                            'cssFields' => self::custom_css_fields(),
+                        ]
+                    ),
                 ],
-            ]
-        );
-
-        // Custom CSS fields.
-        CssStyle::style(
-            [
-                'selector'  => $order_class,
-                'attr'      => $attrs['css'] ?? [],
-                'cssFields' => self::custom_css_fields(),
             ]
         );
     }

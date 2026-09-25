@@ -11,20 +11,20 @@ class WDCL_LogoCarouselChild extends Divi_Carousel_Free_Builder_Module
 
     public function init()
     {
-        $this->name = esc_html__('Logo', 'divi-carousel-free');
+        $this->name = esc_html__('Logo', 'wow-carousel-for-divi-lite');
 
         $this->settings_modal_toggles = [
             'general'  => [
                 'toggles' => [
                     'main_content' => [
-                        'title' => esc_html__('Content', 'divi-carousel-free'),
+                        'title' => esc_html__('Content', 'wow-carousel-for-divi-lite'),
                     ],
                 ],
             ],
             'advanced' => [
                 'toggles' => [
-                    'overlay' => esc_html__('Overlay', 'divi-carousel-free'),
-                    'borders' => esc_html__('Borders', 'divi-carousel-free'),
+                    'overlay' => esc_html__('Overlay', 'wow-carousel-for-divi-lite'),
+                    'borders' => esc_html__('Borders', 'wow-carousel-for-divi-lite'),
                 ],
             ],
         ];
@@ -35,35 +35,35 @@ class WDCL_LogoCarouselChild extends Divi_Carousel_Free_Builder_Module
 
         $fields = [
             'logo'         => [
-                'label'              => esc_html__('Upload Logo', 'divi-carousel-free'),
+                'label'              => esc_html__('Upload Logo', 'wow-carousel-for-divi-lite'),
                 'type'               => 'upload',
                 'option_category'    => 'basic_option',
-                'upload_button_text' => esc_attr__('Upload a Logo', 'divi-carousel-free'),
-                'choose_text'        => esc_attr__('Choose a Logo', 'divi-carousel-free'),
-                'update_text'        => esc_attr__('Set As Logo', 'divi-carousel-free'),
+                'upload_button_text' => esc_attr__('Upload a Logo', 'wow-carousel-for-divi-lite'),
+                'choose_text'        => esc_attr__('Choose a Logo', 'wow-carousel-for-divi-lite'),
+                'update_text'        => esc_attr__('Set As Logo', 'wow-carousel-for-divi-lite'),
                 'toggle_slug'        => 'main_content',
             ],
 
             'logo_alt'     => [
-                'label'       => esc_html__('Logo Alt Text', 'divi-carousel-free'),
+                'label'       => esc_html__('Logo Alt Text', 'wow-carousel-for-divi-lite'),
                 'type'        => 'text',
                 'toggle_slug' => 'main_content',
             ],
 
             'is_link'      => [
-                'label'           => esc_html__('Use Link', 'divi-carousel-free'),
+                'label'           => esc_html__('Use Link', 'wow-carousel-for-divi-lite'),
                 'type'            => 'yes_no_button',
                 'option_category' => 'configuration',
                 'options'         => [
-                    'on'  => esc_html__('Yes', 'divi-carousel-free'),
-                    'off' => esc_html__('No', 'divi-carousel-free'),
+                    'on'  => esc_html__('Yes', 'wow-carousel-for-divi-lite'),
+                    'off' => esc_html__('No', 'wow-carousel-for-divi-lite'),
                 ],
                 'default'         => 'off',
                 'toggle_slug'     => 'main_content',
             ],
 
             'link_url'     => [
-                'label'       => esc_html__('Link Url', 'divi-carousel-free'),
+                'label'       => esc_html__('Link Url', 'wow-carousel-for-divi-lite'),
                 'type'        => 'text',
                 'default'     => '',
                 'show_if'     => [
@@ -88,9 +88,9 @@ class WDCL_LogoCarouselChild extends Divi_Carousel_Free_Builder_Module
 
         $label = [
             'admin_title' => [
-                'label'       => esc_html__('Admin Label', 'divi-carousel-free'),
+                'label'       => esc_html__('Admin Label', 'wow-carousel-for-divi-lite'),
                 'type'        => 'text',
-                'description' => esc_html__('This will change the label of the item', 'divi-carousel-free'),
+                'description' => esc_html__('This will change the label of the item', 'wow-carousel-for-divi-lite'),
                 'toggle_slug' => 'admin_label',
             ],
         ];
@@ -124,7 +124,7 @@ class WDCL_LogoCarouselChild extends Divi_Carousel_Free_Builder_Module
                 ],
                 'important' => 'all',
             ],
-            'label_prefix' => esc_html__('Item', 'divi-carousel-free'),
+            'label_prefix' => esc_html__('Item', 'wow-carousel-for-divi-lite'),
             'defaults'     => [
                 'border_radii'  => 'on|0px|0px|0px|0px',
                 'border_styles' => [

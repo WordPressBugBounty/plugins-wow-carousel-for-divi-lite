@@ -16,6 +16,9 @@ delete_option('dcf_carousel_modules');
 delete_option('divi_carousel_free_version');
 delete_option('divi_carousel_free_activation_time');
 delete_option('divi_carousel_free_install_date');
+delete_option('dcf_onboarding_completed');
+delete_option('dcf_onboarding_pending');
+delete_option('dcf_saddle_later');
 
 // Legacy Carousel Maker detection state.
 delete_option('dcf_has_carousel_maker');

@@ -15,8 +15,8 @@ class Admin
     public function register_menu()
     {
         \DiviPeople_Admin_Menu::register('divi-carousel-free', [
-            'page_title' => __('Divi Carousel', 'divi-carousel-free'),
-            'menu_title' => __('Divi Carousel', 'divi-carousel-free'),
+            'page_title' => __('Divi Carousel', 'wow-carousel-for-divi-lite'),
+            'menu_title' => __('Divi Carousel', 'wow-carousel-for-divi-lite'),
             'capability' => 'manage_options',
             'menu_slug'  => 'divi-carousel-free',
             'callback'   => [$this, 'render_dashboard_page'],
@@ -58,6 +58,10 @@ class Admin
             true
         );
 
+        // Load the dashboard's JS strings from the WordPress.org language
+        // packs. The domain must be the plugin slug for packs to apply.
+        wp_set_script_translations('divi-carousel-free-admin', 'wow-carousel-for-divi-lite');
+
         // Enqueue admin styles
         wp_enqueue_style(
             'divi-carousel-free-admin',
@@ -86,12 +90,73 @@ class Admin
             'pluginUrl' => DCF_PLUGIN_URL,
             'version' => DCF_PLUGIN_VERSION,
             'restUrl' => rest_url(),
+            'onboardingCompleted' => (bool) get_option('dcf_onboarding_completed'),
+            // Fresh install that hasn't seen the wizard yet (e.g. activated in
+            // bulk or from WP-CLI, so the activation redirect never ran).
+            'onboardingPending' => (bool) get_option('dcf_onboarding_pending') && !get_option('dcf_onboarding_completed'),
+            'saddle' => self::saddle_state(),
+            // Said "Not now" to Saddle in the wizard: the dashboard shows it
+            // as a "create your first carousel with AI" guide instead.
+            'saddleLater' => (bool) get_option('dcf_saddle_later'),
+            'newPageUrl' => admin_url('post-new.php?post_type=page'),
+            'builder' => self::detect_builder(),
         ]);
     }
 
     public function render_dashboard_page()
     {
         echo '<div id="divi-carousel-free-admin-root"></div>';
+    }
+
+    /**
+     * Saddle's install state plus what the current user may do about it.
+     * The admin app installs/activates through core's /wp/v2/plugins
+     * endpoint, which enforces the same capabilities server side; these
+     * flags only decide whether to offer the button or a fallback link.
+     */
+    private static function saddle_state(): array
+    {
+        if (!function_exists('get_plugins')) {
+            require_once ABSPATH . 'wp-admin/includes/plugin.php';
+        }
+
+        $file = 'saddle/saddle.php';
+
+        if (is_plugin_active($file)) {
+            $status = 'active';
+        } elseif (array_key_exists($file, get_plugins())) {
+            $status = 'installed';
+        } else {
+            $status = 'missing';
+        }
+
+        return [
+            'status'      => $status,
+            'plugin'      => 'saddle/saddle',
+            'canInstall'  => current_user_can('install_plugins') && wp_is_file_mod_allowed('dcf_install_saddle'),
+            'canActivate' => current_user_can('activate_plugins'),
+            'installUrl'  => admin_url('plugin-install.php?s=saddle&tab=search&type=term'),
+            'infoUrl'     => 'https://wordpress.org/plugins/saddle/',
+            'settingsUrl' => admin_url('admin.php?page=saddle'),
+            'siteUrl'     => 'https://saddle.to/',
+        ];
+    }
+
+    /**
+     * Which Divi builder the carousel modules will show up in, so the
+     * welcome wizard can say where to find them.
+     */
+    private static function detect_builder(): string
+    {
+        if (function_exists('et_builder_d5_enabled') && et_builder_d5_enabled()) {
+            return 'd5';
+        }
+
+        if (defined('ET_BUILDER_VERSION') || class_exists('ET_Builder_Module')) {
+            return 'd4';
+        }
+
+        return 'none';
     }
 
     /**

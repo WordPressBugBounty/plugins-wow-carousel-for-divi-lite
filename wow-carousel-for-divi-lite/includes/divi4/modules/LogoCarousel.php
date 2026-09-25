@@ -8,7 +8,7 @@ class WDCL_LogoCarousel extends Divi_Carousel_Free_Builder_Module
     public function init()
     {
 
-        $this->name       = esc_html__('Logo Carousel', 'divi-carousel-free');
+        $this->name       = esc_html__('Logo Carousel', 'wow-carousel-for-divi-lite');
         $this->slug       = 'wdcl_logo_carousel';
         $this->vb_support = 'on';
         $this->child_slug = 'wdcl_logo_carousel_child';
@@ -17,19 +17,19 @@ class WDCL_LogoCarousel extends Divi_Carousel_Free_Builder_Module
             'general'  => [
                 'toggles' => [
                     'settings'      => [
-                        'title'             => esc_html__('Carousel Settings', 'divi-carousel-free'),
+                        'title'             => esc_html__('Carousel Settings', 'wow-carousel-for-divi-lite'),
                         'tabbed_subtoggles' => true,
                         'sub_toggles'       => [
                             'general'  => [
-                                'name' => esc_html__('General', 'divi-carousel-free'),
+                                'name' => esc_html__('General', 'wow-carousel-for-divi-lite'),
                             ],
                             'advanced' => [
-                                'name' => esc_html__('Advanced', 'divi-carousel-free'),
+                                'name' => esc_html__('Advanced', 'wow-carousel-for-divi-lite'),
                             ],
                         ],
                     ],
                     'logo_settings' => [
-                        'title' => esc_html__('Logo Settings', 'divi-carousel-free'),
+                        'title' => esc_html__('Logo Settings', 'wow-carousel-for-divi-lite'),
                     ],
                 ],
             ],
@@ -37,32 +37,32 @@ class WDCL_LogoCarousel extends Divi_Carousel_Free_Builder_Module
             'advanced' => [
                 'toggles' => [
                     'carousel'   => [
-                        'title' => esc_html__('Carousel', 'divi-carousel-free'),
+                        'title' => esc_html__('Carousel', 'wow-carousel-for-divi-lite'),
                     ],
                     'arrow'      => [
-                        'title'             => esc_html__('Navigation', 'divi-carousel-free'),
+                        'title'             => esc_html__('Navigation', 'wow-carousel-for-divi-lite'),
                         'tabbed_subtoggles' => true,
                         'sub_toggles'       => [
                             'arrow_common' => [
-                                'name' => esc_html__('Common', 'divi-carousel-free'),
+                                'name' => esc_html__('Common', 'wow-carousel-for-divi-lite'),
                             ],
                             'arrow_left'   => [
-                                'name' => esc_html__('Left', 'divi-carousel-free'),
+                                'name' => esc_html__('Left', 'wow-carousel-for-divi-lite'),
                             ],
                             'arrow_right'  => [
-                                'name' => esc_html__('Right', 'divi-carousel-free'),
+                                'name' => esc_html__('Right', 'wow-carousel-for-divi-lite'),
                             ],
                         ],
                     ],
                     'pagination' => [
-                        'title'             => esc_html__('Pagination', 'divi-carousel-free'),
+                        'title'             => esc_html__('Pagination', 'wow-carousel-for-divi-lite'),
                         'tabbed_subtoggles' => true,
                         'sub_toggles'       => [
                             'pagi_common' => [
-                                'name' => esc_html__('Common', 'divi-carousel-free'),
+                                'name' => esc_html__('Common', 'wow-carousel-for-divi-lite'),
                             ],
                             'pagi_active' => [
-                                'name' => esc_html__('Active', 'divi-carousel-free'),
+                                'name' => esc_html__('Active', 'wow-carousel-for-divi-lite'),
                             ],
                         ],
                     ],
@@ -79,21 +79,21 @@ class WDCL_LogoCarousel extends Divi_Carousel_Free_Builder_Module
         $logo_options = [
 
             'logo_hover'  => [
-                'label'       => esc_html__('Image Hover Animation', 'divi-carousel-free'),
+                'label'       => esc_html__('Image Hover Animation', 'wow-carousel-for-divi-lite'),
                 'type'        => 'select',
                 'toggle_slug' => 'logo_settings',
                 'default'     => 'zoom_in',
                 'options'     => [
-                    'no_hover'      => esc_html__('None', 'divi-carousel-free'),
-                    'zoom_in'       => esc_html__('Zoom In', 'divi-carousel-free'),
-                    'zoom_out'      => esc_html__('Zoom Out', 'divi-carousel-free'),
-                    'fade'          => esc_html__('Fade', 'divi-carousel-free'),
-                    'black_n_white' => esc_html__('Black and White', 'divi-carousel-free'),
+                    'no_hover'      => esc_html__('None', 'wow-carousel-for-divi-lite'),
+                    'zoom_in'       => esc_html__('Zoom In', 'wow-carousel-for-divi-lite'),
+                    'zoom_out'      => esc_html__('Zoom Out', 'wow-carousel-for-divi-lite'),
+                    'fade'          => esc_html__('Fade', 'wow-carousel-for-divi-lite'),
+                    'black_n_white' => esc_html__('Black and White', 'wow-carousel-for-divi-lite'),
                 ],
             ],
 
             'logo_height' => [
-                'label'           => esc_html__('Height', 'divi-carousel-free'),
+                'label'           => esc_html__('Height', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => 'auto',
@@ -108,7 +108,7 @@ class WDCL_LogoCarousel extends Divi_Carousel_Free_Builder_Module
             ],
 
             'logo_width'  => [
-                'label'           => esc_html__('Width', 'divi-carousel-free'),
+                'label'           => esc_html__('Width', 'wow-carousel-for-divi-lite'),
                 'type'            => 'range',
                 'option_category' => 'basic_option',
                 'default'         => 'auto',

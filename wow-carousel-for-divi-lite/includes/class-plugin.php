@@ -75,6 +75,17 @@ class Plugin
 
     public static function activation()
     {
+        // A fresh install has never written any of our options. Checked
+        // before they are written below; existing sites that update or
+        // reactivate never get the welcome wizard pushed at them.
+        $is_fresh_install = !get_option('divi_carousel_free_version')
+            && !get_option('divi_carousel_free_install_date')
+            && !get_option('dcf_carousel_modules');
+
+        if ($is_fresh_install) {
+            update_option('dcf_onboarding_pending', 1, false);
+        }
+
         update_option('divi_carousel_free_version', DCF_PLUGIN_VERSION);
 
         if (!get_option('divi_carousel_free_activation_time')) {
@@ -116,20 +127,30 @@ class Plugin
         // Delete the redirect transient
         delete_transient('dcf_activation_redirect');
 
-        // Don't redirect if activating multiple plugins or doing AJAX
-        if (isset($_GET['activate-multi']) || wp_doing_ajax()) {
+        // Only redirect a fresh install, for a single interactive activation
+        // by someone who can use the welcome screen — never bulk, AJAX or
+        // network activation. Once the wizard is finished or skipped the
+        // pending flag is gone and activating behaves like any other plugin.
+        if (
+            isset($_GET['activate-multi'])
+            || wp_doing_ajax()
+            || is_network_admin()
+            || !current_user_can('manage_options')
+            || !get_option('dcf_onboarding_pending')
+        ) {
             return;
         }
 
-        // Redirect to dashboard
-        wp_safe_redirect(admin_url('admin.php?page=divi-carousel-free'));
+        $url = admin_url('admin.php?page=divi-carousel-free#/welcome');
+
+        wp_safe_redirect($url);
         exit;
     }
 
     public function load_textdomain()
     {
         load_plugin_textdomain(
-            'divi-carousel-free',
+            'wow-carousel-for-divi-lite',
             false,
             dirname(dirname(plugin_basename(__FILE__))) . '/languages/'
         );

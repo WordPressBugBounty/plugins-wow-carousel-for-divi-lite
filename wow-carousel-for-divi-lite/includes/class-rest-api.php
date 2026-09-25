@@ -96,6 +96,46 @@ class Rest_API
                 ],
             ],
         ]);
+
+        // Welcome wizard: finished or skipped, so activation stops sending
+        // the user back to it.
+        register_rest_route(self::NAMESPACE, '/onboarding', [
+            'methods'             => 'POST',
+            'callback'            => [$this, 'update_onboarding'],
+            'permission_callback' => [$this, 'check_permission'],
+            'args'                => [
+                'completed' => [
+                    'required' => true,
+                    'type'     => 'boolean',
+                ],
+                // "later" when the user said "Not now" to Saddle, so the
+                // dashboard can offer it again as a guide rather than never.
+                'saddle' => [
+                    'required' => false,
+                    'type'     => 'string',
+                    'enum'     => ['later', 'yes'],
+                ],
+            ],
+        ]);
+    }
+
+    public function update_onboarding($request)
+    {
+        if ($request->get_param('completed')) {
+            update_option('dcf_onboarding_completed', time(), false);
+            delete_option('dcf_onboarding_pending');
+
+            $saddle = $request->get_param('saddle');
+            if ('later' === $saddle) {
+                update_option('dcf_saddle_later', time(), false);
+            } elseif ('yes' === $saddle) {
+                delete_option('dcf_saddle_later');
+            }
+        } else {
+            delete_option('dcf_onboarding_completed');
+        }
+
+        return rest_ensure_response(['success' => true]);
     }
 
     public function check_permission()

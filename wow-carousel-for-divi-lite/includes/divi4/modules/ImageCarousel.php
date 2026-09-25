@@ -11,20 +11,20 @@ class WDCL_ImageCarousel extends Divi_Carousel_Free_Builder_Module
     public function init()
     {
 
-        $this->name = esc_html__('Image Carousel', 'divi-carousel-free');
+        $this->name = esc_html__('Image Carousel', 'wow-carousel-for-divi-lite');
 
         $this->settings_modal_toggles = [
             'general'  => [
                 'toggles' => [
                     'settings' => [
-                        'title'             => esc_html__('Carousel Settings', 'divi-carousel-free'),
+                        'title'             => esc_html__('Carousel Settings', 'wow-carousel-for-divi-lite'),
                         'tabbed_subtoggles' => true,
                         'sub_toggles'       => [
                             'general'  => [
-                                'name' => esc_html__('General', 'divi-carousel-free'),
+                                'name' => esc_html__('General', 'wow-carousel-for-divi-lite'),
                             ],
                             'advanced' => [
-                                'name' => esc_html__('Advanced', 'divi-carousel-free'),
+                                'name' => esc_html__('Advanced', 'wow-carousel-for-divi-lite'),
                             ],
                         ],
                     ],
@@ -34,32 +34,32 @@ class WDCL_ImageCarousel extends Divi_Carousel_Free_Builder_Module
             'advanced' => [
                 'toggles' => [
                     'carousel'   => [
-                        'title' => esc_html__('Carousel', 'divi-carousel-free'),
+                        'title' => esc_html__('Carousel', 'wow-carousel-for-divi-lite'),
                     ],
                     'arrow'      => [
-                        'title'             => esc_html__('Navigation', 'divi-carousel-free'),
+                        'title'             => esc_html__('Navigation', 'wow-carousel-for-divi-lite'),
                         'tabbed_subtoggles' => true,
                         'sub_toggles'       => [
                             'arrow_common' => [
-                                'name' => esc_html__('Common', 'divi-carousel-free'),
+                                'name' => esc_html__('Common', 'wow-carousel-for-divi-lite'),
                             ],
                             'arrow_left'   => [
-                                'name' => esc_html__('Left', 'divi-carousel-free'),
+                                'name' => esc_html__('Left', 'wow-carousel-for-divi-lite'),
                             ],
                             'arrow_right'  => [
-                                'name' => esc_html__('Right', 'divi-carousel-free'),
+                                'name' => esc_html__('Right', 'wow-carousel-for-divi-lite'),
                             ],
                         ],
                     ],
                     'pagination' => [
-                        'title'             => esc_html__('Pagination', 'divi-carousel-free'),
+                        'title'             => esc_html__('Pagination', 'wow-carousel-for-divi-lite'),
                         'tabbed_subtoggles' => true,
                         'sub_toggles'       => [
                             'pagi_common' => [
-                                'name' => esc_html__('Common', 'divi-carousel-free'),
+                                'name' => esc_html__('Common', 'wow-carousel-for-divi-lite'),
                             ],
                             'pagi_active' => [
-                                'name' => esc_html__('Active', 'divi-carousel-free'),
+                                'name' => esc_html__('Active', 'wow-carousel-for-divi-lite'),
                             ],
                         ],
                     ],
