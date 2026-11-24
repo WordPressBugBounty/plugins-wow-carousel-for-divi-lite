@@ -117,6 +117,25 @@ class Rest_API
                 ],
             ],
         ]);
+
+        // The Snapback card on the dashboard, hidden per user.
+        register_rest_route(self::NAMESPACE, '/snapback/hide', [
+            'methods'             => 'POST',
+            'callback'            => [$this, 'hide_snapback'],
+            'permission_callback' => [$this, 'check_permission'],
+        ]);
+    }
+
+    /**
+     * Hide the Snapback card on the dashboard for the current user.
+     *
+     * @return \WP_REST_Response
+     */
+    public function hide_snapback()
+    {
+        update_user_meta(get_current_user_id(), Admin::SNAPBACK_HIDDEN_META, 1);
+
+        return rest_ensure_response(['success' => true]);
     }
 
     public function update_onboarding($request)

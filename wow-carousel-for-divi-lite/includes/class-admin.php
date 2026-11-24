@@ -6,6 +6,12 @@ defined('ABSPATH') || exit;
 
 class Admin
 {
+    /** Per-user flag: the Snapback card was hidden (Rest_API::hide_snapback()). */
+    const SNAPBACK_HIDDEN_META = 'dcf_snapback_card_hidden';
+
+    /** The Snapback half-price line shows until 2027-01-01T07:59:59Z (Dec 31, 23:59:59 in California). */
+    const SNAPBACK_OFFER_ENDS = 1798790399;
+
     public function __construct()
     {
         add_action('admin_menu', [$this, 'register_menu']);
@@ -22,6 +28,8 @@ class Admin
             'callback'   => [$this, 'render_dashboard_page'],
             'position'   => 10,
         ]);
+
+        $this->register_snapback_page();
     }
 
     public function enqueue_admin_assets($hook)
@@ -100,6 +108,7 @@ class Admin
             'saddleLater' => (bool) get_option('dcf_saddle_later'),
             'newPageUrl' => admin_url('post-new.php?post_type=page'),
             'builder' => self::detect_builder(),
+            'snapback' => self::snapback_state(),
         ]);
     }
 
@@ -140,6 +149,88 @@ class Admin
             'settingsUrl' => admin_url('admin.php?page=saddle'),
             'siteUrl'     => 'https://saddle.to/',
         ];
+    }
+
+    /**
+     * The Snapback card on this dashboard (SnapbackNudge.jsx). Shown only on
+     * our own screen, never as an admin notice, and nothing here calls a
+     * remote server; the button is the only link out.
+     */
+    private static function snapback_state(): array
+    {
+        $active = defined('SNAPBACK_PRO_FILE');
+
+        return [
+            'hidden'  => (bool) get_user_meta(get_current_user_id(), self::SNAPBACK_HIDDEN_META, true),
+            'active'  => $active,
+            'installed' => self::snapback_installed(),
+            'offer'   => time() <= self::SNAPBACK_OFFER_ENDS,
+            'url'     => 'https://snapbackwp.com/?utm_source=wow-carousel-for-divi-lite&utm_medium=plugin-card&utm_campaign=bf26',
+            'pageUrl' => 'https://snapbackwp.com/?utm_source=wow-carousel-for-divi-lite&utm_medium=plugin-page&utm_campaign=bf26',
+            'openUrl' => $active ? admin_url('admin.php?page=snapback') : '',
+        ];
+    }
+
+    /**
+     * "Get Snapback" under the DiviPeople menu: a page about Snapback
+     * (SnapbackPage in Snapback.jsx). Only while Snapback is not active, and only once per site: the first PlugPress plugin to add it wins.
+     */
+    private function register_snapback_page()
+    {
+        if (self::snapback_installed()) {
+            return;
+        }
+
+        // One "Get Snapback" page per site, whichever PlugPress plugin adds
+        // it first (every plugin checks the same constant).
+        if (defined('PLUGPRESS_GET_SNAPBACK_PAGE')) {
+            return;
+        }
+        define('PLUGPRESS_GET_SNAPBACK_PAGE', 'divi-carousel-free-get-snapback');
+
+        add_submenu_page(
+            'divipeople',
+            __('Get Snapback', 'wow-carousel-for-divi-lite'),
+            __('Get Snapback', 'wow-carousel-for-divi-lite'),
+            'manage_options',
+            'divi-carousel-free-get-snapback',
+            [$this, 'render_snapback_page'],
+            99
+        );
+    }
+
+    /**
+     * Snapback is installed, active or not. Then this plugin shows no
+     * Snapback banner, no "Get Snapback" page and no update-row line. Read
+     * from the plugin headers, so a renamed folder still counts.
+     */
+    public static function snapback_installed(): bool
+    {
+        static $installed = null;
+
+        if (null === $installed) {
+            $installed = defined('SNAPBACK_PRO_FILE');
+
+            if (!$installed) {
+                if (!function_exists('get_plugins')) {
+                    require_once ABSPATH . 'wp-admin/includes/plugin.php';
+                }
+
+                foreach (get_plugins() as $plugin) {
+                    if (($plugin['TextDomain'] ?? '') === 'snapback-pro') {
+                        $installed = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        return $installed;
+    }
+
+    public function render_snapback_page()
+    {
+        echo '<div id="divi-carousel-free-snapback-root"></div>';
     }
 
     /**

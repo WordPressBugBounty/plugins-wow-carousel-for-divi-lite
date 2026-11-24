@@ -4,7 +4,7 @@ Contributors: plugpressco, badhonrocks, divipeople
 Tags: divi carousel, divi 5, image carousel, logo carousel, video carousel
 Requires at least: 5.0
 Tested up to: 7.1
-Stable tag: 3.3.1
+Stable tag: 3.3.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -20,6 +20,8 @@ It adds four carousel modules to the Divi Builder. Pick one, add your slides, an
 Built for Divi 5. Works with Divi 4 too, in the Divi Theme, the Extra Theme or the Divi Builder plugin.
 
 [**Live demo**](https://divipeople.com/free-plugins/divi-carousel-free/demo/) | [**Divi Carousel Pro**](https://divipeople.com/divi-carousel-pro/)
+
+Before your next update, take a restore point with [Snapback](https://snapbackwp.com/?utm_source=wow-carousel-for-divi-lite&utm_medium=readme&utm_campaign=bf26), a backup and recovery plugin from the same team.
 
 = 🎠 Four Divi carousel modules =
 
@@ -157,6 +159,11 @@ Ask on the [WordPress.org support forum](https://wordpress.org/support/plugin/wo
 5. The dashboard and Module Manager
 
 == Changelog ==
+
+= 3.3.2 =
+
+Changed
+* The PlugPress Suite on the dashboard has larger product cards that can be reached with the keyboard.
 
 = 3.3.1 =
 
